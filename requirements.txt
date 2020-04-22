@@ -57,7 +57,7 @@ Pygments==2.3.0
 PyMsgBox==1.0.6
 PyMySQL==0.9.3
 pyparsing==2.2.2
-pypiwin32==223
+
 PyRect==0.1.4
 PyScreeze==0.1.19
 pyTelegramBotAPI==3.6.7
