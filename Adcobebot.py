@@ -9,7 +9,7 @@ server = Flask(__name__)
 PORT = int(os.environ.get('PORT', '8443'))                
             
   # Handle '/start' and '/help'
-@bot.message_handler(commands=['help'])
+
 def send_welcome(message):
  bot.reply_to(message, "\nHi there, I am EchoBot.\nI am here to echo your words. Just send anything  and I'll send the same thing to you!\n")
 @bot.message_handler(commands=['start'])
