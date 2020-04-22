@@ -1,0 +1,1 @@
+web: python3 Adcobebot.py
