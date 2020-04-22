@@ -1,1 +1,1 @@
-web: python3 Adcobebot.py
+web: python Adcobebot.py
