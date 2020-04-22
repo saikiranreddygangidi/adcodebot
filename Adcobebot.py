@@ -28,7 +28,7 @@ def getMessage():
 @server.route("/")
 def webhook():
   bot.remove_webhook()
-  bot.set_webhook(url='Your_App_Name_Link_Here' + API_TOKEN)
+  bot.set_webhook(url='https://git.heroku.com/adcodebot.git' + API_TOKEN)
   return "!", 200
   
   
