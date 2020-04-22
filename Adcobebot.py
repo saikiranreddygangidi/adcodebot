@@ -12,6 +12,7 @@ PORT = int(os.environ.get('PORT', '8443'))
 
 def send_welcome(message):
  bot.reply_to(message, "\nHi there, I am EchoBot.\nI am here to echo your words. Just send anything  and I'll send the same thing to you!\n")
+
 @bot.message_handler(commands=['start'])
 def start(message):
  bot.reply_to(message, "\nHi there, I am EchoBot.")
