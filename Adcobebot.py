@@ -95,7 +95,7 @@ def codename(message):
           reply="ROBO: Bye! take care.."
       else:
           reply=response(user_response)
-  bot.reply_to(message,reply+'\n IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N')                  
+  bot.reply_to(message,reply+'\n-----------------------------------------------------------\n IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N')                  
             
   # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
 @bot.message_handler(func=lambda message: True)
