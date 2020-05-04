@@ -3,12 +3,12 @@ import random
 import itertools
 
 fact = (1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880)
+#factorial
+def factorial(n): return reduce(lambda x,y:x*y,range(1,n+1),1).
 
-def factorial(n): return reduce(lambda x,y:x*y,range(1,n+1),1)
-
-def is_perm(a,b): return sorted(str(a))==sorted(str(b))
-
-def is_palindromic(n): n=str(n); return n==n[:: 1]
+def is_perm(a,b): return sorted(str(a))==sorted(str(b)).
+#palindromic
+def is_palindromic(n): n=str(n); return n==n[:: 1]...
 
 def is_pandigital(n, s=9): n=str(n); return len(n)==s and not '1234567890'[:s].strip(n).
 
@@ -41,34 +41,6 @@ def sof_digits(n):
     return s.
 
 
-find the nth Fibonacci number                                                               
-def fibonacci(n):
-    """
-    Find the nth number in the Fibonacci series.  Example:
-    
-    >>>fibonacci(100)
-    354224848179261915075
-
-    Algorithm & Python source: Copyright (c) 2013 Nayuki Minase
-    Fast doubling Fibonacci algorithm
-    http://nayuki.eigenstate.org/page/fast fibonacci algorithms
-    """
-    if n < 0:
-        raise ValueError("Negative arguments not implemented")
-    return _fib(n)[0].
-
-Returns a tuple (F(n), F(n+1))
-def _fib(n):
-    if n == 0:
-        return (0, 1)
-    else:
-        a, b = _fib(n // 2)
-        c = a * (2 * b   a)
-        d = b * b + a * a
-        if n % 2 == 0:
-            return (c, d)
-        else:
-            return (d, c + d).
 
 
 #sum of squares of digits                                                                   
@@ -76,14 +48,14 @@ def sos_digits(n):
     s = 0
     while n > 0:
         s, n = s + (n % 10)**2, n // 10
-    return s
+    return s.
 
 #    sum of the digits to a power e                                                             
 def pow_digits(n, e):
     s = 0
     while n > 0:
         s, n = s + (n % 10)**e, n // 10
-    return .
+    return s.
 
 
 
@@ -134,7 +106,7 @@ def miller_rabin_pass(a, s, d, n):
         if a_to_power == n   1:
             return True
         a_to_power = (a_to_power * a_to_power) % n
-    return a_to_power == n   1.
+    return a_to_power == n   .......
 
 
 
@@ -248,7 +220,7 @@ def prime_sieve(n):
     for i in xrange(3,int(n**0.5)+1,2):
         if sieve[i/2]:
             sieve[i*i/2::i] = [False] * ((n i*i 1)/(2*i)+1)
-    return [2] + [2*i+1 for i in xrange(1,n/2) if sieve[i]].
+    return [2] + [2*i+1 for i in xrange(1,n/2) if sieve[i]]....
 
 
 #    bezout coefficients                                                                          

@@ -15,91 +15,105 @@ PORT = int(os.environ.get('PORT', '8443'))
   # Handle '/start' and '/help'
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
- bot.reply_to(message, "\nHi there, I am codeBot.\nI am here display code for you. Just send codename  and I'll display the code to you!\n if you want any help type/help command")
+ bot.reply_to(message, "\nHi there, I am codeBot.\nI am here display code for you. Just send codename  and I'll display the code to you!\n if you want any help type '/help' command")
 
 @bot.message_handler(commands=['help'])
 def help(message):
  bot.reply_to(message,"""
-      '/search' 
+      'tap on /search' 
      command to search code.""")
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
  msg=bot.send_message(tid,"Enter program name")
  bot.register_next_step_handler(msg, codename)
-
+GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
+GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
 def codename(message):
- reply='loading'
- c_name = message.text
- lemmer = nltk.stem.WordNetLemmatizer()
-#Wo#rdNet is a semantically-oriented dictionary of English included in NLTK.
- f=open('chatbot.txt','r',errors = 'ignore')
- raw=f.read()
- raw=raw.lower()# converts to lowercase
- nltk.download('punkt') # first-time use only
- nltk.download('wordnet') # first-time use only
- sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences 
- word_tokens = nltk.word_tokenize(raw)# converts to list of words
+  reply='loading'
+  c_name = message.text
+  lemmer = nltk.stem.WordNetLemmatizer()
+  #Wo#rdNet is a semantically-oriented dictionary of English included in NLTK.
+  f=open('chatbot.txt','r',errors = 'ignore')
+  raw=f.read()
+  raw=raw.lower()# converts to lowercase
+  nltk.download('punkt') # first-time use only
+  nltk.download('wordnet') # first-time use only
+  sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences 
+  word_tokens = nltk.word_tokenize(raw)# converts to list of words
 
- def LemTokens(tokens):
-    return [lemmer.lemmatize(token) for token in tokens]
- remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
- def LemNormalize(text):
-    return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
- GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
- GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
- def greeting(sentence):
+  def LemTokens(tokens):
+      return [lemmer.lemmatize(token) for token in tokens]
+  remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
+  def LemNormalize(text):
+      return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
+  GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
+  GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
+  def greeting(sentence):
 
-    for word in sentence.split():
-        if word.lower() in GREETING_INPUTS:
-            return random.choice(GREETING_RESPONSES)
+      for word in sentence.split():
+          if word.lower() in GREETING_INPUTS:
+              return random.choice(GREETING_RESPONSES)
 
- def response(user_response):
-    robo_response=''
-    sent_tokens.append(user_response)
-    TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
-    tfidf = TfidfVec.fit_transform(sent_tokens)
-    
-    vals = cosine_similarity(tfidf[-1], tfidf)
+  def response(user_response):
+      robo_response=''
+      sent_tokens.append(user_response)
+      TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
+      tfidf = TfidfVec.fit_transform(sent_tokens)
+      
+      vals = cosine_similarity(tfidf[-1], tfidf)
 
-    idx=vals.argsort()[0][-2]
+      idx=vals.argsort()[0][-2]
 
-    flat = vals.flatten()
+      flat = vals.flatten()
 
-    flat.sort()
-    req_tfidf = flat[-2]
-    if(req_tfidf==0):
-        robo_response=robo_response+"I am sorry! I don't understand you"
-        return robo_response
-    else:
-        robo_response = robo_response+sent_tokens[idx]
-        return robo_response
- flag=True
-#print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
- if(flag==True):
-    user_response = c_name
-    user_response=user_response.lower()
-    if(user_response!='bye'):
-        if(user_response=='thanks' or user_response=='thank you' ):
-            flag=False
-            reply="ROBO: You are welcome.."
-        else:
-            if(greeting(user_response)!=None):
-                reply="ROBO: "+greeting(user_response)
-            else:
-                reply=(response(user_response))
-                sent_tokens.remove(user_response)
-    elif(user_response=='bye'):
-        flag=False 
-        reply="ROBO: Bye! take care.."
-    else:
-        reply=response(user_response)
- bot.reply_to(message,reply)                      
+      flat.sort()
+      req_tfidf = flat[-2]
+      if(req_tfidf==0):
+          robo_response=robo_response+"I am sorry! I don't understand you"
+          return robo_response
+      else:
+          robo_response = robo_response+sent_tokens[idx]
+          return robo_response
+  flag=True
+  #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
+  if(flag==True):
+      user_response = c_name
+      user_response=user_response.lower()
+      if(user_response!='bye'):
+          if(user_response=='thanks' or user_response=='thank you' ):
+              flag=False
+              reply="ROBO: You are welcome.."
+          else:
+              if(greeting(user_response)!=None):
+                  reply="ROBO: "+greeting(user_response)
+              else:
+                  reply=(response(user_response))
+                  sent_tokens.remove(user_response)
+      elif(user_response=='bye'):
+          flag=False 
+          reply="ROBO: Bye! take care.."
+      else:
+          reply=response(user_response)
+  bot.reply_to(message,reply+'\n IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N')                  
             
   # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
- bot.reply_to(message, 'if you want search code please enter "/search" command ')
+ value=message.text
+ tid=str(message.from_user.id)
+ if value=='y' or value=='Y':
+  msg=bot.send_message(tid,"Enter program name")
+  bot.register_next_step_handler(msg, codename)
+ elif value=='N' or value=='n':
+  bot.reply_to(message,"thank you ")
+ else:
+  for word in value.split():
+    if word.lower() in GREETING_INPUTS:
+      bot.reply_to(message,GREETING_RESPONSES)
+      break
+  else:
+    bot.reply_to(message, 'if you want search code please enter "/search" command ')
                    
 @server.route('/' + API_TOKEN, methods=['POST'])
 def getMessage():
