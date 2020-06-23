@@ -25,16 +25,29 @@ def help(message):
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
- msg=bot.send_message(tid,"Enter program name")
- bot.register_next_step_handler(msg, codename)
+ msg=bot.send_message(tid,"Enter a programming language you want to get your code")
+ bot.register_next_step_handler(msg, select_lang)
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
+def select_lang(message):
+  global f
+  tid = str(message.from_user.id)
+  language=message.text
+  language=language.lower()
+  language_list=["c","c++","java","python"]
+  if language not in language_list:
+    bot.reply_to(message,"we don't do it here for now")
+  else:
+    filename=language+".txt"
+    f=open(filename,'r',errors = 'ignore')
+    msg=bot.send_message(tid,"Enter program name")
+    bot.register_next_step_handler(msg, codename)
 def codename(message):
   reply='loading'
   c_name = message.text
   lemmer = nltk.stem.WordNetLemmatizer()
   #Wo#rdNet is a semantically-oriented dictionary of English included in NLTK.
-  f=open('chatbot.txt','r',errors = 'ignore')
+  
   raw=f.read()
   raw=raw.lower()# converts to lowercase
   nltk.download('punkt') # first-time use only
@@ -70,7 +83,7 @@ def codename(message):
       flat.sort()
       req_tfidf = flat[-2]
       if(req_tfidf==0):
-          robo_response=robo_response+"I am sorry! I don't understand you"
+          robo_response=robo_response+"I am sorry! I don't understand you may check other it may present there "
           return robo_response
       else:
           robo_response = robo_response+sent_tokens[idx]
@@ -95,7 +108,7 @@ def codename(message):
           reply="ROBO: Bye! take care.."
       else:
           reply=response(user_response)
-  bot.reply_to(message,reply+'\n-----------------------------------------------------------\n IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N')                  
+  bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
             
   # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
 @bot.message_handler(func=lambda message: True)
@@ -103,8 +116,8 @@ def echo_message(message):
  value=message.text
  tid=str(message.from_user.id)
  if value=='y' or value=='Y':
-  msg=bot.send_message(tid,"Enter program name")
-  bot.register_next_step_handler(msg, codename)
+  msg=bot.send_message(tid,"Enter a programming language you want to get your code")
+  bot.register_next_step_handler(msg, select_lang)
  elif value=='N' or value=='n':
   bot.reply_to(message,"thank you ")
  else:
@@ -113,7 +126,7 @@ def echo_message(message):
       bot.reply_to(message,GREETING_RESPONSES)
       break
   else:
-    bot.reply_to(message, 'if you want search code please enter "/search" command ')
+    bot.reply_to(message, 'I mainly search a program for you .if you want search code please enter "/search" command ')
                    
 @server.route('/' + API_TOKEN, methods=['POST'])
 def getMessage():
