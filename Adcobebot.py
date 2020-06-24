@@ -37,7 +37,7 @@ def cpp(message):
  global f
  #bot.reply_to(message,"hello world")
  tid = str(message.from_user.id)
- filename="cpp.txt"
+ filename="c++.txt"
  f=open(filename,'r',errors = 'ignore')
  msg=bot.send_message(tid,"Enter program name")
  bot.register_next_step_handler(msg, codename)
@@ -164,6 +164,7 @@ def echo_message(message):
  else:
   for word in value.split():
     if word.lower() in GREETING_INPUTS:
+      bot.reply_to(message,f)
       bot.reply_to(message,GREETING_RESPONSES)
       break
   else:
