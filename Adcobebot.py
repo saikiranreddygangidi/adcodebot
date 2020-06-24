@@ -15,7 +15,7 @@ PORT = int(os.environ.get('PORT', '8443'))
   # Handle '/start' and '/help'
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
- bot.reply_to(message, "\nHi there, I am codeBot.\nI am here display code for you. Just send codename  and I'll display the code to you!\n if you want any help type '/help' command")
+ bot.reply_to(message, "\nHi, Welcome to Codebot.\nI'm here to help you in finding the code you want.\nTo search a program tab '/search' .\n if you want any help type '/help' command")
 
 @bot.message_handler(commands=['help'])
 def help(message):
@@ -25,12 +25,42 @@ def help(message):
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
- msg=bot.send_message(tid,"Enter a programming language you want to get your code")
- bot.register_next_step_handler(msg, select_lang)
+ bot.reply_to(message,'select a program language among the following \n "/c"\n"/c++"\n"/java"\n"/python"')
+
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
-def select_lang(message):
+@bot.message_handler(commands=['c'])
+def c(message):
   global f
+  filename="c.txt"
+  f=open(filename,'r',errors = 'ignore')
+  msg=bot.send_message(tid,"Enter program name")
+  bot.register_next_step_handler(msg, codename)
+@bot.message_handler(commands=['c++'])
+def cpp(message):
+  global f
+  filename="c++.txt"
+  f=open(filename,'r',errors = 'ignore')
+  msg=bot.send_message(tid,"Enter program name")
+  bot.register_next_step_handler(msg, codename)
+@bot.message_handler(commands=['java'])
+def java(message):
+  global f
+  filename="java.txt"
+  f=open(filename,'r',errors = 'ignore')
+  msg=bot.send_message(tid,"Enter program name")
+  bot.register_next_step_handler(msg, codename)
+@bot.message_handler(commands=['python'])
+def python(message):
+  global f
+  filename="python.txt"
+  f=open(filename,'r',errors = 'ignore')
+  msg=bot.send_message(tid,"Enter program name")
+  bot.register_next_step_handler(msg, codename)
+'''def select_lang(message):
+  global f
+  global language
+
   tid = str(message.from_user.id)
   language=message.text
   language=language.lower()
@@ -41,7 +71,7 @@ def select_lang(message):
     filename=language+".txt"
     f=open(filename,'r',errors = 'ignore')
     msg=bot.send_message(tid,"Enter program name")
-    bot.register_next_step_handler(msg, codename)
+    bot.register_next_step_handler(msg, codename)'''
 def codename(message):
   reply='loading'
   c_name = message.text
@@ -116,17 +146,18 @@ def echo_message(message):
  value=message.text
  tid=str(message.from_user.id)
  if value=='y' or value=='Y':
-  msg=bot.send_message(tid,"Enter a programming language you want to get your code")
-  bot.register_next_step_handler(msg, select_lang)
+  msg=bot.send_message(tid,"Enter a program name")
+  bot.register_next_step_handler(msg, codename)
  elif value=='N' or value=='n':
-  bot.reply_to(message,"thank you ")
+  bot.reply_to(message,'select a program a language among the following \n "/c"\n"/c++"\n"/java"\n"/python"')
+
  else:
   for word in value.split():
     if word.lower() in GREETING_INPUTS:
       bot.reply_to(message,GREETING_RESPONSES)
       break
   else:
-    bot.reply_to(message, 'I mainly search a program for you .if you want search code please enter "/search" command ')
+    bot.reply_to(message, 'I mainly search a program for you .if you want search a program code please enter "/search" command ')
                    
 @server.route('/' + API_TOKEN, methods=['POST'])
 def getMessage():
