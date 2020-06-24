@@ -26,8 +26,9 @@ def help(message):
 @bot.message_handler(commands=['c'])
 def c(message):
  global f
- bot.reply_to(message,"hello world")
+ #bot.reply_to(message,"hello world")
  tid = str(message.from_user.id)
+ filename="c.txt"
  f=open(filename,'r',errors = 'ignore')
  msg=bot.send_message(tid,"Enter program name")
  bot.register_next_step_handler(msg, codename)
