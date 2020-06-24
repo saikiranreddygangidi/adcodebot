@@ -23,12 +23,6 @@ def help(message):
       'tap on /search' 
      command to search code.""")
 @bot.message_handler(commands=['search'])
-def search(message):
- tid = str(message.from_user.id)
- bot.reply_to(message,'select a program language among the following \n "/c"\n"/c++"\n"/java"\n"/python"')
-
-GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
-GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
 @bot.message_handler(commands=['c'])
 def c(message):
   global f
@@ -36,7 +30,7 @@ def c(message):
   f=open(filename,'r',errors = 'ignore')
   msg=bot.send_message(tid,"Enter program name")
   bot.register_next_step_handler(msg, codename)
-@bot.message_handler(commands=['c++'])
+@bot.message_handler(commands=['cpp'])
 def cpp(message):
   global f
   filename="c++.txt"
@@ -57,6 +51,13 @@ def python(message):
   f=open(filename,'r',errors = 'ignore')
   msg=bot.send_message(tid,"Enter program name")
   bot.register_next_step_handler(msg, codename)
+def search(message):
+ tid = str(message.from_user.id)
+ bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
+
+GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
+GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
+
 '''def select_lang(message):
   global f
   global language
@@ -149,7 +150,7 @@ def echo_message(message):
   msg=bot.send_message(tid,"Enter a program name")
   bot.register_next_step_handler(msg, codename)
  elif value=='N' or value=='n':
-  bot.reply_to(message,'select a program a language among the following \n "/c"\n"/c++"\n"/java"\n"/python"')
+  bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
 
  else:
   for word in value.split():
