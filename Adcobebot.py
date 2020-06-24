@@ -83,14 +83,14 @@ GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! Yo
     msg=bot.send_message(tid,"Enter program name")
     bot.register_next_step_handler(msg, codename)'''
 def codename(message):
-  while True:
-    global f
-    reply='loading'
-    tid = str(message.from_user.id)
-    c_name = message.text
-    lemmer = nltk.stem.WordNetLemmatizer()
+  
+  global f
+  reply='loading'
+  tid = str(message.from_user.id)
+  c_name = message.text
+  lemmer = nltk.stem.WordNetLemmatizer()
     #Wo#rdNet is a semantically-oriented dictionary of English included in NLTK.
-    
+  while True:  
     raw=f.read()
     raw=raw.lower()# converts to lowercase
     nltk.download('punkt') # first-time use only
@@ -153,7 +153,10 @@ def codename(message):
             reply=response(user_response)
     #bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
     value=bot.send_message(tid,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')
-    if value.text=='N' or value.text=='n':
+    if value.text=='y' or value.text=='Y':
+      msg=bot.send_message(tid,"Enter a program name!")
+      c_name=msg.text
+    elif value.text=='N' or value.text=='n':
       bot.reply_to(message,'select one program  language among the  following \n /c\n/cpp\n/java\n/python')
       break
 
