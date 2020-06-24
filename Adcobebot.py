@@ -154,7 +154,7 @@ def codename(message):
     #bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
     value=bot.send_message(tid,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')
     if value.text=='N' or value.text=='n':
-      bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
+      bot.reply_to(message,'select one program  language among the  following \n /c\n/cpp\n/java\n/python')
       break
 
   # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
