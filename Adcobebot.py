@@ -159,7 +159,7 @@ def codename(message):
     elif value.text=='N' or value.text=='n':
       bot.reply_to(message,'select one program  language among the  following \n /c\n/cpp\n/java\n/python')
       break
-    else
+    else:
       bot.reply_to(message,value)
 
   # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
