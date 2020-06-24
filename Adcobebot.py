@@ -25,32 +25,11 @@ def help(message):
 
 @bot.message_handler(commands=['c'])
 def c(message):
-  global f
-  filename="c.txt"
-  f=open(filename,'r',errors = 'ignore')
-  msg=bot.send_message(tid,"Enter program name")
-  bot.register_next_step_handler(msg, codename)
-@bot.message_handler(commands=['cpp'])
-def cpp(message):
-  global f
-  filename="c++.txt"
-  f=open(filename,'r',errors = 'ignore')
-  msg=bot.send_message(tid,"Enter program name")
-  bot.register_next_step_handler(msg, codename)
-@bot.message_handler(commands=['java'])
-def java(message):
-  global f
-  filename="java.txt"
-  f=open(filename,'r',errors = 'ignore')
-  msg=bot.send_message(tid,"Enter program name")
-  bot.register_next_step_handler(msg, codename)
-@bot.message_handler(commands=['python'])
-def python(message):
-  global f
-  filename="python.txt"
-  f=open(filename,'r',errors = 'ignore')
-  msg=bot.send_message(tid,"Enter program name")
-  bot.register_next_step_handler(msg, codename)
+ global f
+ tid = str(message.from_user.id)
+ f=open(filename,'r',errors = 'ignore')
+ msg=bot.send_message(tid,"Enter program name")
+ bot.register_next_step_handler(msg, codename)
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
