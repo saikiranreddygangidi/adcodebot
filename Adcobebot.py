@@ -83,6 +83,7 @@ GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! Yo
     msg=bot.send_message(tid,"Enter program name")
     bot.register_next_step_handler(msg, codename)'''
 def codename(message):
+  global f
   reply='loading'
   c_name = message.text
   lemmer = nltk.stem.WordNetLemmatizer()
