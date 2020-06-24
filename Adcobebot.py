@@ -83,7 +83,7 @@ GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! Yo
     msg=bot.send_message(tid,"Enter program name")
     bot.register_next_step_handler(msg, codename)'''
 def codename(message):
-  while true:
+  while True:
     global f
     reply='loading'
     tid = str(message.from_user.id)
