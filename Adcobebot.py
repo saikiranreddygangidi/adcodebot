@@ -32,6 +32,33 @@ def c(message):
  f=open(filename,'r',errors = 'ignore')
  msg=bot.send_message(tid,"Enter program name")
  bot.register_next_step_handler(msg, codename)
+@bot.message_handler(commands=['cpp'])
+def cpp(message):
+ global f
+ #bot.reply_to(message,"hello world")
+ tid = str(message.from_user.id)
+ filename="cpp.txt"
+ f=open(filename,'r',errors = 'ignore')
+ msg=bot.send_message(tid,"Enter program name")
+ bot.register_next_step_handler(msg, codename)
+@bot.message_handler(commands=['java'])
+def java(message):
+ global f
+ #bot.reply_to(message,"hello world")
+ tid = str(message.from_user.id)
+ filename="java.txt"
+ f=open(filename,'r',errors = 'ignore')
+ msg=bot.send_message(tid,"Enter program name")
+ bot.register_next_step_handler(msg, codename)
+@bot.message_handler(commands=['python'])
+def python(message):
+ global f
+ #bot.reply_to(message,"hello world")
+ tid = str(message.from_user.id)
+ filename="python.txt"
+ f=open(filename,'r',errors = 'ignore')
+ msg=bot.send_message(tid,"Enter program name")
+ bot.register_next_step_handler(msg, codename)
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
@@ -60,7 +87,7 @@ def codename(message):
   c_name = message.text
   lemmer = nltk.stem.WordNetLemmatizer()
   #Wo#rdNet is a semantically-oriented dictionary of English included in NLTK.
-  
+  bot.reply_to(message,f.read())
   raw=f.read()
   raw=raw.lower()# converts to lowercase
   nltk.download('punkt') # first-time use only
