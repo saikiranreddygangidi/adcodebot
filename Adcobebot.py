@@ -22,7 +22,7 @@ def help(message):
  bot.reply_to(message,"""
       'tap on /search' 
      command to search code.""")
-@bot.message_handler(commands=['search'])
+
 @bot.message_handler(commands=['c'])
 def c(message):
   global f
