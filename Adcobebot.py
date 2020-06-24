@@ -51,6 +51,7 @@ def python(message):
   f=open(filename,'r',errors = 'ignore')
   msg=bot.send_message(tid,"Enter program name")
   bot.register_next_step_handler(msg, codename)
+@bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
  bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
