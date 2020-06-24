@@ -22,7 +22,7 @@ def help(message):
  bot.reply_to(message,"""
       'tap on /search' 
      command to search code.""")
-
+f="c.txt"
 @bot.message_handler(commands=['c'])
 def c(message):
  global f
@@ -88,7 +88,7 @@ def codename(message):
   c_name = message.text
   lemmer = nltk.stem.WordNetLemmatizer()
   #Wo#rdNet is a semantically-oriented dictionary of English included in NLTK.
-  bot.reply_to(message,f.read())
+  
   raw=f.read()
   raw=raw.lower()# converts to lowercase
   nltk.download('punkt') # first-time use only
@@ -165,7 +165,7 @@ def echo_message(message):
  else:
   for word in value.split():
     if word.lower() in GREETING_INPUTS:
-      bot.reply_to(message,f)
+      
       bot.reply_to(message,GREETING_RESPONSES)
       break
   else:
