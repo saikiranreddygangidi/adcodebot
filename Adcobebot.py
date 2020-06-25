@@ -164,26 +164,20 @@ def recheck_lang(message):
   tid=str(message.from_user.id)
   value=message.text
   if value=='y' or value=='Y':
-    #f=open(filename,'r',errors = 'ignore')
+    f=open(filename,'r',errors = 'ignore')
     msg=bot.send_message(tid,"Enter a program name")
     bot.register_next_step_handler(msg, codename)
   elif value=='N' or value=='n':
-    bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
-
-    
+    bot.reply_to(message,'select a program a language among the following \n\n /c\n\n/cpp\n\n/java\n\n/python')
+  else:
+    bot.reply_to(message,'you entered wrong key to search a code tap /search')
 
   # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
- value=message.text
- tid=str(message.from_user.id)
- if value=='y' or value=='Y':
-  msg=bot.send_message(tid,"Enter a program name")
-  bot.register_next_step_handler(msg, codename)
- elif value=='N' or value=='n':
-  bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
-
- else:
+  value=message.text
+  tid=str(message.from_user.id)
+ 
   for word in value.split():
     if word.lower() in GREETING_INPUTS:
       
