@@ -90,77 +90,80 @@ def codename(message):
   c_name = message.text
   lemmer = nltk.stem.WordNetLemmatizer()
     #Wo#rdNet is a semantically-oriented dictionary of English included in NLTK.
-  while True:  
-    raw=f.read()
-    raw=raw.lower()# converts to lowercase
-    nltk.download('punkt') # first-time use only
-    nltk.download('wordnet') # first-time use only
-    sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences 
-    word_tokens = nltk.word_tokenize(raw)# converts to list of words
+   
+  raw=f.read()
+  raw=raw.lower()# converts to lowercase
+  nltk.download('punkt') # first-time use only
+  nltk.download('wordnet') # first-time use only
+  sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences 
+  word_tokens = nltk.word_tokenize(raw)# converts to list of words
 
-    def LemTokens(tokens):
-        return [lemmer.lemmatize(token) for token in tokens]
-    remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
-    def LemNormalize(text):
-        return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
-    GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
-    GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
-    def greeting(sentence):
+  def LemTokens(tokens):
+      return [lemmer.lemmatize(token) for token in tokens]
+  remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
+  def LemNormalize(text):
+      return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
+  GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
+  GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
+  def greeting(sentence):
 
-        for word in sentence.split():
-            if word.lower() in GREETING_INPUTS:
-                return random.choice(GREETING_RESPONSES)
+      for word in sentence.split():
+          if word.lower() in GREETING_INPUTS:
+              return random.choice(GREETING_RESPONSES)
 
-    def response(user_response):
-        robo_response=''
-        sent_tokens.append(user_response)
-        TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
-        tfidf = TfidfVec.fit_transform(sent_tokens)
-        
-        vals = cosine_similarity(tfidf[-1], tfidf)
+  def response(user_response):
+      robo_response=''
+      sent_tokens.append(user_response)
+      TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
+      tfidf = TfidfVec.fit_transform(sent_tokens)
+      
+      vals = cosine_similarity(tfidf[-1], tfidf)
 
-        idx=vals.argsort()[0][-2]
+      idx=vals.argsort()[0][-2]
 
-        flat = vals.flatten()
+      flat = vals.flatten()
 
-        flat.sort()
-        req_tfidf = flat[-2]
-        if(req_tfidf==0):
-            robo_response=robo_response+"I am sorry! I don't understand you may check other it may present there "
-            return robo_response
-        else:
-            robo_response = robo_response+sent_tokens[idx]
-            return robo_response
-    flag=True
-    #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
-    if(flag==True):
-        user_response = c_name
-        user_response=user_response.lower()
-        if(user_response!='bye'):
-            if(user_response=='thanks' or user_response=='thank you' ):
-                flag=False
-                reply="ROBO: You are welcome.."
-            else:
-                if(greeting(user_response)!=None):
-                    reply="ROBO: "+greeting(user_response)
-                else:
-                    reply=(response(user_response))
-                    sent_tokens.remove(user_response)
-        elif(user_response=='bye'):
-            flag=False 
-            reply="ROBO: Bye! take care.."
-        else:
-            reply=response(user_response)
-    #bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
-    value=bot.send_message(tid,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')
-    if value.text=='y' or value.text=='Y':
-      msg=bot.send_message(tid,"Enter a program name!")
-      c_name=msg.text
-    elif value.text=='N' or value.text=='n':
-      bot.reply_to(message,'select one program  language among the  following \n /c\n/cpp\n/java\n/python')
-      break
-    else:
-      bot.reply_to(message,value)
+      flat.sort()
+      req_tfidf = flat[-2]
+      if(req_tfidf==0):
+          robo_response=robo_response+"I am sorry! I don't understand you may check other it may present there "
+          return robo_response
+      else:
+          robo_response = robo_response+sent_tokens[idx]
+          return robo_response
+  flag=True
+  #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
+  if(flag==True):
+      user_response = c_name
+      user_response=user_response.lower()
+      if(user_response!='bye'):
+          if(user_response=='thanks' or user_response=='thank you' ):
+              flag=False
+              reply="ROBO: You are welcome.."
+          else:
+              if(greeting(user_response)!=None):
+                  reply="ROBO: "+greeting(user_response)
+              else:
+                  reply=(response(user_response))
+                  sent_tokens.remove(user_response)
+      elif(user_response=='bye'):
+          flag=False 
+          reply="ROBO: Bye! take care.."
+      else:
+          reply=response(user_response)
+  #bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
+  msg=bot.send_message(tid,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')
+  bot.register_next_step_handler(msg, recheck_lang)
+def recheck_lang(message):
+  tid=str(message.from_user.id)
+  value=message.text
+  if value=='y' or value=='Y':
+    msg=bot.send_message(tid,"Enter a program name")
+    bot.register_next_step_handler(msg, codename)
+  elif value=='N' or value=='n':
+    bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
+
+    
 
   # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
 @bot.message_handler(func=lambda message: True)
