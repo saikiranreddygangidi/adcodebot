@@ -164,7 +164,7 @@ def recheck_lang(message):
   tid=str(message.from_user.id)
   value=message.text
   if value=='y' or value=='Y':
-    f=open(filename,'r',errors = 'ignore')
+    #f=open(filename,'r',errors = 'ignore')
     msg=bot.send_message(tid,"Enter a program name")
     bot.register_next_step_handler(msg, codename)
   elif value=='N' or value=='n':
