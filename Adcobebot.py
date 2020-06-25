@@ -22,10 +22,11 @@ def help(message):
  bot.reply_to(message,"""
       'tap on /search' 
      command to search code.""")
-f="c.txt"
+filename="c.txt"
 @bot.message_handler(commands=['c'])
 def c(message):
  global f
+ global filename
  #bot.reply_to(message,"hello world")
  tid = str(message.from_user.id)
  filename="c.txt"
@@ -35,6 +36,7 @@ def c(message):
 @bot.message_handler(commands=['cpp'])
 def cpp(message):
  global f
+ global filename
  #bot.reply_to(message,"hello world")
  tid = str(message.from_user.id)
  filename="c++.txt"
@@ -53,6 +55,7 @@ def java(message):
 @bot.message_handler(commands=['python'])
 def python(message):
  global f
+ global filename
  #bot.reply_to(message,"hello world")
  tid = str(message.from_user.id)
  filename="python.txt"
@@ -85,6 +88,7 @@ GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! Yo
 def codename(message):
   
   global f
+  global filename
   reply='loading'
   tid = str(message.from_user.id)
   c_name = message.text
@@ -155,9 +159,12 @@ def codename(message):
   msg=bot.send_message(tid,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')
   bot.register_next_step_handler(msg, recheck_lang)
 def recheck_lang(message):
+  global f
+  global filename
   tid=str(message.from_user.id)
   value=message.text
   if value=='y' or value=='Y':
+    f=open(filename,'r',errors = 'ignore')
     msg=bot.send_message(tid,"Enter a program name")
     bot.register_next_step_handler(msg, codename)
   elif value=='N' or value=='n':
