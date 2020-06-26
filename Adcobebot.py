@@ -15,7 +15,7 @@ PORT = int(os.environ.get('PORT', '8443'))
   # Handle '/start' and '/help'
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
- bot.reply_to(message, "\nHi, Welcome to Codebot.\nI'm here to help you in finding the code you want.\nTo search a program tab '/search' .\n if you want any help type '/help' command")
+ bot.reply_to(message, "Hi 👋, Welcome to Codebot. \n I'm here to help you in finding the code you want.\n To begin tap /search\n if you want any help type '/help' command")
 
 @bot.message_handler(commands=['help'])
 def help(message):
@@ -130,7 +130,7 @@ def codename(message):
       flat.sort()
       req_tfidf = flat[-2]
       if(req_tfidf==0):
-          robo_response=robo_response+"I am sorry! I don't understand you may check other it may present there "
+          robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or presently this code is present here , to try again please type Y or else type N... "
           return robo_response
       else:
           robo_response = robo_response+sent_tokens[idx]
@@ -184,7 +184,7 @@ def echo_message(message):
       bot.reply_to(message,GREETING_RESPONSES)
       break
   else:
-    bot.reply_to(message, 'I mainly search a program for you .if you want search a program code please enter "/search" command ')
+    bot.reply_to(message, 'If you want search a program .\nPlease select a programming language to continue 😄..! \nTo select tap /search ')
                    
 @server.route('/' + API_TOKEN, methods=['POST'])
 def getMessage():
