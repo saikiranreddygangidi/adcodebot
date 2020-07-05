@@ -134,7 +134,7 @@ def codename(message):
           return robo_response
       else:
           robo_response = robo_response+sent_tokens[idx]
-          robo_response.replace(robo_response[:robo_response.rindex("=")],"")
+          #robo_response.replace(robo_response[:robo_response.rindex("=")],"")
           return robo_response
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
