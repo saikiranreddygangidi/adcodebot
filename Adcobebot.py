@@ -130,10 +130,11 @@ def codename(message):
       flat.sort()
       req_tfidf = flat[-2]
       if(req_tfidf==0):
-          robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or presently this code is present here , to try again please type Y or else type N... "
+          robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
           return robo_response
       else:
           robo_response = robo_response+sent_tokens[idx]
+          robo_response.replace(robo_response[:robo_response.rindex("=")],"")
           return robo_response
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
@@ -156,7 +157,7 @@ def codename(message):
       else:
           reply=response(user_response)
   #bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
-  msg=bot.send_message(tid,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')
+  msg=bot.send_message(tid,reply+'\n-----------------------------------------------------------\n "If you want to continue please type Y or else type N"')
   bot.register_next_step_handler(msg, recheck_lang)
 def recheck_lang(message):
   global f
@@ -168,7 +169,7 @@ def recheck_lang(message):
     msg=bot.send_message(tid,"Enter a program name")
     bot.register_next_step_handler(msg, codename)
   elif value=='N' or value=='n':
-    bot.reply_to(message,'select a program a language among the following \n\n /c\n\n/cpp\n\n/java\n\n/python')
+    bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
   else:
     bot.reply_to(message,'you entered wrong key to search a code tap /search')
 

@@ -454,3 +454,3161 @@ int main()
     
     return 0; 
 } .
+
+
+
+
+#21 Program to Store and Display Information Using Structure program to store and display information using structure  store and display information using structure store and display details using structure 
+===============================
+#include <iostream>
+using namespace std;
+
+struct student
+{
+    char name[50];
+    int roll;
+    float marks;
+} s[10];
+
+int main()
+{
+    cout << "Enter information of students: " << endl;
+
+    // storing information
+    for(int i = 0; i < 10; ++i)
+    {
+        s[i]..roll = i+1;
+        cout << "For roll number" << s[i]..roll << "," << endl;
+
+        cout << "Enter name: ";
+        cin >> s[i]..name;
+
+        cout << "Enter marks: ";
+        cin >> s[i]..marks;
+
+        cout << endl;
+    }
+
+    cout << "Displaying Information: " << endl;
+
+    // Displaying information
+    for(int i = 0; i < 10; ++i)
+    {
+        cout << "\nRoll number: " << i+1 << endl;
+        cout << "Name: " << s[i]..name << endl;
+        cout << "Marks: " << s[i]..marks << endl;
+    }
+
+    return 0;
+} ....
+
+
+#22 Program to Calculate Difference Between Two Time Period calculate difference between two time period calculate difference between two time periods
+
+=================================
+// Computes time difference of two time period
+// Time periods are entered by the user
+
+#include <iostream>
+using namespace std;
+
+struct TIME
+{
+  int seconds;
+  int minutes;
+  int hours;
+};
+
+void computeTimeDifference(struct TIME, struct TIME, struct TIME *);
+
+int main()
+{
+    struct TIME t1, t2, difference;
+
+    cout << "Enter start time.." << endl;
+    cout << "Enter hours, minutes and seconds respectively: ";
+    cin >> t1..hours >> t1..minutes >> t1..seconds;
+
+    cout << "Enter stop time.." << endl;
+    cout << "Enter hours, minutes and seconds respectively: ";
+    cin >> t2..hours >> t2..minutes >> t2..seconds;
+
+    computeTimeDifference(t1, t2, &difference);
+
+    cout << endl << "TIME DIFFERENCE: " << t1..hours << ":" << t1..minutes << ":" << t1..seconds;
+    cout << " - " << t2..hours << ":" << t2..minutes << ":" << t2..seconds;
+    cout << " = " << difference..hours << ":" << difference..minutes << ":" << difference..seconds;
+    return 0;
+}
+void computeTimeDifference(struct TIME t1, struct TIME t2, struct TIME *difference){
+    
+    if(t2..seconds > t1..seconds)
+    {
+        --t1..minutes;
+        t1..seconds += 60;
+    }
+
+    difference->seconds = t1..seconds - t2..seconds;
+    if(t2..minutes > t1..minutes)
+    {
+        --t1..hours;
+        t1..minutes += 60;
+    }
+    difference->minutes = t1..minutes-t2..minutes;
+    difference->hours = t1..hours-t2..hours;
+}....
+
+
+
+#23 Program to Add Complex Numbers by Passing Structure to a Function Add Complex Numbers by Passing Structure to a Function add complex numbers by passing structure to a function Add complex numbers by passing structure to a function add complex numbers using function 
+
+=====================================
+// Complex numbers are entered by the user
+
+
+#include <iostream>
+using namespace std;
+
+typedef struct complex
+{
+    float real;
+    float imag;
+} complexNumber;
+
+complexNumber addComplexNumbers(complex, complex);
+
+int main()
+{
+    complexNumber n1, n2, temporaryNumber;
+    char signOfImag;
+
+    cout << "For 1st complex number," << endl;
+    cout << "Enter real and imaginary parts respectively:" << endl;
+    cin >> n1..real >> n1..imag;
+
+    cout << endl << "For 2nd complex number," << endl;
+    cout << "Enter real and imaginary parts respectively:" << endl;
+    cin >> n2..real >> n2..imag;
+
+    signOfImag = (temporaryNumber..imag > 0) ? '+' : '-';
+    temporaryNumber..imag = (temporaryNumber..imag > 0) ? temporaryNumber..imag : -temporaryNumber..imag; 
+
+    temporaryNumber = addComplexNumbers(n1, n2);    
+    cout << "Sum = "  << temporaryNumber..real << temporaryNumber..imag << "i";
+    return 0;
+}
+
+complexNumber addComplexNumbers(complex n1,complex n2)
+{
+      complex temp;
+      temp..real = n1..real+n2..real;
+      temp..imag = n1..imag+n2..imag;
+      return(temp);
+}....
+
+
+
+
+#24 Program to Add Two Distances (in inch-feet) System Using Structures Add two distances in inch using structures
+add two distances in inch using structures Add two distances in feet using structures add two distances in feet using structures
+================================
+
+#include <iostream>
+using namespace std;
+
+struct Distance{
+    int feet;
+    float inch;
+}d1 , d2, sum;
+
+int main()
+{
+    cout << "Enter 1st distance," << endl;
+    cout << "Enter feet: ";
+    cin >> d1..feet;
+    cout << "Enter inch: ";
+    cin >> d1..inch;
+
+    cout << "\nEnter information for 2nd distance" << endl;
+    cout << "Enter feet: ";
+    cin >> d2..feet;
+    cout << "Enter inch: ";
+    cin >> d2..inch;
+
+    sum..feet = d1..feet+d2..feet;
+    sum..inch = d1..inch+d2..inch;
+
+    // changing to feet if inch is greater than 12
+    if(sum..inch > 12)
+    {
+        ++ sum..feet;
+        sum..inch -= 12;
+    } 
+
+    cout << endl << "Sum of distances = " << sum..feet << " feet  " << sum..inch << " inches";
+    return 0;
+}  ..
+
+#25 Program to Store Information of a Student in a Structure Program to store information of a student in a structure
+Store information of a student in a structure store details of a student in a structure Store details of a student
+store details of a student
+===============================
+
+#include <iostream>
+using namespace std;
+
+struct student
+{
+    char name[50];
+    int roll;
+    float marks;
+};
+
+int main() 
+{
+    student s;
+    cout << "Enter information," << endl;
+    cout << "Enter name: ";
+    cin >> s..name;
+    cout << "Enter roll number: ";
+    cin >> s..roll;
+    cout << "Enter marks: ";
+    cin >> s..marks;
+
+    cout << "\nDisplaying Information," << endl;
+    cout << "Name: " << s..name << endl;
+    cout << "Roll: " << s..roll << endl;
+    cout << "Marks: " << s..marks << endl;
+    return 0;
+} ..
+
+
+#26 Program to Sort Elements in Lexicographical Order or Dictionary Order Program to sort elements in lexicographical order or dictionary order Sort elements in lexicographical order    sort elements in lexicographical order Sort elements in dictionary order  sort elements in dictionary order 
+=================================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str[10], temp;
+
+    cout << "Enter 10 words: " << endl;
+    for(int i = 0; i < 10; ++i)
+    {
+      getline(cin, str[i]);
+    }
+
+    for(int i = 0; i < 9; ++i)
+       for( int j = i+1; j < 10; ++j)
+       {
+          if(str[i] > str[j])
+          {
+            temp = str[i];
+            str[i] = str[j];
+            str[j] = temp;
+          }
+    }
+
+    cout << "In lexicographical order: " << endl;
+
+    for(int i = 0; i < 10; ++i)
+    {
+       cout << str[i] << endl;
+    }
+    return 0;
+}..
+
+#27 Program to Copy Strings   
+    Program to copy  strings
+       Program to copy string 
+       Program to string copy 
+       Program to  copy string
+copy string
+ string copy 
+copy strings
+Copy Strings   
+================================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string s1, s2;
+
+    cout << "Enter string s1: ";
+    getline (cin, s1);
+
+    s2 = s1;
+
+    cout << "s1 = "<< s1 << endl;
+    cout << "s2 = "<< s2;
+
+    return 0;
+}..
+
+
+
+
+#28 Program to Concatenate Two Strings concatenate two strings Concatenate two strings Concatenate two string
+=====================================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string s1, s2, result;
+
+    cout << "Enter string s1: ";
+    getline (cin, s1);
+
+    cout << "Enter string s2: ";
+    getline (cin, s2);
+
+    result = s1 + s2;
+
+    cout << "Resultant String = "<< result;
+
+    return 0;
+}.. 
+
+
+    #29 Program to Find the Length of a String Find the length of a string
+    find the length of a string 
+ length of a string
+Find length of string Find the length of string
+find string length Find string length
+
+
+=========================================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str = "C++ Programming";
+
+    // you can also use str..length()
+    cout << "String Length = " << str..size();
+
+    return 0;
+}..
+
+
+
+
+    #30 Program to Remove all Characters in a String Except Alphabets
+    Program to remove all characters in a string except alphabets
+remove all characters in a string except alphabets
+Remove all characters in a string except alphabets
+
+
+
+
+===========================
+#include <iostream>
+using namespace std;
+
+int main() {
+    string line;
+    string temp = "";
+
+    cout << "Enter a string: ";
+    getline(cin, line);
+
+    for (int i = 0; i < line..size(); ++i) {
+        if ((line[i] >= 'a' && line[i] <= 'z') || (line[i] >= 'A' && line[i] <= 'Z')) {
+            temp = temp + line[i];
+        }
+    }
+    line = temp;
+    cout << "Output String: " << line;
+    return 0;
+}.. 
+
+
+    #31 Program to Find the Number of Vowels, Consonants, Digits and White Spaces in a String
+Program to find the number of vowels, consonants, digits and white spaces in a string
+Find the number of vowels, consonants, digits and white spaces in a string
+find the number of vowels consonants digits white spaces in a string
+find the number of vowels consonants digits and white spaces in a string
+
+
+==========================
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char line[150];
+    int vowels, consonants, digits, spaces;
+
+    vowels =  consonants = digits = spaces = 0;
+
+    cout << "Enter a line of string: ";
+    cin..getline(line, 150);
+    for(int i = 0; line[i]!='\0'; ++i)
+    {
+        if(line[i]=='a' || line[i]=='e' || line[i]=='i' ||
+           line[i]=='o' || line[i]=='u' || line[i]=='A' ||
+           line[i]=='E' || line[i]=='I' || line[i]=='O' ||
+           line[i]=='U')
+        {
+            ++vowels;
+        }
+        else if((line[i]>='a'&& line[i]<='z') || (line[i]>='A'&& line[i]<='Z'))
+        {
+            ++consonants;
+        }
+        else if(line[i]>='0' && line[i]<='9')
+        {
+            ++digits;
+        }
+        else if (line[i]==' ')
+        {
+            ++spaces;
+        }
+    }
+
+    cout << "Vowels: " << vowels << endl;
+    cout << "Consonants: " << consonants << endl;
+    cout << "Digits: " << digits << endl;
+    cout << "White spaces: " << spaces << endl;
+
+    return 0;
+} ..
+
+    #32 Program to Find the Frequency of Characters in a String
+        Program to find the frequency of characters in a string
+        Find the frequency of characters in a string
+        find the frequency of characters in a string
+        frequency of characters in a string
+         Frequency of characters in a string
+
+
+
+
+
+===============================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str = "C++ Programming is awesome";
+    char checkCharacter = 'a';
+    int count = 0;
+
+    for (int i = 0; i < str..size(); i++)
+    {
+        if (str[i] ==  checkCharacter)
+        {
+            ++ count;
+        }
+    }
+
+    cout << "Number of " << checkCharacter << " = " << count;
+
+    return 0;
+} ..
+
+
+
+
+    #33 Program to Swap Numbers in Cyclic Order Using Call by Reference
+  Program to swap numbers in cyclic order using call by reference
+   Swap numbers in cyclic order using call by reference
+      swap numbers in cyclic order using call by reference
+      Swap numbers in cyclic order
+      swap numbers in cyclic order
+
+
+
+=========================
+#include<iostream>
+using namespace std;
+
+void cyclicSwap(int *a, int *b, int *c);
+
+int main()
+{
+    int a, b, c;
+
+    cout << "Enter value of a, b and c respectively: ";
+    cin >> a >> b >> c;
+
+    cout << "Value before swapping: " << endl;
+    cout << "a, b and c respectively are: " << a << ", " << b << ", " << c << endl;
+
+    cyclicSwap(&a, &b, &c);
+
+    cout << "Value after swapping numbers in cycle: " << endl;
+    cout << "a, b and c respectively are: " << a << ", " << b << ", " << c << endl;
+
+    return 0;
+}
+
+void cyclicSwap(int *a, int *b, int *c)
+{
+    int temp;
+    temp = *b;
+    *b = *a;
+    *a = *c;
+    *c = temp;
+} ..
+
+
+
+    #34  Program to Access Elements of an Array Using Pointer
+    Program to access elements of an array using pointer
+    Access elements of an array using pointer
+    access elements of an array using pointer
+
+
+
+
+=============================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int data[5];
+   cout << "Enter elements: ";
+
+   for(int i = 0; i < 5; ++i)
+      cin >> data[i];
+
+   cout << "You entered: ";
+   for(int i = 0; i < 5; ++i)
+      cout << endl << *(data + i);
+
+   return 0;
+} ..
+
+
+
+
+    #35 Program to Multiply two Matrices by Passing Matrix to Function
+ Program to multiply two matrices by passing matrix to function
+Multiply two matrices by passing matrix to function
+multiply two matrices by passing matrix to function
+
+
+
+
+
+==================
+#include <iostream>
+using namespace std;
+
+void enterData(int firstMatrix[][10], int secondMatrix[][10], int rowFirst, int columnFirst, int rowSecond, int columnSecond);
+void multiplyMatrices(int firstMatrix[][10], int secondMatrix[][10], int multResult[][10], int rowFirst, int columnFirst, int rowSecond, int columnSecond);
+void display(int mult[][10], int rowFirst, int columnSecond);
+
+int main()
+{
+    int firstMatrix[10][10], secondMatrix[10][10], mult[10][10], rowFirst, columnFirst, rowSecond, columnSecond, i, j, k;
+
+    cout << "Enter rows and column for first matrix: ";
+    cin >> rowFirst >> columnFirst;
+
+    cout << "Enter rows and column for second matrix: ";
+    cin >> rowSecond >> columnSecond;
+
+    // If colum of first matrix in not equal to row of second matrix, asking user to enter the size of matrix again..
+    while (columnFirst != rowSecond)
+    {
+        cout << "Error! column of first matrix not equal to row of second.." << endl;
+        cout << "Enter rows and column for first matrix: ";
+        cin >> rowFirst >> columnFirst;
+        cout << "Enter rows and column for second matrix: ";
+        cin >> rowSecond >> columnSecond;
+    }
+
+    // Function to take matrices data
+        enterData(firstMatrix, secondMatrix, rowFirst, columnFirst, rowSecond, columnSecond);
+
+        // Function to multiply two matrices..
+        multiplyMatrices(firstMatrix, secondMatrix, mult, rowFirst, columnFirst, rowSecond, columnSecond);
+
+        // Function to display resultant matrix after multiplication..
+        display(mult, rowFirst, columnSecond);
+
+    return 0;
+}
+
+void enterData(int firstMatrix[][10], int secondMatrix[][10], int rowFirst, int columnFirst, int rowSecond, int columnSecond)
+{
+    int i, j;
+    cout << endl << "Enter elements of matrix 1:" << endl;
+    for(i = 0; i < rowFirst; ++i)
+    {
+        for(j = 0; j < columnFirst; ++j)
+        {
+            cout << "Enter elements a"<< i + 1 << j + 1 << ": ";
+            cin >> firstMatrix[i][j];
+        }
+    }
+
+    cout << endl << "Enter elements of matrix 2:" << endl;
+    for(i = 0; i < rowSecond; ++i)
+    {
+        for(j = 0; j < columnSecond; ++j)
+        {
+            cout << "Enter elements b" << i + 1 << j + 1 << ": ";
+            cin >> secondMatrix[i][j];
+        }
+    }
+}
+
+void multiplyMatrices(int firstMatrix[][10], int secondMatrix[][10], int mult[][10], int rowFirst, int columnFirst, int rowSecond, int columnSecond)
+{
+    int i, j, k;
+
+    // Initializing elements of matrix mult to 0..
+    for(i = 0; i < rowFirst; ++i)
+    {
+        for(j = 0; j < columnSecond; ++j)
+        {
+            mult[i][j] = 0;
+        }
+    }
+
+    // Multiplying matrix firstMatrix and secondMatrix and storing in array mult..
+    for(i = 0; i < rowFirst; ++i)
+    {
+        for(j = 0; j < columnSecond; ++j)
+        {
+            for(k=0; k<columnFirst; ++k)
+            {
+                mult[i][j] += firstMatrix[i][k] * secondMatrix[k][j];
+            }
+        }
+    }
+}
+
+void display(int mult[][10], int rowFirst, int columnSecond)
+{
+    int i, j;
+
+    cout << "Output Matrix:" << endl;
+    for(i = 0; i < rowFirst; ++i)
+    {
+        for(j = 0; j < columnSecond; ++j)
+        {
+            cout << mult[i][j] << " ";
+            if(j == columnSecond - 1)
+                cout << endl << endl;
+        }
+    }
+}..
+
+
+
+    #36 Program to Find Transpose of a Matrix
+       Find Transpose of a Matrix
+           find Transpose of a Matrix
+    
+    Transpose of a Matrix  transpose of a Matrix Transpose of Matrix
+
+
+
+
+=================================
+#include <iostream>
+using namespace std;
+
+int main() {
+   int a[10][10], transpose[10][10], row, column, i, j;
+
+   cout << "Enter rows and columns of matrix: ";
+   cin >> row >> column;
+
+   cout << "\nEnter elements of matrix: " << endl;
+
+   // Storing matrix elements
+   for (int i = 0; i < row; ++i) {
+      for (int j = 0; j < column; ++j) {
+         cout << "Enter element a" << i + 1 << j + 1 << ": ";
+         cin >> a[i][j];
+      }
+   }
+
+   // Printing the a matrix
+   cout << "\nEntered Matrix: " << endl;
+   for (int i = 0; i < row; ++i) {
+      for (int j = 0; j < column; ++j) {
+         cout << " " << a[i][j];
+         if (j == column - 1)
+            cout << endl << endl;
+      }
+   }
+
+   // Computing transpose of the matrix
+   for (int i = 0; i < row; ++i)
+      for (int j = 0; j < column; ++j) {
+         transpose[j][i] = a[i][j];
+      }
+
+   // Printing the transpose
+   cout << "\nTranspose of Matrix: " << endl;
+   for (int i = 0; i < column; ++i)
+      for (int j = 0; j < row; ++j) {
+         cout << " " << transpose[i][j];
+         if (j == row - 1)
+            cout << endl << endl;
+      }
+
+   return 0;
+}..
+
+
+    #37 Program to Multiply Two Matrix Using Multi dimensional Arrays
+    Program to multiply two matrix using multi dimensional arrays
+    Multiply two matrix using multi dimensional arrays
+ Multiply two matrices using multi dimensional arrays
+
+
+
+
+=====================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a[10][10], b[10][10], mult[10][10], r1, c1, r2, c2, i, j, k;
+
+    cout << "Enter rows and columns for first matrix: ";
+    cin >> r1 >> c1;
+    cout << "Enter rows and columns for second matrix: ";
+    cin >> r2 >> c2;
+
+    // If column of first matrix in not equal to row of second matrix,
+    // ask the user to enter the size of matrix again..
+    while (c1!=r2)
+    {
+        cout << "Error! column of first matrix not equal to row of second..";
+
+        cout << "Enter rows and columns for first matrix: ";
+        cin >> r1 >> c1;
+
+        cout << "Enter rows and columns for second matrix: ";
+        cin >> r2 >> c2;
+    }
+
+    // Storing elements of first matrix..
+    cout << endl << "Enter elements of matrix 1:" << endl;
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c1; ++j)
+        {
+            cout << "Enter element a" << i + 1 << j + 1 << " : ";
+            cin >> a[i][j];
+        }
+
+    // Storing elements of second matrix..
+    cout << endl << "Enter elements of matrix 2:" << endl;
+    for(i = 0; i < r2; ++i)
+        for(j = 0; j < c2; ++j)
+        {
+            cout << "Enter element b" << i + 1 << j + 1 << " : ";
+            cin >> b[i][j];
+        }
+
+    // Initializing elements of matrix mult to 0..
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c2; ++j)
+        {
+            mult[i][j]=0;
+        }
+
+    // Multiplying matrix a and b and storing in array mult..
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c2; ++j)
+            for(k = 0; k < c1; ++k)
+            {
+                mult[i][j] += a[i][k] * b[k][j];
+            }
+
+    // Displaying the multiplication of two matrix..
+    cout << endl << "Output Matrix: " << endl;
+    for(i = 0; i < r1; ++i)
+    for(j = 0; j < c2; ++j)
+    {
+        cout << " " << mult[i][j];
+        if(j == c2-1)
+            cout << endl;
+    }
+
+    return 0;
+} ..
+
+
+    #38 Program to Add Two Matrix Using Multi-dimensional Arrays
+    Program to add two matrix using multi-dimensional arrays
+    Add two matrix using multi dimensional arrays
+    add two matrix using multi dimensional arrays
+    Add two matrices using multi dimensional arrays
+    Add two matrices using multi dimensional arrays
+
+
+
+===================================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int r, c, a[100][100], b[100][100], sum[100][100], i, j;
+
+    cout << "Enter number of rows (between 1 and 100): ";
+    cin >> r;
+
+    cout << "Enter number of columns (between 1 and 100): ";
+    cin >> c;
+
+    cout << endl << "Enter elements of 1st matrix: " << endl;
+
+    // Storing elements of first matrix entered by user..
+    for(i = 0; i < r; ++i)
+       for(j = 0; j < c; ++j)
+       {
+           cout << "Enter element a" << i + 1 << j + 1 << " : ";
+           cin >> a[i][j];
+       }
+
+    // Storing elements of second matrix entered by user..
+    cout << endl << "Enter elements of 2nd matrix: " << endl;
+    for(i = 0; i < r; ++i)
+       for(j = 0; j < c; ++j)
+       {
+           cout << "Enter element b" << i + 1 << j + 1 << " : ";
+           cin >> b[i][j];
+       }
+
+    // Adding Two matrices
+    for(i = 0; i < r; ++i)
+        for(j = 0; j < c; ++j)
+            sum[i][j] = a[i][j] + b[i][j];
+
+    // Displaying the resultant sum matrix..
+    cout << endl << "Sum of two matrix is: " << endl;
+    for(i = 0; i < r; ++i)
+        for(j = 0; j < c; ++j)
+        {
+            cout << sum[i][j] << "  ";
+            if(j == c - 1)
+                cout << endl;
+        }
+
+    return 0;
+} ..
+
+
+    #39  Program to Calculate Standard Deviation
+     Program to calculate standard deviation
+Calculate standard deviation calculate standard deviation
+   
+
+
+===========================
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float calculateSD(float data[]);
+
+int main()
+{
+    int i;
+    float data[10];
+
+    cout << "Enter 10 elements: ";
+    for(i = 0; i < 10; ++i)
+        cin >> data[i];
+
+    cout << endl << "Standard Deviation = " << calculateSD(data);
+
+    return 0;
+}
+
+float calculateSD(float data[])
+{
+    float sum = 0..0, mean, standardDeviation = 0..0;
+
+    int i;
+
+    for(i = 0; i < 10; ++i)
+    {
+        sum += data[i];
+    }
+
+    mean = sum/10;
+
+    for(i = 0; i < 10; ++i)
+        standardDeviation += pow(data[i] - mean, 2);
+
+    return sqrt(standardDeviation / 10);
+}.. 
+
+
+
+    #40 Program to Find Largest Element of an Array
+        Program to find largest element of an array
+        Find largest element of an array
+        find largest element of an array
+largest element of an array
+Largest element of an array
+largest element of array
+Largest element of array
+
+
+===========================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i, n;
+    float arr[100];
+
+    cout << "Enter total number of elements(1 to 100): ";
+    cin >> n;
+    cout << endl;
+
+    // Store number entered by the user
+    for(i = 0; i < n; ++i)
+    {
+       cout << "Enter Number " << i + 1 << " : ";
+       cin >> arr[i];
+    }
+
+    // Loop to store largest number to arr[0]
+    for(i = 1;i < n; ++i)
+    {
+       // Change < to > if you want to find the smallest element
+       if(arr[0] < arr[i])
+           arr[0] = arr[i];
+    }
+    cout << "Largest element = " << arr[0];
+
+    return 0;
+} ..
+
+
+
+
+
+
+    #41 Program to Calculate Average of Numbers Using Arrays
+        Program to calculate average of numbers using arrays
+        Calculate average of numbers using arrays
+        calculate average of numbers using arrays
+        calculate avg of numbers using arrays
+         Calculate avg of numbers using arrays
+         Average of numbers using arrays
+         average of numbers using arrays
+         Avg of numbers using arrays
+         avg of numbers using arrays
+
+
+
+
+=========================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, i;
+    float num[100], sum=0..0, average;
+
+    cout << "Enter the numbers of data: ";
+    cin >> n;
+
+    while (n > 100 || n <= 0)
+    {
+        cout << "Error! number should in range of (1 to 100).." << endl;
+        cout << "Enter the number again: ";
+        cin >> n;
+    }
+
+    for(i = 0; i < n; ++i)
+    {
+        cout << i + 1 << ".. Enter number: ";
+        cin >> num[i];
+        sum += num[i];
+    }
+
+    average = sum / n;
+    cout << "Average = " << average;
+
+    return 0;
+} ..
+
+
+
+
+    #42  Program to Calculate Power Using Recursion
+         Program to calculate power using recursion
+         Calculate power using recursion
+         calculate power using recursion
+         Power using recursion
+         power using recursion
+
+==========================
+
+#include <iostream>
+using namespace std;
+
+int calculatePower(int, int);
+
+int main()
+{
+    int base, powerRaised, result;
+
+    cout << "Enter base number: ";
+    cin >> base;
+
+    cout << "Enter power number(positive integer): ";
+    cin >> powerRaised;
+
+    result = calculatePower(base, powerRaised);
+    cout << base << "^" << powerRaised << " = " << result;
+
+    return 0;
+}
+
+int calculatePower(int base, int powerRaised)
+{
+    if (powerRaised != 0)
+        return (base*calculatePower(base, powerRaised-1));
+    else
+        return 1;
+} ..
+
+
+
+
+    #43 program to Reverse a Sentence Using Recursion
+ Program to reverse a sentence using recursion
+   Reverse a sentence using recursion
+ reverse a sentence using recursion
+
+
+
+============================================
+
+#include <iostream>
+using namespace std;
+
+void reverse(const string& a);
+
+int main()
+{
+    string str;
+    cout << " Please enter a string " << endl;
+    getline(cin, str);
+    reverse(str);
+    return 0;    
+}
+
+void reverse(const string& str)
+{
+    size_t numOfChars = str..size();
+
+    if(numOfChars == 1)
+       cout << str << endl;
+    else
+    {
+       cout << str[numOfChars - 1];
+       reverse(str..substr(0, numOfChars - 1));
+    }
+}.. 
+
+    #44  Program to Convert Binary Number to Octal and vice versa
+Program to convert binary number to octal and vice versa
+Program to convert binary number to octal 
+ Convert binary number to octal 
+ convert binary number to octal 
+  convert binary to octal 
+   Convert binary to octal 
+
+
+
+
+=============================
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int convertBinarytoOctal(long long);
+int main()
+{
+    long long binaryNumber;
+
+    cout << "Enter a binary number: ";
+    cin >> binaryNumber;
+
+    cout << binaryNumber << " in binary = " << convertBinarytoOctal(binaryNumber) << " in octal ";
+
+    return 0;
+}
+
+int convertBinarytoOctal(long long binaryNumber)
+{
+    int octalNumber = 0, decimalNumber = 0, i = 0;
+
+    while(binaryNumber != 0)
+    {
+        decimalNumber += (binaryNumber%10) * pow(2,i);
+        ++i;
+        binaryNumber/=10;
+    }
+
+    i = 1;
+
+    while (decimalNumber != 0)
+    {
+        octalNumber += (decimalNumber % 8) * i;
+        decimalNumber /= 8;
+        i *= 10;
+    }
+
+    return octalNumber;
+}..
+
+
+
+    #45 Program to Convert Octal Number to Decimal and vice versa
+ Program to convert octal number to decimal and vice versa
+convert octal number to decimal and vice versa
+Convert octal number to decimal and vice versa
+convert octal number to decimal
+Convert octal number to decimal
+convert octal number to decimal number
+Convert octal number to decimal number
+convert octal to decimal number
+Convert octal to decimal number
+Convert octal to decimal
+convert octal to decimal
+
+=======================
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int octalToDecimal(int octalNumber);
+
+int main()
+{
+   int octalNumber;
+   cout << "Enter an octal number: ";
+   cin >> octalNumber;
+   cout << octalNumber << " in octal = " << octalToDecimal(octalNumber) << " in decimal";
+   
+   return 0;
+}
+
+// Function to convert octal number to decimal
+int octalToDecimal(int octalNumber)
+{
+    int decimalNumber = 0, i = 0, rem;
+    while (octalNumber != 0)
+    {
+        rem = octalNumber % 10;
+        octalNumber /= 10;
+        decimalNumber += rem * pow(8, i);
+        ++i;
+    }
+    return decimalNumber;
+}.. 
+
+
+
+
+
+    #46 Program to Convert Binary Number to Decimal and vice-versa
+
+Program to convert binary number to decimal and vice versa
+Convert binary number to decimal and vice versa
+convert binary number to decimal and vice versa
+convert binary number to decimal number
+Convert binary number to decimal number
+convert binary to decimal number
+Convert binary to decimal number
+convert binary to decimal 
+Convert binary to decimal 
+
+
+
+
+============================
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int convertBinaryToDecimal(long long);
+
+int main()
+{
+    long long n;
+
+    cout << "Enter a binary number: ";
+    cin >> n;
+ 
+    cout << n << " in binary = " << convertBinaryToDecimal(n) << "in decimal";
+    return 0;
+}
+
+int convertBinaryToDecimal(long long n)
+{
+    int decimalNumber = 0, i = 0, remainder;
+    while (n!=0)
+    {
+        remainder = n%10;
+        n /= 10;
+        decimalNumber += remainder*pow(2,i);
+        ++i;
+    }
+    return decimalNumber;
+}..
+
+
+
+    #47 Program to Find G..C..D Using Recursion
+        Program to find GCD using recursion
+        find GCD using recursion
+        Find GCD using recursion
+          find gcd using recursion
+        Find gcd using recursion
+        GCD using recursion
+        gcd using recursion
+        Gcd using recursion
+       
+=================================
+#include <iostream>
+using namespace std;
+
+int hcf(int n1, int n2);
+
+int main()
+{
+   int n1, n2;
+
+   cout << "Enter two positive integers: ";
+   cin >> n1 >> n2;
+
+   cout << "H..C..F of " << n1 << " & " <<  n2 << " is: " << hcf(n1, n2);
+
+   return 0;
+}
+
+int hcf(int n1, int n2)
+{
+    if (n2 != 0)
+       return hcf(n2, n1 % n2);
+    else 
+       return n1;
+} ..
+
+
+    #48 program to Calculate Factorial of a Number Using Recursion
+         Program to calculate factorial of a number using recursion
+        calculate factorial of a number using recursion
+        Calculate factorial of a number using recursion
+       factorial of a number using recursion
+       Factorial of a number using recursion
+         factorial of number using recursion
+       Factorial of number using recursion
+         factorial using recursion
+       Factorial using recursion
+       
+       
+
+
+
+
+
+
+
+
+=========================
+
+#include<iostream>
+using namespace std;
+
+int factorial(int n);
+
+int main()
+{
+    int n;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    cout << "Factorial of " << n << " = " << factorial(n);
+
+    return 0;
+}
+
+int factorial(int n)
+{
+    if(n > 1)
+        return n * factorial(n - 1);
+    else
+        return 1;
+}..
+
+
+
+    #49 program to Find Sum of Natural Numbers using Recursion
+        Program to find sum of natural numbers using recursion
+
+find sum of natural numbers using recursion
+Find sum of natural numbers using recursion
+sum of natural numbers using recursion
+Sum of natural numbers using recursion
+Sum of natural numbers
+sum of natural numbers
+
+
+
+
+=======================================
+
+#include<iostream>
+using namespace std;
+
+int add(int n);
+
+int main()
+{
+    int n;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    cout << "Sum =  " << add(n);
+
+    return 0;
+}
+
+int add(int n)
+{
+    if(n != 0)
+        return n + add(n - 1);
+    return 0;
+} ..
+
+
+
+    #50 Program to Check Whether a Number can be Express as Sum of Two Prime Numbers
+        Program to check whether a number can be express as sum of two prime numbers
+        check whether a number can be express as sum of two prime numbers
+        Check whether a number can be express as sum of two prime numbers
+        check whether a number can be expressed as sum of two prime numbers
+        Check whether a number can be expressed as sum of two prime numbers
+
+
+
+
+===============================
+
+#include <iostream>
+using namespace std;
+
+bool checkPrime(int n);
+
+int main()
+{
+    int n, i;
+    bool flag = false;
+
+    cout << "Enter a positive  integer: ";
+    cin >> n;
+
+    for(i = 2; i <= n/2; ++i)
+    {
+        if (checkPrime(i))
+        {
+            if (checkPrime(n - i))
+            {
+                cout << n << " = " << i << " + " << n-i << endl;
+                flag = true;
+            }
+        }
+    }
+
+    if (!flag)
+      cout << n << " can't be expressed as sum of two prime numbers..";
+
+    return 0;
+}
+
+// Check prime number
+bool checkPrime(int n)
+{
+    int i;
+    bool isPrime = true;
+
+    for(i = 2; i <= n/2; ++i)
+    {
+        if(n % i == 0)
+        {
+            isPrime = false;
+            break;
+        }
+    }
+
+    return isPrime;
+} ..
+
+
+
+    #51 Program to Check Prime Number By Creating a Function
+       
+       Program to check prime number by creating a function
+       check prime number by creating a function
+       Check prime number by creating a function
+       prime number by using a function
+       Prime number by using a function
+       prime number using function
+       Prime number using function
+          prime num using function
+             Prime num using function
+
+
+=================================
+
+#include <iostream>
+using namespace std;
+
+int checkPrimeNumber(int);
+
+int main()
+{
+  int n;
+
+  cout << "Enter a positive  integer: ";
+  cin >> n;
+  
+  if(checkPrimeNumber(n) == 0)
+    cout << n << " is a prime number..";
+  else
+    cout << n << " is not a prime number..";
+  return 0;
+}
+int checkPrimeNumber(int n)
+{
+  bool flag = false;
+
+  for(int i = 2; i <= n/2; ++i)
+  {
+      if(n%i == 0)
+      {
+          flag = true;
+          break;
+      }
+  }
+  return flag;
+} ..
+
+
+
+
+    #52 Program to Display Prime Numbers Between Two Intervals Using Functions
+        Program to display prime numbers between two intervals using functions
+        Display prime numbers between two intervals using functions
+        display prime numbers between two intervals using functions
+        Prime numbers between two intervals using functions
+        prime numbers between two intervals using functions
+        Prime numbers between two intervals using function
+        prime numbers between two intervals using function
+        Prime numbers between intervals using functions
+        prime numbers between intervals using functions
+
+
+=======================================
+
+
+#include <iostream>
+using namespace std;
+
+int checkPrimeNumber(int);
+
+int main()
+{
+    int n1, n2;
+    bool flag;
+
+    cout << "Enter two positive integers: ";
+    cin >> n1 >> n2;
+
+    cout << "Prime numbers between " << n1 << " and " << n2 << " are: ";
+
+    for(int i = n1+1; i < n2; ++i)
+    {
+        // If i is a prime number, flag will be equal to 1
+        flag = checkPrimeNumber(i);
+
+        if(flag)
+            cout << i << " ";
+    }
+    return 0;
+}
+
+// user-defined function to check prime number
+int checkPrimeNumber(int n)
+{
+    bool flag = true;
+
+    for(int j = 2; j <= n/2; ++j)
+    {
+        if (n%j == 0)
+        {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}..
+
+
+    #53 Program to Make a Simple Calculator to Add, Subtract, Multiply or Divide Using switch......case
+        Program to make a simple calculator to add, subtract, multiply or divide using switch case
+        Calculator calculator
+        Simple calculator
+
+
+
+
+===========================
+
+# include <iostream>
+using namespace std;
+
+int main()
+{
+    char op;
+    float num1, num2;
+
+    cout << "Enter operator either + or - or * or /: ";
+    cin >> op;
+
+    cout << "Enter two operands: ";
+    cin >> num1 >> num2;
+
+    switch(op)
+    {
+        case '+':
+            cout << num1+num2;
+            break;
+
+        case '-':
+            cout << num1-num2;
+            break;
+
+        case '*':
+            cout << num1*num2;
+            break;
+
+        case '/':
+            cout << num1/num2;
+            break;
+
+        default:
+            // If the operator is other than +, -, * or /, error message is shown
+            cout << "Error! operator is not correct";
+            break;
+    }
+
+    return 0;
+}..
+
+
+    #54 Program to print half pyramid using *
+    print half pyramid using *
+    Print half pyramid using *
+    Half pyramid using *
+    basic pyramid using *
+    Basic pyramid using *
+    pyramid using *
+    Pyramid using *
+    Pattern using *
+    pattern using *
+
+
+
+
+=========================
+Half Pyramid using *
+---------------
+*
+* *
+* * *
+* * * *
+* * * * *
+---------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = 1; i <= rows; ++i)
+    {
+        for(int j = 1; j <= i; ++j)
+        {
+            cout << "* ";
+        }
+        cout << "\n";
+    }
+    return 0;
+} ..
+
+
+
+
+
+    #55  Program to print half pyramid a using numbers
+
+    print half pyramid using  numbers
+    Print half pyramid using  numbers
+    Half pyramid using numbers
+    half pyramid using numbers
+    
+
+
+=========================
+Half Pyramid using numbers
+---------------
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+---------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = 1; i <= rows; ++i)
+    {
+        for(int j = 1; j <= i; ++j)
+        {
+            cout << "* ";
+        }
+        cout << "\n";
+    }
+    return 0;
+} ..
+
+
+
+    #56 Program to print half pyramid using alphabets
+
+    print half pyramid using alphabets
+    Print half pyramid using alphabets
+    Half pyramid using alphabets
+    basic pyramid using alphabets
+    Basic pyramid using alphabets
+    pyramid using alphabets
+    Pyramid using alphabets
+    pyramid using alphabet
+    Pyramid using alphabet
+    Pattern using alphabets
+    pattern using alphabets
+    Pattern using alphabet
+    pattern using alphabet
+
+
+
+
+=========================
+Half Pyramid using using alphabets
+---------------
+A
+B B
+C C C
+D D D D
+E E E E E
+---------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char input, alphabet = 'A';
+
+    cout << "Enter the uppercase character you want to print in the last row: ";
+    cin >> input;
+
+    for(int i = 1; i <= (input-'A'+1); ++i)
+    {
+        for(int j = 1; j <= i; ++j)
+        {
+            cout << alphabet << " ";
+        }
+        ++alphabet;
+
+        cout << endl;
+    }
+    return 0;
+}.. 
+
+
+    #57 Inverted half pyramid using *
+    Inverted half pyramid using *
+        Reverse half pyramid using *
+        reverse half pyramid using *
+        Reverse pyramid using *
+        reverse pyramid using *
+        reverse pattern using *
+        Reverse pattern using *
+
+
+
+
+
+
+
+
+=========================
+Inverted half pyramid using *
+
+---------------
+* * * * *
+* * * *
+* * * 
+* *
+*
+---------------
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = rows; i >= 1; --i)
+    {
+        for(int j = 1; j <= i; ++j)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+    
+    return 0;
+} ..
+
+
+    #58 Inverted half pyramid using numbers
+    Inverted half pyramid using numbers
+        Reverse half pyramid using numbers
+        reverse half pyramid using numbers
+        Reverse pyramid using numbers
+        reverse pyramid using numbers
+        Reverse pyramid using number
+        reverse pyramid using number
+        Reverse pattern using numbers
+        reverse pattern using numbers
+        Reverse pattern using number
+        reverse pattern using number
+
+
+
+
+
+=========================
+ Inverted half pyramid using numbers
+
+---------------
+1 2 3 4 5
+1 2 3 4 
+1 2 3
+1 2
+1
+---------------
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = rows; i >= 1; --i)
+    {
+        for(int j = 1; j <= i; ++j)
+        {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+} ..
+
+
+
+    #59  Program to print full pyramid using *
+     Print full pyramid using *
+     Full pyramid using *
+     Complete pyramid using *
+      Print full pattern using *
+     Full pattern using *
+     Complete pattern using *
+
+
+=========================
+Full Pyramid using *
+
+------------------
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
+------------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int space, rows;
+
+    cout <<"Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = 1, k = 0; i <= rows; ++i, k = 0)
+    {
+        for(space = 1; space <= rows-i; ++space)
+        {
+            cout <<"  ";
+        }
+
+        while(k != 2*i-1)
+        {
+            cout << "* ";
+            ++k;
+        }
+        cout << endl;
+    }    
+    return 0;
+} ..
+
+
+
+    #60  Program to print pyramid using numbers
+    Print pyramid using numbers
+        pyramid using numbers
+    Pyramid using numbers
+    pyramid using number
+    Pyramid using number
+    Pattern using numbers
+    pattern using numbers
+    Pattern using number
+    pattern using number
+
+
+=========================
+Full Pyramid using numbers
+
+------------------
+        1
+      2 3 2
+    3 4 5 4 3
+  4 5 6 7 6 5 4
+5 6 7 8 9 8 7 6 5
+------------------
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows, count = 0, count1 = 0, k = 0;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = 1; i <= rows; ++i)
+    {
+        for(int space = 1; space <= rows-i; ++space)
+        {
+            cout << "  ";
+            ++count;
+        }
+
+        while(k != 2*i-1)
+        {
+            if (count <= rows-1)
+            {
+                cout << i+k << " ";
+                ++count;
+            }
+            else
+            {
+                ++count1;
+                cout << i+k-2*count1 << " ";
+            }
+            ++k;
+        }
+        count1 = count = k = 0;
+
+        cout << endl;
+    }
+    return 0;
+} ..
+
+
+    #61  Inverted full pyramid using *
+     Print inverted full pyramid using *
+     Inverted full pyramid using *
+     inverted full pyramid using *
+    Complete reverse pyramid using *
+      Print full reverse pattern using *
+     Full reverse pattern using *
+     Complete reverse pattern using *
+
+=========================
+Inverted full pyramid using *
+
+------------------
+ * * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+------------------
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = rows; i >= 1; --i)
+    {
+        for(int space = 0; space < rows-i; ++space)
+            cout << "  ";
+
+        for(int j = i; j <= 2*i-1; ++j)
+            cout << "* ";
+
+        for(int j = 0; j < i-1; ++j)
+            cout << "* ";
+
+        cout << endl;
+    }
+
+    return 0;
+} ..
+
+
+
+    #62  Print Pascal's triangle
+        Pascal triangle
+        pascal triang
+        Pascal's triangle
+        Pascals triangle
+        pascals triangle
+
+
+=========================
+ Pascal's triangle
+
+------------------
+ * * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+------------------
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows, coef = 1;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int space = 1; space <= rows-i; space++)
+            cout <<"  ";
+
+        for(int j = 0; j <= i; j++)
+        {
+            if (j == 0 || i == 0)
+                coef = 1;
+            else
+                coef = coef*(i-j+1)/j;
+
+            cout << coef << "   ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+} ..
+
+
+
+
+    #63 Print Floyd's Triangle
+
+        Floyds triangle
+        Floyd's triangle
+        floyds triangle
+        Floyd triangle
+
+=========================
+Floyd's Triangle
+
+------------------
+ * * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+------------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows, number = 1;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = 1; i <= rows; i++)
+    {
+        for(int j = 1; j <= i; ++j)
+        {
+            cout << number << " ";
+            ++number;
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+} ..
+
+
+
+
+    #64 Program to Display Factors of a Number
+            Display factors of a number
+            factors of a number
+            factors of number
+            find factors of a number
+            Find factors of a number
+
+
+
+
+
+
+
+
+=====================
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, i;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    cout << "Factors of " << n << " are: " << endl;  
+    for(i = 1; i <= n; ++i)
+    {
+        if(n % i == 0)
+            cout << i << endl;
+    }
+
+    return 0;
+}..
+
+
+
+
+
+
+    #65 Program to Display Armstrong Number Between Two Intervals
+Display armstrong number between two intervals
+display armstrong number between two intervals
+Armstrong number between two intervals
+armstrong number between two intervals
+armstrong number between intervals
+Armstrong number between intervals
+
+
+
+
+==================================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int num1, num2, i, num, digit, sum;
+
+  cout << "Enter first number: ";
+  cin >> num1;
+
+  cout << "Enter second number: ";
+  cin >> num2;
+
+  cout << "Armstrong numbers between " << num1 << " and " << num2 << " are: " << endl;
+  for(i = num1; i <= num2; i++)
+  {
+        sum = 0;
+        num = i;
+
+        for(; num > 0; num /= 10)
+        {
+            digit = num % 10;
+            sum = sum + digit * digit * digit;
+        }
+
+        if(sum == i)
+        {
+            cout << i << endl;
+        }
+  }
+
+  return 0;
+}..
+
+
+    #66 Program to Check Armstrong Number
+    Armstrong Number
+    Armstrong number
+
+
+
+
+
+=====================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, originalNum, remainder, result = 0;
+    cout << "Enter a three-digit integer: ";
+    cin >> num;
+    originalNum = num;
+
+    while (originalNum != 0) {
+        // remainder contains the last digit
+        remainder = originalNum % 10;
+        
+        result += remainder * remainder * remainder;
+        
+        // removing last digit from the orignal number
+        originalNum /= 10;
+    }
+
+    if (result == num)
+        cout << num << " is an Armstrong number..";
+    else
+        cout << num << " is not an Armstrong number..";
+
+    return 0;
+} ..
+
+
+
+    #67 Program to Display Prime Numbers Between Two Intervals
+Display prime numbers between two intervals
+Display prime numbers between two intervals
+prime numbers between two intervals
+Prime numbers between two intervals
+
+
+
+=========================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int low, high, i, flag;
+
+    cout << "Enter two numbers(intervals): ";
+    cin >> low >> high;
+
+    cout << "Prime numbers between " << low << " and " << high << " are: ";
+
+    while (low < high)
+    {
+        flag = 0;
+
+        for(i = 2; i <= low/2; ++i)
+        {
+            if(low % i == 0)
+            {
+                flag = 1;
+                break;
+            }
+        }
+
+        if (flag == 0)
+            cout << low << " ";
+
+        ++low;
+    }
+
+    return 0;
+} ..
+
+
+
+    #68 Program to Check Whether a Number is Prime or Not
+
+Program to check whether a number is prime or not
+check whether a number is prime or not
+Check whether a number is prime or not
+number is prime or not
+Number is prime or not
+ prime or not
+ Prime or not
+
+
+
+
+================
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+   int n, i;
+   bool isPrime = true;
+
+   cout << "Enter a positive integer: ";
+   cin >> n;
+
+   for (i = 2; i <= n / 2; ++i) {
+      if (n % i == 0) {
+         isPrime = false;
+         break;
+      }
+   }
+   if (isPrime)
+      cout << n << " is a prime number";
+   else
+      cout << n << " is not a prime number";
+
+   return 0;
+} ..
+
+
+
+
+
+
+    #69  Program to Check Whether a Number is Palindrome or Not
+Number is palindrome or not
+number is palindrome or not
+palindrome or not
+
+
+
+========================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+     int n, num, digit, rev = 0;
+
+     cout << "Enter a positive number: ";
+     cin >> num;
+
+     n = num;
+
+     do
+     {
+         digit = num % 10;
+         rev = (rev * 10) + digit;
+         num = num / 10;
+     } while (num != 0);
+
+     cout << " The reverse of the number is: " << rev << endl;
+
+     if (n == rev)
+         cout << " The number is a palindrome..";
+     else
+         cout << " The number is not a palindrome..";
+
+    return 0;
+} ..
+
+
+
+    #70 Program to Multiply two Numbers
+ Multiply two numbers
+  multiply two numbers
+
+
+=============================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double firstNumber, secondNumber, productOfTwoNumbers;
+    cout << "Enter two numbers: ";
+
+    // Stores two floating point numbers in variable firstNumber and secondNumber respectively
+    cin >> firstNumber >> secondNumber;
+ 
+    // Performs multiplication and stores the result in variable productOfTwoNumbers
+    productOfTwoNumbers = firstNumber * secondNumber;  
+
+    cout << "Product = " << productOfTwoNumbers;    
+    
+    return 0;
+} ..
+
+
+
+
+
+    #71 Program to Find ASCII Value of a Character
+
+     Find ASCII value of a character
+     find ASCII value of a character
+     Find ascii value of a character
+     find ascii value of a character
+     Find ascii value of character
+     Find ascii value of character
+     ascii value 
+     ASCII value 
+     ASCII
+
+
+
+
+===========================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+ char c;
+ cout << "Enter a character: ";
+ cin >> c;
+ cout << "ASCII Value of " << c << " is " << int(c);
+ return 0;
+} ..
+
+    #72 Program to Subtract Complex Number Using Operator Overloading 
+Subtract complex number using operator overloading 
+subtract complex number using operator overloading 
+Subtract complex number
+subtract complex number 
+
+
+===========================
+
+#include <iostream>
+using namespace std;
+
+class Complex
+{
+    private:
+      float real;
+      float imag;
+    public:
+       Complex(): real(0), imag(0){ }
+       void input()
+       {
+           cout << "Enter real and imaginary parts respectively: ";
+           cin >> real;
+           cin >> imag;
+       }
+
+       // Operator overloading
+       Complex operator - (Complex c2)
+       {
+           Complex temp;
+           temp..real = real - c2..real;
+           temp..imag = imag - c2..imag;
+
+           return temp;
+       }
+
+       void output()
+       {
+           if(imag < 0)
+               cout << "Output Complex number: "<< real << imag << "i";
+           else
+               cout << "Output Complex number: " << real << "+" << imag << "i";
+       }
+};
+
+int main()
+{
+    Complex c1, c2, result;
+
+    cout<<"Enter first complex number:\n";
+    c1..input();
+
+    cout<<"Enter second complex number:\n";
+    c2..input();
+
+    // In case of operator overloading of binary operators in C++ programming, 
+    // the object on right hand side of operator is always assumed as argument by compiler..
+    result = c1 - c2;
+    result..output();
+
+    return 0;
+} ..
+
+
+    #73 Increment ++ and Decrement -- Operator Overloading in C++ Programming
+
+Increment and decrement 
+increment and decrement 
+Decrement and increment 
+decrement and increment 
+
+
+
+======================
+
+#include <iostream>
+using namespace std;
+
+class Check
+{
+    private:
+       int i;
+    public:
+       Check(): i(0) {  }
+       void operator ++() 
+          { ++i; }
+       void Display() 
+          { cout << "i=" << i << endl; }
+};
+
+int main()
+{
+    Check obj;
+
+    // Displays the value of data member i for object obj
+    obj..Display();
+
+    // Invokes operator function void operator ++( )
+    ++obj; 
+  
+    // Displays the value of data member i for object obj
+    obj..Display();
+
+    return 0;
+} ..
+
+    #74 Program to Calculate Power of a Number
+Calculate power of a number
+ power of a number
+  Power of a number
+   power of number
+  Power of number
+   power of num
+  Power of num
+
+=====================================
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int exponent;
+    float base, result = 1;
+
+    cout << "Enter base and exponent respectively:  ";
+    cin >> base >> exponent;
+
+    cout << base << "^" << exponent << " = ";
+
+    while (exponent != 0) {
+        result *= base;
+        --exponent;
+    }
+
+    cout << result;
+    
+    return 0;
+} ..
+
+
+
+
+
+
+    #75  Program to Reverse a Number
+    Reverse a number
+    reverse a number
+    Reverse of a number
+    reverse of a number
+
+
+
+
+=============================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, reversedNumber = 0, remainder;
+
+    cout << "Enter an integer: ";
+    cin >> n;
+
+    while(n != 0)
+    {
+        remainder = n%10;
+        reversedNumber = reversedNumber*10 + remainder;
+        n /= 10;
+    }
+
+    cout << "Reversed Number = " << reversedNumber;
+
+    return 0;
+} ..
+
+
+
+
+
+
+
+    #76 Program to Find LCM
+    LCM
+    lcm
+
+
+
+
+
+===================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n1, n2, max;
+
+    cout << "Enter two numbers: ";
+    cin >> n1 >> n2;
+    
+    // maximum value between n1 and n2 is stored in max
+    max = (n1 > n2) ? n1 : n2;
+
+    do
+    {
+        if (max % n1 == 0 && max % n2 == 0)
+        {
+            cout << "LCM = " << max;
+            break;
+        }
+        else
+            ++max;
+    } while (true);
+    
+    return 0;
+} ..
+
+
+    #77 Program to Find GCD gcd
+
+
+====================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n1, n2;
+
+    cout << "Enter two numbers: ";
+    cin >> n1 >> n2;
+    
+    while(n1 != n2)
+    {
+        if(n1 > n2)
+            n1 -= n2;
+        else
+            n2 -= n1;
+    }
+
+    cout << "HCF = " << n1;
+    return 0;
+} ..
+
+
+    #78 Program to Display Fibonacci Series
+    Display fibonacci series
+    display fibonacci series
+    Fibonacci series
+    fibonacci series
+    fibo
+    Fibo
+
+=========================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, t1 = 0, t2 = 1, nextTerm = 0;
+
+    cout << "Enter the number of terms: ";
+    cin >> n;
+
+    cout << "Fibonacci Series: ";
+
+    for (int i = 1; i <= n; ++i)
+    {
+        // Prints the first two terms..
+        if(i == 1)
+        {
+            cout << " " << t1;
+            continue;
+        }
+        if(i == 2)
+        {
+            cout << t2 << " ";
+            continue;
+        }
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+        
+        cout << nextTerm << " ";
+    }
+    return 0;
+} ..
+
+
+
+
+
+    #79 Program to Generate Multiplication Table
+Multiplication table
+
+
+=========================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, range;
+
+    cout << "Enter an integer: ";
+    cin >> n;
+
+    cout << "Enter range: ";
+    cin >> range;
+    
+    for (int i = 1; i <= range; ++i) {
+        cout << n << " * " << i << " = " << n * i << endl;
+    }
+    
+    return 0;
+} ..
+
+    #80 Program to Find Factorial
+
+factorial
+fact
+Fact
+===========================
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    unsigned int n;
+    unsigned long long factorial = 1;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    for(int i = 1; i <=n; ++i)
+    {
+        factorial *= i;
+    }
+
+    cout << "Factorial of " << n << " = " << factorial;    
+    return 0;
+} ..
+
+
+
+
+
+
+
+    #81 Program to Check Leap Year
+ Leap year
+  leap year
+
+==========================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int year;
+
+    cout << "Enter a year: ";
+    cin >> year;
+
+    if (year % 4 == 0)
+    {
+        if (year % 100 == 0)
+        {
+            if (year % 400 == 0)
+                cout << year << " is a leap year..";
+            else
+                cout << year << " is not a leap year..";
+        }
+        else
+            cout << year << " is a leap year..";
+    }
+    else
+        cout << year << " is not a leap year..";
+
+    return 0;
+} ..
+
+
+
+
+
+
+    #82 Program to Calculate Sum of Natural Numbers
+    Sum of natural numbers
+    sum of natural numbers
+
+
+========================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, sum = 0;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; ++i) {
+        sum += i;
+    }
+
+    cout << "Sum = " << sum;
+    return 0;
+}..
+
+
+
+
+
+
+
+
+     #83 Program to Find All Roots of a Quadratic Equation
+     find all roots of a quadratic equation
+
+
+
+=========================
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+    float a, b, c, x1, x2, discriminant, realPart, imaginaryPart;
+    cout << "Enter coefficients a, b and c: ";
+    cin >> a >> b >> c;
+    discriminant = b*b - 4*a*c;
+    
+    if (discriminant > 0) {
+        x1 = (-b + sqrt(discriminant)) / (2*a);
+        x2 = (-b - sqrt(discriminant)) / (2*a);
+        cout << "Roots are real and different.." << endl;
+        cout << "x1 = " << x1 << endl;
+        cout << "x2 = " << x2 << endl;
+    }
+    
+    else if (discriminant == 0) {
+        cout << "Roots are real and same.." << endl;
+        x1 = (-b + sqrt(discriminant)) / (2*a);
+        cout << "x1 = x2 =" << x1 << endl;
+    }
+
+    else {
+        realPart = -b/(2*a);
+        imaginaryPart =sqrt(-discriminant)/(2*a);
+        cout << "Roots are complex and different.."  << endl;
+        cout << "x1 = " << realPart << "+" << imaginaryPart << "i" << endl;
+        cout << "x2 = " << realPart << "-" << imaginaryPart << "i" << endl;
+    }
+
+    return 0;
+} ..
+
+
+
+
+    #84 Program to Find Largest Number Among Three Numbers
+find largest number among three numbers
+Largest number among three numbers
+
+===============================
+#include <iostream>
+using namespace std;
+
+int main()
+{    
+    float n1, n2, n3;
+
+    cout << "Enter three numbers: ";
+    cin >> n1 >> n2 >> n3;
+
+    if(n1 >= n2 && n1 >= n3)
+    {
+        cout << "Largest number: " << n1;
+    }
+
+    if(n2 >= n1 && n2 >= n3)
+    {
+        cout << "Largest number: " << n2;
+    }
+
+    if(n3 >= n1 && n3 >= n2) {
+        cout << "Largest number: " << n3;
+    }
+
+    return 0;
+} ..
+
+
+
+    #85 Program to Check Whether a character is Vowel or Consonant
+
+Character is vowel or consonant
+
+
+
+
+================================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char c;
+    int isLowercaseVowel, isUppercaseVowel;
+
+    cout << "Enter an alphabet: ";
+    cin >> c;
+
+    // evaluates to 1 (true) if c is a lowercase vowel
+    isLowercaseVowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+
+    // evaluates to 1 (true) if c is an uppercase vowel
+    isUppercaseVowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+
+    // evaluates to 1 (true) if either isLowercaseVowel or isUppercaseVowel is true
+    if (isLowercaseVowel || isUppercaseVowel)
+        cout << c << " is a vowel..";
+    else
+        cout << c << " is a consonant..";
+
+    return 0;
+} ..
+
+
+
+    #86 Program to Check Whether Number is Even or Odd
+Number is even or odd
+Check number is even or odd
+
+
+
+
+====================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+
+    cout << "Enter an integer: ";
+    cin >> n;
+
+    if ( n % 2 == 0)
+        cout << n << " is even..";
+    else
+        cout << n << " is odd..";
+
+    return 0;
+} ..
+
+
+
+
+
+
+    #87 Program to Swap Two Numbers
+
+Swap two numbers
+swap two numbers
+
+=========================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a = 5, b = 10, temp;
+
+    cout << "Before swapping.." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    cout << "\nAfter swapping.." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    return 0;
+}..
+
+
+
+
+
+
+    #88 Swap Numbers Without Using Temporary Variables
+
+     Swap numbers without using temporary variables
+
+
+
+
+===========================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    
+    int a = 5, b = 10;
+
+    cout << "Before swapping.." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    cout << "\nAfter swapping.." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    return 0;
+} ..
+
+
+
+    #89 Program to Find Size of int, float, double and char in Your System
+        Size of int float double and char in your system
+
+
+
+==================================
+#include <iostream>
+using namespace std;
+
+int main() 
+{    
+    cout << "Size of char: " << sizeof(char) << " byte" << endl;
+    cout << "Size of int: " << sizeof(int) << " bytes" << endl;
+    cout << "Size of float: " << sizeof(float) << " bytes" << endl;
+    cout << "Size of double: " << sizeof(double) << " bytes" << endl;
+
+    return 0;
+}..
+
+
+
+
+    #90 Program to Find Quotient and Remainder
+Find quotient and remainder
+
+
+
+
+==========================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{    
+    int divisor, dividend, quotient, remainder;
+
+    cout << "Enter dividend: ";
+    cin >> dividend;
+
+    cout << "Enter divisor: ";
+    cin >> divisor;
+
+    quotient = dividend / divisor;
+    remainder = dividend % divisor;
+
+    cout << "Quotient = " << quotient << endl;
+    cout << "Remainder = " << remainder;
+
+    return 0;
+}..
+
+
+
+
+
+
+
+
+    #91  Program to Add Two Numbers
+add two numbers
+
+
+
+=======================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int firstNumber, secondNumber, sumOfTwoNumbers;
+    
+    cout << "Enter two integers: ";
+    cin >> firstNumber >> secondNumber;
+
+    // sum of two numbers in stored in variable sumOfTwoNumbers
+    sumOfTwoNumbers = firstNumber + secondNumber;
+
+    // Prints sum 
+    cout << firstNumber << " + " <<  secondNumber << " = " << sumOfTwoNumbers;     
+
+    return 0;
+} ..
+
+    #92 Program to Print Number Entered by User
+
+Print Number entered by user
+Print number given by User
+=============================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{    
+    int number;
+
+    cout << "Enter an integer: ";
+    cin >> number;
+
+    cout << "You entered " << number;    
+    return 0;
+} ..
+
+    #93 Hello World Program
+    hello world
+    Hello world
+    basic cpp program
+==================
+
+// Your First C++ Program
+
+#include <iostream>
+
+int main() {
+    std::cout << "Hello World!";
+    return 0;
+}..
