@@ -94,7 +94,8 @@ def codename(message):
   c_name = message.text
   lemmer = nltk.stem.WordNetLemmatizer()
     #Wo#rdNet is a semantically-oriented dictionary of English included in NLTK.
-   
+  file1 = open("data.txt", "a") 
+  file1.write(c_name)
   raw=f.read()
   raw=raw.lower()# converts to lowercase
   nltk.download('punkt') # first-time use only
