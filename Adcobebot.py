@@ -2,6 +2,7 @@ import nltk
 import telebot
 from flask import Flask, request
 import os
+import re
 import string
 import random
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -134,8 +135,10 @@ def codename(message):
           return robo_response
       else:
           robo_response = robo_response+sent_tokens[idx]
-          #robo_response.replace(robo_response[:robo_response.rindex("=")],"")
-          return robo_response
+          #robo_response1 = re.findall("%%(.*)%%",robo_response)[0]
+          program_name=robo_response.split("EOPN")[0]
+          program_code=robo_response.split("EOKW")[1]
+          return program_name+program_code
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
   if(flag==True):

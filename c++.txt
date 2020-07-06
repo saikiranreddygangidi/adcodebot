@@ -1,465 +1,36 @@
-String is Palindrome
-=====================
-#include <iostream>
-#include <string.h>
-using namespace std;
-int main()
-{
-    char str1[20], str2[20];
-    int i, j, len = 0, flag = 0;
-    cout << "Enter the string : ";
-    gets(str1);
-    len = strlen(str1) - 1;
-    for (i = len, j = 0; i >= 0 ; i--, j++)
-        str2[j] = str1[i];
-    if (strcmp(str1, str2))
-        flag = 1;
-    if (flag == 1)
-        cout << str1 << " is not a palindrome";
-    else
-        cout << str1 << " is a palindrome";
-    return 0;
-}.
-#1  Fibonacci fibo fibonacci Series 
 
-#include <iostream>  
-using namespace std;  
-int main() 
-{  
-    int num1=0,num2=1,num3,i,number;    
-    cout<<"Enter the number of elements: ";    
-    cin>>number;   
+Program to Store and Display Information Using Structure
+=============================== EOPN
+#21
+program to store and display information using structure 
+store and display information using structure 
+store and display details using structure 
+=============================== EOKW
+
+-------------------------
+Expected Output:
+
+Enter student details: 
+
+For roll number1,
+Enter name: Tom
+Enter marks: 98
+
+For roll number2,
+Enter name: Jerry
+Enter marks: 89
+.
+.
+.
+Displaying Information:
+
+Roll number: 1
+Name: Tom
+Marks: 98
+.
+.
+------------------------
 
-    //printing 0 and 1    
-    cout<<n1<<" "<<n2<<" ";
-    
-    for(i=2;i<number;++i) 
-
-    /*
-    Here loop starts from 2 because 
-    0 and 1 are already printed    
-    */
-
-    {    
-    num3=num1+num2;    
-    cout<<num3<<" ";    
-    num1=num2;    
-    num2=num3;    
-    }    
-    return 0;  
-}  .
-
----------------
-
-#2  prime prime number Prime Number
-
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-    int num, i, count=0, flag=0;  
-    cout << "Enter the number to find Prime: ";  
-    cin >> num;  
-    m=n/2; 
-
-    /---for loop begins---/
-    
-    for(i = 2; i <= count; i++)  
-    {  
-        if(num % i == 0)  
-        {  
-        cout<<"Number is not Prime."<<endl;  
-        flag=1;  
-        break;  
-        }  
-    } 
-
-    /---for loop ends---/
-    
-    if (flag==0)  
-        cout << "Number is Prime."<<endl;  
-    return 0;  
-
-} .
-
----------------------------
-#3  palindrome Palindrome 
-
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-    int num,r,sum=0,temp;    
-    cout<<"Enter a number=";    
-    cin>>num;    
-    temp=n;    
-
-    /---While loop begins---/
-    while(n>0)    
-    {    
-    r=n%10;    
-    sum=(sum*10)+r;    
-    n=n/10;    
-    }
-    /---While loop ends---/
-
-    if(temp==sum)    
-    cout<<"Number is Palindrome.";    
-    else    
-    cout<<"Number is not Palindrome.";   
-    return 0; 
-
-}  .
-
-
----------------------------
-#4  Factorial factorial fact Fact
-
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-  int i,fact=1,number;    
-  cout<<"Enter any Number: ";    
-  cin>>number;  
-
-  /---for loop begins---/  
-
-  for(i=1;i<=number;i++)
-  {    
-      fact=fact*i;    
-  }   
-
-  /---for loop ends---/
-
-
-  cout<<"Factorial of " <<number<<" is: "<<fact<<endl;  
-  return 0;  
-}  .
-
----------------------------
-#5 Armstrong Number armstrong number
-
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-    int num,r,sum=0,temp;    
-    cout<<"Enter the Number=  ";    
-    cin>>num;    
-    temp=num;  
-
-    /---While loop begins---/  
-
-    while(num>0)    
-    {    
-    r=num%10;    
-    sum=sum+(r*r*r);    
-    num=num/10;    
-    } 
-
-    /---While loop ends---/    
-
-    if(temp==sum)    
-    cout<<"Armstrong Number."<<endl;    
-    else    
-    cout<<"Not Armstrong Number."<<endl;   
-    return 0;  
-}  .
-
-
----------------------------
-#6 Sum of digits sum of digits Sum of Digits
-
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-    int num,sum=0,m;    
-    cout<<"Enter a number: ";    
-    cin>>num; 
-
-    /---While loop begins---/ 
-
-    while(n>0)    
-    {    
-    m=n%10;    
-    sum=sum+m;    
-    n=n/10;    
-    }    
-
-    /---While loop ends---/ 
-
-    cout<<"Sum is= "<<sum<<endl;    
-    return 0;  
-
-}  .
-
-
-
----------------------------
-#7 Reverse a number reverse a number reverse number
-
-#include <iostream>  
-using namespace std;  
-int main()  
- {  
-    int n, reverse=0, rem;    
-    cout<<"Enter a number: ";    
-    cin>>n;   
-
-    /---While loop begins---/ 
-
-    while(n!=0)    
-    {    
-        rem=n%10;      
-        reverse=reverse*10+rem;    
-        n/=10;    
-    }  
-
-    /---While loop ends---/  
-
-    cout<<"Reversed Number: "<<reverse<<endl;     
-    return 0;   
- } .
-
----------------------------
-#8 swap two numbers Swap two numbers swapping swap
-
-#include <iostream>  
-using namespace std;  
-
-int main()  
-{  
-    int a=3, b=10;      
-    cout<<"Before swap a= "<<a<<" b= "<<b<<endl;      
-    a=a*b; //a=30 (3*10)    
-    b=a/b; //b=3 (30/10)    
-    a=a/b; //a=10 (30/3)    
-    cout<<"After swap a= "<<a<<" b= "<<b<<endl;      
-    return 0;  
-}  .
-
---------------------------
-#9 matrix multiplication Matrix Multiplication
-
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-    int a[10][10],b[10][10],mul[10][10],r,c,i,j,k;    
-    cout<<"enter the number of row=";    
-    cin>>r;    
-    cout<<"enter the number of column=";    
-    cin>>c;    
-    cout<<"enter the first matrix element=\n";   
-
-    /---for loop begins---/
-
-    for(i=0;i<r;i++)    
-    {    
-    for(j=0;j<c;j++)    
-    {    
-    cin>>a[i][j];  
-    }    
-    }  
-    /---for loop ends---/  
-
-    cout<<"enter the second matrix element=\n";  
-
-    /---for loop begins---/  
-    for(i=0;i<r;i++)    
-    {    
-    for(j=0;j<c;j++)    
-    {    
-    cin>>b[i][j];    
-    }    
-    }  
-    /---for loop ends---/  
-
-    cout<<"multiply of the matrix=\n"; 
-    /---for loop begins---/   
-    for(i=0;i<r;i++)    
-    {    
-    for(j=0;j<c;j++)    
-    {    
-    mul[i][j]=0;    
-    for(k=0;k<c;k++)    
-    {    
-    mul[i][j]+=a[i][k]*b[k][j];    
-    }    
-    }    
-    }
-    /---for loop ends---/ 
-
-    /--for loop to print result--/  
-    for(i=0;i<r;i++)    
-    {    
-    for(j=0;j<c;j++)    
-    {    
-    cout<<mul[i][j]<<" ";    
-    }    
-    cout<<"\n";    
-    }  
-    /---for loop ends---/ 
-
-    return 0;  
-}  .
-
-#10 convert decimal to binary
-
-#include <iostream>  
-using namespace std;  
-int main()  
-{  
-    int a[10], n, i;    
-    cout<<"Enter the number to convert: ";    
-    cin>>n;  
-
-    /---for loop begins---/   
-    for(i=0; n>0; i++)    
-    {    
-    a[i]=n%2;    
-    n= n/2;  
-    } 
-    /---for loop ends---/ 
-       
-    cout<<"Binary of the given number= ";  
-    
-    /---for loop begins---/   
-    for(i=i-1; i>=0; i--)    
-    {    
-        cout<<a[i];    
-    }  
-    /---for loop ends---/   
-}  ...
-
-#Disjoint Set Union on trees
-==========================
-// CPP code to find maximum subtree such 
-// that all nodes are even in weight 
-#include<bits/stdc++.h> 
-
-using namespace std; 
-
-#define N 100010 
-
-// Structure for Edge 
-struct Edge 
-{ 
-    int u, v; 
-}; 
-
-/* 
-    'id': stores parent of a node. 
-    'sz': stores size of a DSU tree. 
-*/
-int id[N], sz[N]; 
-
-// Function to assign root 
-int Root(int idx) 
-{ 
-    int i = idx; 
-    
-    while(i != id[i]) 
-        id[i] = id[id[i]], i = id[i]; 
-    
-    return i; 
-} 
-
-// Function to find Union 
-void Union(int a, int b) 
-{ 
-    int i = Root(a), j = Root(b); 
-    
-    if (i != j) 
-    { 
-        if(sz[i] >= sz[j]) 
-        { 
-            id[j] = i, sz[i] += sz[j]; 
-            sz[j] = 0; 
-        } 
-        else
-        { 
-            id[i] = j, sz[j] += sz[i]; 
-            sz[i] = 0; 
-        } 
-    } 
-} 
-
-// Utility function for Union 
-void UnionUtil(struct Edge e[], int W[], int q) 
-{ 
-
-    for(int i = 0; i < q; i++) 
-    { 
-        // Edge between 'u' and 'v' 
-        int u, v; 
-        u = e[i].u, v = e[i].v; 
-
-        // 0-indexed nodes 
-        u--, v--; 
-
-        // If weights of both 'u' and 'v' 
-        // are even then we make union of them. 
-        if(W[u] % 2 == 0 && W[v] % 2 == 0) 
-                    Union(u,v); 
-    } 
-} 
-
-// Function to find maximum 
-// size of DSU tree 
-int findMax(int n, int W[]) 
-{ 
-    int maxi = 0; 
-    for(int i = 1; i <= n; i++) 
-        if(W[i] % 2 == 0) 
-            maxi = max(maxi, sz[i]); 
-            
-    return maxi; 
-} 
-
-// Driver code 
-int main() 
-{ 
-    /* 
-        Nodes are 0-indexed in this code 
-        So we have to make necessary changes 
-        while taking inputs 
-    */
-
-    // Weights of nodes 
-    int W[] = {1, 2, 6, 4, 2, 0, 3}; 
-
-    // Number of nodes in a tree 
-    int n = sizeof(W) / sizeof(W[0]); 
-
-    // Initializing every node as 
-    // a tree with single node. 
-    for(int i = 0; i < n; i++) 
-            id[i] = i, sz[i] = 1; 
-
-    Edge e[] = {{1, 2}, {1, 3}, {2, 4}, 
-                {2, 5}, {4, 6}, {6, 7}}; 
-
-    int q = sizeof(e) / sizeof(e[0]); 
-
-    UnionUtil(e, W, q); 
-
-    // Find maximum size of DSU tree. 
-    int maxi = findMax(n, W); 
-
-    printf("Maximum size of the subtree with "); 
-    printf("even weighted nodes = %d\n", maxi); 
-    
-    return 0; 
-} .
-
-
-
-
-#21 Program to Store and Display Information Using Structure program to store and display information using structure  store and display information using structure store and display details using structure 
-===============================
 #include <iostream>
 using namespace std;
 
@@ -472,19 +43,19 @@ struct student
 
 int main()
 {
-    cout << "Enter information of students: " << endl;
+    cout << "Enter student details: " << endl;
 
     // storing information
     for(int i = 0; i < 10; ++i)
     {
-        s[i]..roll = i+1;
-        cout << "For roll number" << s[i]..roll << "," << endl;
+        s[i].roll = i+1;
+        cout << "For roll number" << s[i].roll << "," << endl;
 
         cout << "Enter name: ";
-        cin >> s[i]..name;
+        cin >> s[i].name;
 
         cout << "Enter marks: ";
-        cin >> s[i]..marks;
+        cin >> s[i].marks;
 
         cout << endl;
     }
@@ -495,17 +66,40 @@ int main()
     for(int i = 0; i < 10; ++i)
     {
         cout << "\nRoll number: " << i+1 << endl;
-        cout << "Name: " << s[i]..name << endl;
-        cout << "Marks: " << s[i]..marks << endl;
+        cout << "Name: " << s[i].name << endl;
+        cout << "Marks: " << s[i].marks << endl;
     }
 
     return 0;
-} ....
+} .
 
+Program to Calculate Difference Between Two Time Period 
+================================= EOPN
+#22 
+calculate difference between two time period
+calculate difference between two time periods
 
-#22 Program to Calculate Difference Between Two Time Period calculate difference between two time period calculate difference between two time periods
+================================= EOKW
 
-=================================
+------------------------------
+Expected Output:
+
+Enter hours, minutes and 
+seconds respectively:
+11
+33
+52
+Enter stop time.
+Enter hours, minutes and
+seconds respectively:
+8
+12
+15
+
+TIME DIFFERENCE:
+11:33:52 - 8:12:15 = 3:21:37
+------------------------------
+
 // Computes time difference of two time period
 // Time periods are entered by the user
 
@@ -525,46 +119,68 @@ int main()
 {
     struct TIME t1, t2, difference;
 
-    cout << "Enter start time.." << endl;
+    cout << "Enter start time." << endl;
     cout << "Enter hours, minutes and seconds respectively: ";
-    cin >> t1..hours >> t1..minutes >> t1..seconds;
+    cin >> t1.hours >> t1.minutes >> t1.seconds;
 
-    cout << "Enter stop time.." << endl;
+    cout << "Enter stop time." << endl;
     cout << "Enter hours, minutes and seconds respectively: ";
-    cin >> t2..hours >> t2..minutes >> t2..seconds;
+    cin >> t2.hours >> t2.minutes >> t2.seconds;
 
     computeTimeDifference(t1, t2, &difference);
 
-    cout << endl << "TIME DIFFERENCE: " << t1..hours << ":" << t1..minutes << ":" << t1..seconds;
-    cout << " - " << t2..hours << ":" << t2..minutes << ":" << t2..seconds;
-    cout << " = " << difference..hours << ":" << difference..minutes << ":" << difference..seconds;
+    cout << endl << "TIME DIFFERENCE: " << t1.hours << ":" << t1.minutes << ":" << t1.seconds;
+    cout << " - " << t2.hours << ":" << t2.minutes << ":" << t2.seconds;
+    cout << " = " << difference.hours << ":" << difference.minutes << ":" << difference.seconds;
     return 0;
 }
 void computeTimeDifference(struct TIME t1, struct TIME t2, struct TIME *difference){
     
-    if(t2..seconds > t1..seconds)
+    if(t2.seconds > t1.seconds)
     {
-        --t1..minutes;
-        t1..seconds += 60;
+        --t1.minutes;
+        t1.seconds += 60;
     }
 
-    difference->seconds = t1..seconds - t2..seconds;
-    if(t2..minutes > t1..minutes)
+    difference->seconds = t1.seconds - t2.seconds;
+    if(t2.minutes > t1.minutes)
     {
-        --t1..hours;
-        t1..minutes += 60;
+        --t1.hours;
+        t1.minutes += 60;
     }
-    difference->minutes = t1..minutes-t2..minutes;
-    difference->hours = t1..hours-t2..hours;
-}....
+    difference->minutes = t1.minutes-t2.minutes;
+    difference->hours = t1.hours-t2.hours;
+}.
 
 
+Program to Add Complex Numbers by Passing Structure to a Function Add Complex 
+===================================== EOPN
+#23 
+Numbers by Passing Structure to a Function
+add complex numbers by passing structure to a function
+ Add complex numbers by passing structure to a function
+  add complex numbers using function 
 
-#23 Program to Add Complex Numbers by Passing Structure to a Function Add Complex Numbers by Passing Structure to a Function add complex numbers by passing structure to a function Add complex numbers by passing structure to a function add complex numbers using function 
+===================================== EOKW
 
-=====================================
+-------------------------
+Expected Output:
+
+Enter real and imaginary 
+parts respectively:
+3.4
+5.5
+
+For 2nd complex number,
+Enter real and imaginary 
+parts respectively:
+-4.5
+-9.5
+
+Sum = -1.1-4i
+-------------------------
+
 // Complex numbers are entered by the user
-
 
 #include <iostream>
 using namespace std;
@@ -584,34 +200,51 @@ int main()
 
     cout << "For 1st complex number," << endl;
     cout << "Enter real and imaginary parts respectively:" << endl;
-    cin >> n1..real >> n1..imag;
+    cin >> n1.real >> n1.imag;
 
     cout << endl << "For 2nd complex number," << endl;
     cout << "Enter real and imaginary parts respectively:" << endl;
-    cin >> n2..real >> n2..imag;
+    cin >> n2.real >> n2.imag;
 
-    signOfImag = (temporaryNumber..imag > 0) ? '+' : '-';
-    temporaryNumber..imag = (temporaryNumber..imag > 0) ? temporaryNumber..imag : -temporaryNumber..imag; 
+    signOfImag = (temporaryNumber.imag > 0) ? '+' : '-';
+    temporaryNumber.imag = (temporaryNumber.imag > 0) ? temporaryNumber.imag : -temporaryNumber.imag; 
 
     temporaryNumber = addComplexNumbers(n1, n2);    
-    cout << "Sum = "  << temporaryNumber..real << temporaryNumber..imag << "i";
+    cout << "Sum = "  << temporaryNumber.real << temporaryNumber.imag << "i";
     return 0;
 }
 
 complexNumber addComplexNumbers(complex n1,complex n2)
 {
       complex temp;
-      temp..real = n1..real+n2..real;
-      temp..imag = n1..imag+n2..imag;
+      temp.real = n1.real+n2.real;
+      temp.imag = n1.imag+n2.imag;
       return(temp);
-}....
+}.
 
 
+ Program to Add Two Distances (in inch-feet) System Using Structures
+=========================================== EOPN
+#24
+ Add two distances in inch using structures
+ add two distances in inch using structures
+ Add two distances in feet using structures 
+ add two distances in feet using structures
+=========================================== EOKW
 
+-------------------------
+Expected Output:
 
-#24 Program to Add Two Distances (in inch-feet) System Using Structures Add two distances in inch using structures
-add two distances in inch using structures Add two distances in feet using structures add two distances in feet using structures
-================================
+Enter 1st distance,
+Enter feet: 6
+Enter inch: 3.4
+
+Enter information for 2nd distance
+Enter feet: 5
+Enter inch: 10.2
+
+Sum of distances = 12 feet  1.6 inches
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -625,34 +258,55 @@ int main()
 {
     cout << "Enter 1st distance," << endl;
     cout << "Enter feet: ";
-    cin >> d1..feet;
+    cin >> d1.feet;
     cout << "Enter inch: ";
-    cin >> d1..inch;
+    cin >> d1.inch;
 
     cout << "\nEnter information for 2nd distance" << endl;
     cout << "Enter feet: ";
-    cin >> d2..feet;
+    cin >> d2.feet;
     cout << "Enter inch: ";
-    cin >> d2..inch;
+    cin >> d2.inch;
 
-    sum..feet = d1..feet+d2..feet;
-    sum..inch = d1..inch+d2..inch;
+    sum.feet = d1.feet+d2.feet;
+    sum.inch = d1.inch+d2.inch;
 
     // changing to feet if inch is greater than 12
-    if(sum..inch > 12)
+    if(sum.inch > 12)
     {
-        ++ sum..feet;
-        sum..inch -= 12;
+        ++ sum.feet;
+        sum.inch -= 12;
     } 
 
-    cout << endl << "Sum of distances = " << sum..feet << " feet  " << sum..inch << " inches";
+    cout << endl << "Sum of distances = " << sum.feet << " feet  " << sum.inch << " inches";
     return 0;
-}  ..
+}  .
 
-#25 Program to Store Information of a Student in a Structure Program to store information of a student in a structure
-Store information of a student in a structure store details of a student in a structure Store details of a student
+
+Program to Store Information of a Student in a Structure 
+========================================== EOPN
+#25 
+Program to store information of a student in a structure
+Store information of a student in a structure
+store details of a student in a structure Store details of a student
 store details of a student
-===============================
+
+========================================= EOKW
+
+
+-------------------------
+Expected Output:
+
+Enter information,
+Enter name: Bill
+Enter roll number: 4
+Enter marks: 55.6
+
+Displaying Information,
+Name: Bill
+Roll: 4
+Marks: 55.6
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -669,22 +323,57 @@ int main()
     student s;
     cout << "Enter information," << endl;
     cout << "Enter name: ";
-    cin >> s..name;
+    cin >> s.name;
     cout << "Enter roll number: ";
-    cin >> s..roll;
+    cin >> s.roll;
     cout << "Enter marks: ";
-    cin >> s..marks;
+    cin >> s.marks;
 
     cout << "\nDisplaying Information," << endl;
-    cout << "Name: " << s..name << endl;
-    cout << "Roll: " << s..roll << endl;
-    cout << "Marks: " << s..marks << endl;
+    cout << "Name: " << s.name << endl;
+    cout << "Roll: " << s.roll << endl;
+    cout << "Marks: " << s.marks << endl;
     return 0;
-} ..
+} .
+
+Program to Sort Elements in Lexicographical Order or Dictionary Order 
+===================================== EOPN
+#26 
+Program to sort elements in lexicographical order or dictionary order
+Sort elements in lexicographical order 
+sort elements in lexicographical order
+Sort elements in dictionary order  
+sort elements in dictionary order 
+============================== EOKW
 
 
-#26 Program to Sort Elements in Lexicographical Order or Dictionary Order Program to sort elements in lexicographical order or dictionary order Sort elements in lexicographical order    sort elements in lexicographical order Sort elements in dictionary order  sort elements in dictionary order 
-=================================
+-------------------------
+Expected Output:
+
+Enter 10 words: 
+C 
+C++
+Java
+Python
+Perl
+R
+Matlab
+Ruby
+JavaScript
+PHP
+
+In lexicographical order: 
+C
+C++
+Java
+JavaScript
+Matlab
+PHP
+Perl
+Python
+R
+Ruby
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -717,18 +406,34 @@ int main()
        cout << str[i] << endl;
     }
     return 0;
-}..
+}.
 
-#27 Program to Copy Strings   
-    Program to copy  strings
-       Program to copy string 
-       Program to string copy 
-       Program to  copy string
-copy string
+
+Program to Copy Strings   
+================================== EOPN
+
+#27 
+ Program to copy  strings
+ Program to copy string 
+ Program to string copy 
+ Program to  copy string
+ copy string
  string copy 
-copy strings
-Copy Strings   
-================================
+ copy strings
+ Copy Strings   
+
+================================ EOKW
+
+
+-------------------------
+Expected Output:
+
+Enter string s1: C++ Strings
+
+s1 = C++ Strings
+s2 = C++ Strings
+-------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -745,13 +450,29 @@ int main()
     cout << "s2 = "<< s2;
 
     return 0;
-}..
+}.
 
 
+Program to Concatenate Two Strings
+================================= EOPN
+
+#28  concatenate two strings
+     Concatenate two strings
+     Concatenate two string
+
+================================= EOKW
+
+-------------------------
+Expected Output:
+
+Enter string s1: C++ Programming
+Enter string s2:  is awesome.
 
 
-#28 Program to Concatenate Two Strings concatenate two strings Concatenate two strings Concatenate two string
-=====================================
+Resultant String =
+C++ Programming is awesome.
+-------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -770,17 +491,30 @@ int main()
     cout << "Resultant String = "<< result;
 
     return 0;
-}.. 
+}. 
 
-
-    #29 Program to Find the Length of a String Find the length of a string
+ Program to Find the Length of a String 
+========================================== EOPN
+#29
+    Find the length of a string
     find the length of a string 
- length of a string
-Find length of string Find the length of string
-find string length Find string length
+    length of a string
+    length of string
+    Length of string
+    Find length of string
+    Find the length of string
+    find string length 
+    Find string length
+
+========================================= EOKW
+
+-------------------------
+Expected Output:
+
+String Length = 15
+-------------------------
 
 
-=========================================
 #include <iostream>
 using namespace std;
 
@@ -788,24 +522,29 @@ int main()
 {
     string str = "C++ Programming";
 
-    // you can also use str..length()
-    cout << "String Length = " << str..size();
+    // you can also use str.length()
+    cout << "String Length = " << str.size();
 
     return 0;
-}..
+}.
 
 
-
-
-    #30 Program to Remove all Characters in a String Except Alphabets
-    Program to remove all characters in a string except alphabets
+ Program to Remove all Characters in a String Except Alphabets
+================================================= EOPN
+#30
+Program to remove all characters in a string except alphabets
 remove all characters in a string except alphabets
 Remove all characters in a string except alphabets
 
+================================================= EOKW
 
+-------------------------
+Expected Output:
 
+Enter a string: p2'r"o@gram84iz./
+Output String: programiz
+-------------------------
 
-===========================
 #include <iostream>
 using namespace std;
 
@@ -816,7 +555,7 @@ int main() {
     cout << "Enter a string: ";
     getline(cin, line);
 
-    for (int i = 0; i < line..size(); ++i) {
+    for (int i = 0; i < line.size(); ++i) {
         if ((line[i] >= 'a' && line[i] <= 'z') || (line[i] >= 'A' && line[i] <= 'Z')) {
             temp = temp + line[i];
         }
@@ -824,18 +563,28 @@ int main() {
     line = temp;
     cout << "Output String: " << line;
     return 0;
-}.. 
+}. 
 
-
-    #31 Program to Find the Number of Vowels, Consonants, Digits and White Spaces in a String
+ Program to Find the Number of Vowels, Consonants, Digits and White Spaces in a String
+================================================ EOPN
+#31
 Program to find the number of vowels, consonants, digits and white spaces in a string
 Find the number of vowels, consonants, digits and white spaces in a string
 find the number of vowels consonants digits white spaces in a string
 find the number of vowels consonants digits and white spaces in a string
 
+================================================ EOKW
 
-==========================
 
+-------------------------
+Expected Output:
+
+Enter a line of string: This is 1 hell of a book.
+Vowels: 7
+Consonants: 10
+Digits: 1
+White spaces: 6
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -848,7 +597,7 @@ int main()
     vowels =  consonants = digits = spaces = 0;
 
     cout << "Enter a line of string: ";
-    cin..getline(line, 150);
+    cin.getline(line, 150);
     for(int i = 0; line[i]!='\0'; ++i)
     {
         if(line[i]=='a' || line[i]=='e' || line[i]=='i' ||
@@ -878,20 +627,20 @@ int main()
     cout << "White spaces: " << spaces << endl;
 
     return 0;
-} ..
+} .
 
-    #32 Program to Find the Frequency of Characters in a String
+
+ Program to Find the Frequency of Characters in a String
+================================================ EOPN
+
+#32
         Program to find the frequency of characters in a string
         Find the frequency of characters in a string
         find the frequency of characters in a string
         frequency of characters in a string
          Frequency of characters in a string
 
-
-
-
-
-===============================
+=============================================== EOKW
 
 #include <iostream>
 using namespace std;
@@ -902,7 +651,7 @@ int main()
     char checkCharacter = 'a';
     int count = 0;
 
-    for (int i = 0; i < str..size(); i++)
+    for (int i = 0; i < str.size(); i++)
     {
         if (str[i] ==  checkCharacter)
         {
@@ -913,21 +662,36 @@ int main()
     cout << "Number of " << checkCharacter << " = " << count;
 
     return 0;
-} ..
+} .
 
 
-
-
-    #33 Program to Swap Numbers in Cyclic Order Using Call by Reference
+Program to Swap Numbers in Cyclic Order Using Call by Reference
+ ================================================== EOPN
+ #33 
   Program to swap numbers in cyclic order using call by reference
-   Swap numbers in cyclic order using call by reference
-      swap numbers in cyclic order using call by reference
-      Swap numbers in cyclic order
-      swap numbers in cyclic order
+  Swap numbers in cyclic order using call by reference
+  swap numbers in cyclic order using call by reference
+  Swap numbers in cyclic order
+  swap numbers in cyclic order
+======================================== EOKW
 
+-------------------------
+Expected Output:
 
+Enter value of a, b and c respectively:
+1
+2
+3
+Value before swapping: 
+a=1
+b=2
+c=3
+Value after swapping numbers in cycle:
+a=3
+b=1
+c=2
+-------------------------
 
-=========================
 #include<iostream>
 using namespace std;
 
@@ -958,19 +722,37 @@ void cyclicSwap(int *a, int *b, int *c)
     *b = *a;
     *a = *c;
     *c = temp;
-} ..
+} .
+
+
+ Program to Access Elements of an Array Using Pointer
+ =================================== EOPN
+
+#34 
+
+Program to access elements of an array using pointer
+Access elements of an array using pointer
+access elements of an array using pointer
+
+==================================== EOKW
 
 
 
-    #34  Program to Access Elements of an Array Using Pointer
-    Program to access elements of an array using pointer
-    Access elements of an array using pointer
-    access elements of an array using pointer
+-------------------------
+Expected Output:
 
+Enter elements: 1
+2
+3
+5
+4
+You entered: 1
+2
+3
+5
+4
+-------------------------
 
-
-
-=============================
 #include <iostream>
 using namespace std;
 
@@ -987,21 +769,59 @@ int main()
       cout << endl << *(data + i);
 
    return 0;
-} ..
+} .
 
 
 
-
-    #35 Program to Multiply two Matrices by Passing Matrix to Function
+Program to Multiply two Matrices by Passing Matrix to Function
+============================================ EOPN
+#35 
  Program to multiply two matrices by passing matrix to function
 Multiply two matrices by passing matrix to function
 multiply two matrices by passing matrix to function
 
+============================================ EOKW
+
+
+-------------------------
+Expected Output:
+
+Enter rows and column for first matrix: 3
+2
+Enter rows and column for second matrix: 3
+2
+Error! column of first matrix not equal to row of second.
+
+Enter rows and column for first matrix: 2
+3
+Enter rows and column for second matrix: 3
+2
+
+Enter elements of matrix 1:
+Enter elements a11: 3
+Enter elements a12: -2
+Enter elements a13: 5
+Enter elements a21: 3
+Enter elements a22: 0
+Enter elements a23: 4
+
+Enter elements of matrix 2:
+Enter elements b11: 2
+Enter elements b12: 3
+Enter elements b21: -9
+Enter elements b22: 0
+Enter elements b31: 0
+Enter elements b32: 4
 
 
 
+Output Matrix:
 
-==================
+| 24 29 |
+| 6  25 |
+
+-------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -1019,10 +839,10 @@ int main()
     cout << "Enter rows and column for second matrix: ";
     cin >> rowSecond >> columnSecond;
 
-    // If colum of first matrix in not equal to row of second matrix, asking user to enter the size of matrix again..
+    // If colum of first matrix in not equal to row of second matrix, asking user to enter the size of matrix again.
     while (columnFirst != rowSecond)
     {
-        cout << "Error! column of first matrix not equal to row of second.." << endl;
+        cout << "Error! column of first matrix not equal to row of second." << endl;
         cout << "Enter rows and column for first matrix: ";
         cin >> rowFirst >> columnFirst;
         cout << "Enter rows and column for second matrix: ";
@@ -1032,10 +852,10 @@ int main()
     // Function to take matrices data
         enterData(firstMatrix, secondMatrix, rowFirst, columnFirst, rowSecond, columnSecond);
 
-        // Function to multiply two matrices..
+        // Function to multiply two matrices.
         multiplyMatrices(firstMatrix, secondMatrix, mult, rowFirst, columnFirst, rowSecond, columnSecond);
 
-        // Function to display resultant matrix after multiplication..
+        // Function to display resultant matrix after multiplication.
         display(mult, rowFirst, columnSecond);
 
     return 0;
@@ -1069,7 +889,7 @@ void multiplyMatrices(int firstMatrix[][10], int secondMatrix[][10], int mult[][
 {
     int i, j, k;
 
-    // Initializing elements of matrix mult to 0..
+    // Initializing elements of matrix mult to 0.
     for(i = 0; i < rowFirst; ++i)
     {
         for(j = 0; j < columnSecond; ++j)
@@ -1078,7 +898,7 @@ void multiplyMatrices(int firstMatrix[][10], int secondMatrix[][10], int mult[][
         }
     }
 
-    // Multiplying matrix firstMatrix and secondMatrix and storing in array mult..
+    // Multiplying matrix firstMatrix and secondMatrix and storing in array mult.
     for(i = 0; i < rowFirst; ++i)
     {
         for(j = 0; j < columnSecond; ++j)
@@ -1105,20 +925,45 @@ void display(int mult[][10], int rowFirst, int columnSecond)
                 cout << endl << endl;
         }
     }
-}..
+}.
 
-
-
-    #36 Program to Find Transpose of a Matrix
+Program to Find Transpose of a Matrix
+===================================== EOPN
+#36 
        Find Transpose of a Matrix
-           find Transpose of a Matrix
+       find Transpose of a Matrix
     
-    Transpose of a Matrix  transpose of a Matrix Transpose of Matrix
+      Transpose of a Matrix 
+      transpose of a Matrix 
+      Transpose of Matrix
+
+================================= EOKW
+
+-------------------------
+Expected Output:
+
+Enter rows and columns of matrix: 2
+3
+
+Enter elements of matrix:
+Enter element a11: 1
+Enter element a12: 2
+Enter element a13: 9
+Enter element a21: 0
+Enter element a22: 4
+Enter element a23: 7
+
+Entered Matrix:
+| 1  2  9 |
+| 0  4  7 |
 
 
+Transpose of Matrix:
+|1  0|
+|2  4|
+|9  7|
+-------------------------
 
-
-=================================
 #include <iostream>
 using namespace std;
 
@@ -1164,18 +1009,54 @@ int main() {
       }
 
    return 0;
-}..
+}.
 
 
-    #37 Program to Multiply Two Matrix Using Multi dimensional Arrays
-    Program to multiply two matrix using multi dimensional arrays
-    Multiply two matrix using multi dimensional arrays
- Multiply two matrices using multi dimensional arrays
+#37 Program to Multiply Two Matrix Using Multi dimensional Arrays
+============================================ EOPN
 
+Program to multiply two matrix using multi dimensional arrays
+Multiply two matrix using multi dimensional arrays
+Multiply two matrices using multi dimensional arrays
 
+============================================ EOKW
 
+-------------------------
+Expected Output:
 
-=====================
+Enter rows and column for first matrix: 3
+2
+Enter rows and column for second matrix: 3
+2
+Error! column of first matrix not equal to row of second.
+
+Enter rows and column for first matrix: 2
+3
+Enter rows and column for second matrix: 3
+2
+
+Enter elements of matrix 1:
+Enter elements a11: 3
+Enter elements a12: -2
+Enter elements a13: 5
+Enter elements a21: 3
+Enter elements a22: 0
+Enter elements a23: 4
+
+Enter elements of matrix 2:
+Enter elements b11: 2
+Enter elements b12: 3
+Enter elements b21: -9
+Enter elements b22: 0
+Enter elements b31: 0
+Enter elements b32: 4
+
+Output Matrix:
+
+| 24 29 |
+| 6  25 |
+-------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -1189,10 +1070,10 @@ int main()
     cin >> r2 >> c2;
 
     // If column of first matrix in not equal to row of second matrix,
-    // ask the user to enter the size of matrix again..
+    // ask the user to enter the size of matrix again.
     while (c1!=r2)
     {
-        cout << "Error! column of first matrix not equal to row of second..";
+        cout << "Error! column of first matrix not equal to row of second.";
 
         cout << "Enter rows and columns for first matrix: ";
         cin >> r1 >> c1;
@@ -1201,7 +1082,7 @@ int main()
         cin >> r2 >> c2;
     }
 
-    // Storing elements of first matrix..
+    // Storing elements of first matrix.
     cout << endl << "Enter elements of matrix 1:" << endl;
     for(i = 0; i < r1; ++i)
         for(j = 0; j < c1; ++j)
@@ -1210,7 +1091,7 @@ int main()
             cin >> a[i][j];
         }
 
-    // Storing elements of second matrix..
+    // Storing elements of second matrix.
     cout << endl << "Enter elements of matrix 2:" << endl;
     for(i = 0; i < r2; ++i)
         for(j = 0; j < c2; ++j)
@@ -1219,14 +1100,14 @@ int main()
             cin >> b[i][j];
         }
 
-    // Initializing elements of matrix mult to 0..
+    // Initializing elements of matrix mult to 0.
     for(i = 0; i < r1; ++i)
         for(j = 0; j < c2; ++j)
         {
             mult[i][j]=0;
         }
 
-    // Multiplying matrix a and b and storing in array mult..
+    // Multiplying matrix a and b and storing in array mult.
     for(i = 0; i < r1; ++i)
         for(j = 0; j < c2; ++j)
             for(k = 0; k < c1; ++k)
@@ -1234,7 +1115,7 @@ int main()
                 mult[i][j] += a[i][k] * b[k][j];
             }
 
-    // Displaying the multiplication of two matrix..
+    // Displaying the multiplication of two matrix.
     cout << endl << "Output Matrix: " << endl;
     for(i = 0; i < r1; ++i)
     for(j = 0; j < c2; ++j)
@@ -1245,19 +1126,43 @@ int main()
     }
 
     return 0;
-} ..
+} .
 
 
-    #38 Program to Add Two Matrix Using Multi-dimensional Arrays
+Program to Add Two Matrix Using Multi-dimensional Arrays
+========================================== EOPN
+ #38 
     Program to add two matrix using multi-dimensional arrays
     Add two matrix using multi dimensional arrays
     add two matrix using multi dimensional arrays
     Add two matrices using multi dimensional arrays
     Add two matrices using multi dimensional arrays
 
+======================================== EOKW
+-------------------------
+Expected Output:
+
+Enter number of rows (between 1 and 100): 2
+Enter number of columns (between 1 and 100): 2
+
+Enter elements of 1st matrix:
+Enter element a11: -4
+Enter element a12: 5
+Enter element a21: 6
+Enter element a22: 8
+
+Enter elements of 2nd matrix:
+Enter element b11: 3
+Enter element b12: -9
+Enter element b21: 7
+Enter element b22: 2
+
+Sum of two matrix is:
+| -1   -4 |
+| 13   10 |
+-------------------------
 
 
-===================================
 #include <iostream>
 using namespace std;
 
@@ -1273,7 +1178,7 @@ int main()
 
     cout << endl << "Enter elements of 1st matrix: " << endl;
 
-    // Storing elements of first matrix entered by user..
+    // Storing elements of first matrix entered by user.
     for(i = 0; i < r; ++i)
        for(j = 0; j < c; ++j)
        {
@@ -1281,7 +1186,7 @@ int main()
            cin >> a[i][j];
        }
 
-    // Storing elements of second matrix entered by user..
+    // Storing elements of second matrix entered by user.
     cout << endl << "Enter elements of 2nd matrix: " << endl;
     for(i = 0; i < r; ++i)
        for(j = 0; j < c; ++j)
@@ -1295,7 +1200,7 @@ int main()
         for(j = 0; j < c; ++j)
             sum[i][j] = a[i][j] + b[i][j];
 
-    // Displaying the resultant sum matrix..
+    // Displaying the resultant sum matrix.
     cout << endl << "Sum of two matrix is: " << endl;
     for(i = 0; i < r; ++i)
         for(j = 0; j < c; ++j)
@@ -1306,16 +1211,19 @@ int main()
         }
 
     return 0;
-} ..
+} .
 
 
-    #39  Program to Calculate Standard Deviation
-     Program to calculate standard deviation
-Calculate standard deviation calculate standard deviation
-   
+ Program to Calculate Standard Deviation
+ ==================================== EOPN
+ #39 
+Program to calculate standard deviation
+Calculate standard deviation
+calculate standard deviation
+
+===================================== EOKW
 
 
-===========================
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -1338,7 +1246,7 @@ int main()
 
 float calculateSD(float data[])
 {
-    float sum = 0..0, mean, standardDeviation = 0..0;
+    float sum = 0.0, mean, standardDeviation = 0.0;
 
     int i;
 
@@ -1353,21 +1261,41 @@ float calculateSD(float data[])
         standardDeviation += pow(data[i] - mean, 2);
 
     return sqrt(standardDeviation / 10);
-}.. 
+}. 
 
+    
 
-
-    #40 Program to Find Largest Element of an Array
+ Program to Find Largest Element of an Array
+ ===================================== EOPN
+    #40
         Program to find largest element of an array
         Find largest element of an array
         find largest element of an array
-largest element of an array
-Largest element of an array
-largest element of array
-Largest element of array
+        largest element of an array
+        Largest element of an array
+        largest element of array
+        Largest element of array
 
 
-===========================
+====================================== EOKW
+
+
+-------------------------
+Expected Output:
+
+Enter total number of elements: 8
+
+Enter Number 1: 23.4
+Enter Number 2: -34.5
+Enter Number 3: 50
+Enter Number 4: 33.5
+Enter Number 5: 55.5
+Enter Number 6: 43.7
+Enter Number 7: 5.7
+Enter Number 8: -66.5
+
+Largest element = 55.5
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -1398,49 +1326,58 @@ int main()
     cout << "Largest element = " << arr[0];
 
     return 0;
-} ..
+} .
+
+Program to Calculate Average of Numbers Using Arrays
+========================================== EOPN
+#41 
+     Program to calculate average of numbers using arrays
+    Calculate average of numbers using arrays
+    calculate average of numbers using arrays
+     calculate avg of numbers using arrays
+     Calculate avg of numbers using arrays
+     Average of numbers using arrays
+    average of numbers using arrays
+     Avg of numbers using arrays
+     avg of numbers using arrays
+
+========================================== EOKW
 
 
+-------------------------
+Expected Output:
 
+Enter the numbers of data: 6
+1. Enter number: 45.3
+2. Enter number: 67.5
+3. Enter number: -45.6
+4. Enter number: 20.34
+5. Enter number: 33
+6. Enter number: 45.6
+Average = 27.69
+-------------------------
 
-
-
-    #41 Program to Calculate Average of Numbers Using Arrays
-        Program to calculate average of numbers using arrays
-        Calculate average of numbers using arrays
-        calculate average of numbers using arrays
-        calculate avg of numbers using arrays
-         Calculate avg of numbers using arrays
-         Average of numbers using arrays
-         average of numbers using arrays
-         Avg of numbers using arrays
-         avg of numbers using arrays
-
-
-
-
-=========================
 #include <iostream>
 using namespace std;
 
 int main()
 {
     int n, i;
-    float num[100], sum=0..0, average;
+    float num[100], sum=0.0, average;
 
     cout << "Enter the numbers of data: ";
     cin >> n;
 
     while (n > 100 || n <= 0)
     {
-        cout << "Error! number should in range of (1 to 100).." << endl;
+        cout << "Error! number should in range of (1 to 100)." << endl;
         cout << "Enter the number again: ";
         cin >> n;
     }
 
     for(i = 0; i < n; ++i)
     {
-        cout << i + 1 << ".. Enter number: ";
+        cout << i + 1 << ". Enter number: ";
         cin >> num[i];
         sum += num[i];
     }
@@ -1449,19 +1386,28 @@ int main()
     cout << "Average = " << average;
 
     return 0;
-} ..
+} .
 
 
-
-
-    #42  Program to Calculate Power Using Recursion
+Program to Calculate Power Using Recursion
+============================== EOPN
+#42  
          Program to calculate power using recursion
          Calculate power using recursion
          calculate power using recursion
          Power using recursion
          power using recursion
 
-==========================
+============================== EOKW
+
+
+-------------------------
+Expected Output:
+
+Enter base number: 3
+Enter power number(+ve integer): 4
+3^4 = 81
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -1490,19 +1436,26 @@ int calculatePower(int base, int powerRaised)
         return (base*calculatePower(base, powerRaised-1));
     else
         return 1;
-} ..
+} .
 
 
 
-
-    #43 program to Reverse a Sentence Using Recursion
+Program to Reverse a Sentence Using Recursion
+ ============================================ EOPN
+#43 
+ program to reverse a sentence using recursion
  Program to reverse a sentence using recursion
    Reverse a sentence using recursion
  reverse a sentence using recursion
 
+============================================ EOKW
 
+-------------------------
+Expected Output:
 
-============================================
+Enter a sentence: margorp emosewa
+awesome program
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -1520,29 +1473,37 @@ int main()
 
 void reverse(const string& str)
 {
-    size_t numOfChars = str..size();
+    size_t numOfChars = str.size();
 
     if(numOfChars == 1)
        cout << str << endl;
     else
     {
        cout << str[numOfChars - 1];
-       reverse(str..substr(0, numOfChars - 1));
+       reverse(str.substr(0, numOfChars - 1));
     }
-}.. 
+}. 
 
-    #44  Program to Convert Binary Number to Octal and vice versa
-Program to convert binary number to octal and vice versa
-Program to convert binary number to octal 
+
+Program to Convert Binary Number to Octal and vice versa
+============================================= EOPN
+#44  
+ Program to convert binary number to octal and vice versa
+ Program to convert binary number to octal 
  Convert binary number to octal 
  convert binary number to octal 
-  convert binary to octal 
-   Convert binary to octal 
+ convert binary to octal 
+ Convert binary to octal 
 
+============================================= EOKW
 
+-------------------------
+Expected Output:
 
+Enter a binary number: 10001
+10001 in binary = 21 in octal
+-------------------------
 
-=============================
 
 #include <iostream>
 #include <cmath>
@@ -1583,11 +1544,12 @@ int convertBinarytoOctal(long long binaryNumber)
     }
 
     return octalNumber;
-}..
+}.
 
 
-
-    #45 Program to Convert Octal Number to Decimal and vice versa
+ Program to Convert Octal Number to Decimal and vice versa
+ =============================== EOPN
+#45
  Program to convert octal number to decimal and vice versa
 convert octal number to decimal and vice versa
 Convert octal number to decimal and vice versa
@@ -1600,7 +1562,17 @@ Convert octal to decimal number
 Convert octal to decimal
 convert octal to decimal
 
-=======================
+============================== EOKW
+
+
+
+-------------------------
+Expected Output: 
+
+Enter an octal number: 2341
+2341 in octal = 1249 in decimal
+-------------------------
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -1629,14 +1601,13 @@ int octalToDecimal(int octalNumber)
         ++i;
     }
     return decimalNumber;
-}.. 
+}. 
 
 
 
-
-
-    #46 Program to Convert Binary Number to Decimal and vice-versa
-
+Program to Convert Binary Number to Decimal and vice-versa
+======================================= EOPN
+#46 
 Program to convert binary number to decimal and vice versa
 Convert binary number to decimal and vice versa
 convert binary number to decimal and vice versa
@@ -1647,10 +1618,13 @@ Convert binary to decimal number
 convert binary to decimal 
 Convert binary to decimal 
 
+====================================== EOKW
+-------------------------
+Expected Output:
 
-
-
-============================
+Enter a binary number: 1111
+1111 in binary = 15
+------------------------
 
 #include <iostream>
 #include <cmath>
@@ -1681,21 +1655,31 @@ int convertBinaryToDecimal(long long n)
         ++i;
     }
     return decimalNumber;
-}..
+}.
 
 
-
-    #47 Program to Find G..C..D Using Recursion
-        Program to find GCD using recursion
-        find GCD using recursion
-        Find GCD using recursion
-          find gcd using recursion
-        Find gcd using recursion
-        GCD using recursion
-        gcd using recursion
-        Gcd using recursion
+ Program to Find G.C.D Using Recursion
+ ================================ EOPN
+ #47
+ Program to find GCD using recursion
+ find GCD using recursion
+  Find GCD using recursion
+ find gcd using recursion
+  Find gcd using recursion
+   GCD using recursion
+  gcd using recursion
+ Gcd using recursion
        
-=================================
+================================= EOKW
+
+-------------------------
+Expected Output:
+
+Enter two positive integers: 366 60
+H.C.F of 366 and 60 is: 6
+-------------------------
+
+
 #include <iostream>
 using namespace std;
 
@@ -1708,7 +1692,7 @@ int main()
    cout << "Enter two positive integers: ";
    cin >> n1 >> n2;
 
-   cout << "H..C..F of " << n1 << " & " <<  n2 << " is: " << hcf(n1, n2);
+   cout << "H.C.F of " << n1 << " & " <<  n2 << " is: " << hcf(n1, n2);
 
    return 0;
 }
@@ -1719,10 +1703,14 @@ int hcf(int n1, int n2)
        return hcf(n2, n1 % n2);
     else 
        return n1;
-} ..
+} .
 
 
-    #48 program to Calculate Factorial of a Number Using Recursion
+
+
+ Program to Calculate Factorial of a Number Using Recursion
+============================ EOPN
+#48
          Program to calculate factorial of a number using recursion
         calculate factorial of a number using recursion
         Calculate factorial of a number using recursion
@@ -1733,16 +1721,15 @@ int hcf(int n1, int n2)
          factorial using recursion
        Factorial using recursion
        
-       
 
+========================= EOKW.
 
+-------------------------
+Expected Output:
 
-
-
-
-
-
-=========================
+Enter an positive integer: 6
+Factorial of 6 = 720
+-------------------------
 
 #include<iostream>
 using namespace std;
@@ -1767,13 +1754,13 @@ int factorial(int n)
         return n * factorial(n - 1);
     else
         return 1;
-}..
+}.
 
 
-
-    #49 program to Find Sum of Natural Numbers using Recursion
-        Program to find sum of natural numbers using recursion
-
+Program to Find Sum of Natural Numbers using Recursion
+======================================= EOPN
+#49 
+Program to find sum of natural numbers using recursion
 find sum of natural numbers using recursion
 Find sum of natural numbers using recursion
 sum of natural numbers using recursion
@@ -1781,10 +1768,14 @@ Sum of natural numbers using recursion
 Sum of natural numbers
 sum of natural numbers
 
+======================================= EOKW
 
+-------------------------
+Expected Output:
 
-
-=======================================
+Enter an positive integer: 10
+Sum = 55
+-------------------------
 
 #include<iostream>
 using namespace std;
@@ -1808,21 +1799,29 @@ int add(int n)
     if(n != 0)
         return n + add(n - 1);
     return 0;
-} ..
+} .
 
 
-
-    #50 Program to Check Whether a Number can be Express as Sum of Two Prime Numbers
+Program to Check Whether a Number can be Express as Sum of Two Prime Numbers
+=============================== EOPN
+ #50 
         Program to check whether a number can be express as sum of two prime numbers
         check whether a number can be express as sum of two prime numbers
         Check whether a number can be express as sum of two prime numbers
         check whether a number can be expressed as sum of two prime numbers
         Check whether a number can be expressed as sum of two prime numbers
 
+=============================== EOKW
 
+-------------------------
+Expected Output:
 
-
-===============================
+Enter a positive integer: 34
+34 = 3 + 31
+34 = 5 + 29
+34 = 11 + 23
+34 = 17 + 17
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -1850,7 +1849,7 @@ int main()
     }
 
     if (!flag)
-      cout << n << " can't be expressed as sum of two prime numbers..";
+      cout << n << " can't be expressed as sum of two prime numbers.";
 
     return 0;
 }
@@ -1871,24 +1870,29 @@ bool checkPrime(int n)
     }
 
     return isPrime;
-} ..
+} .
 
+Program to Check Prime Number By Creating a Function
+================================== EOPN
+#51        
+Program to check prime number by creating a function
+check prime number by creating a function
+Check prime number by creating a function
+prime number by using a function
+Prime number by using a function
+prime number using function
+Prime number using function
+prime num using function
+Prime num using function
 
+================================= EOKW
 
-    #51 Program to Check Prime Number By Creating a Function
-       
-       Program to check prime number by creating a function
-       check prime number by creating a function
-       Check prime number by creating a function
-       prime number by using a function
-       Prime number by using a function
-       prime number using function
-       Prime number using function
-          prime num using function
-             Prime num using function
+-------------------------
+Expected Output:
 
-
-=================================
+Enter a positive  integer: 23
+23 is a prime number.
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -1903,9 +1907,9 @@ int main()
   cin >> n;
   
   if(checkPrimeNumber(n) == 0)
-    cout << n << " is a prime number..";
+    cout << n << " is a prime number.";
   else
-    cout << n << " is not a prime number..";
+    cout << n << " is not a prime number.";
   return 0;
 }
 int checkPrimeNumber(int n)
@@ -1921,12 +1925,12 @@ int checkPrimeNumber(int n)
       }
   }
   return flag;
-} ..
+} .
 
 
-
-
-    #52 Program to Display Prime Numbers Between Two Intervals Using Functions
+ Program to Display Prime Numbers Between Two Intervals Using Functions
+ ========================================= EOPN
+        #52 
         Program to display prime numbers between two intervals using functions
         Display prime numbers between two intervals using functions
         display prime numbers between two intervals using functions
@@ -1937,10 +1941,16 @@ int checkPrimeNumber(int n)
         Prime numbers between intervals using functions
         prime numbers between intervals using functions
 
+======================================= EOKW
 
-=======================================
+-------------------------
+Expected Output:
+Enter two positive integers:
+12 55
 
-
+Prime numbers between 12 and 55 are:
+13 17 19 23 29 31 37 41 43 47 53 
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -1981,19 +1991,28 @@ int checkPrimeNumber(int n)
         }
     }
     return flag;
-}..
-
-
-    #53 Program to Make a Simple Calculator to Add, Subtract, Multiply or Divide Using switch......case
-        Program to make a simple calculator to add, subtract, multiply or divide using switch case
-        Calculator calculator
-        Simple calculator
+}.
 
 
 
+Program to Make a Simple Calculator to Add, Subtract, Multiply or Divide Using switch...case
+============================= EOPN
+#53 
+Program to make a simple calculator to add, subtract, multiply or divide using switch case
+Calculator calculator
+Simple calculator
+========================= EOKW
 
-===========================
+-------------------------
+Expected Output:
 
+Enter operator either + or - or * or divide : -
+Enter two operands: 
+3.4
+8.4
+
+3.4 - 8.4 = -5.0
+-------------------------
 # include <iostream>
 using namespace std;
 
@@ -2033,10 +2052,12 @@ int main()
     }
 
     return 0;
-}..
+}.
 
 
-    #54 Program to print half pyramid using *
+Program to print half pyramid using *
+================================= EOPN
+    #54 
     print half pyramid using *
     Print half pyramid using *
     Half pyramid using *
@@ -2048,17 +2069,16 @@ int main()
     pattern using *
 
 
+================================ EOKW
 
 
-=========================
-Half Pyramid using *
----------------
+--------------------
 *
 * *
 * * *
 * * * *
 * * * * *
----------------
+-------------------
 #include <iostream>
 using namespace std;
 
@@ -2078,30 +2098,27 @@ int main()
         cout << "\n";
     }
     return 0;
-} ..
+} .
 
 
-
-
-
-    #55  Program to print half pyramid a using numbers
-
+Program to print half pyramid a using numbers
+========================================== EOPN
+#55  
     print half pyramid using  numbers
     Print half pyramid using  numbers
     Half pyramid using numbers
     half pyramid using numbers
-    
+========================================= EOKW
 
 
-=========================
-Half Pyramid using numbers
----------------
+--------------------------
 1
 1 2
 1 2 3
 1 2 3 4
 1 2 3 4 5
----------------
+-------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -2121,12 +2138,11 @@ int main()
         cout << "\n";
     }
     return 0;
-} ..
+} .
 
-
-
-    #56 Program to print half pyramid using alphabets
-
+Program to print half pyramid using alphabets
+=================================== EOPN
+#56 
     print half pyramid using alphabets
     Print half pyramid using alphabets
     Half pyramid using alphabets
@@ -2140,19 +2156,17 @@ int main()
     pattern using alphabets
     Pattern using alphabet
     pattern using alphabet
+================================== EOKW
 
 
-
-
-=========================
-Half Pyramid using using alphabets
----------------
+------------------------------------
 A
 B B
 C C C
 D D D D
 E E E E E
----------------
+------------------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -2174,11 +2188,13 @@ int main()
         cout << endl;
     }
     return 0;
-}.. 
+}. 
 
+Inverted half pyramid using *
+============================== EOPN
 
-    #57 Inverted half pyramid using *
-    Inverted half pyramid using *
+#57 
+        Inverted half pyramid using *
         Reverse half pyramid using *
         reverse half pyramid using *
         Reverse pyramid using *
@@ -2186,23 +2202,15 @@ int main()
         reverse pattern using *
         Reverse pattern using *
 
-
-
-
-
-
-
-
-=========================
-Inverted half pyramid using *
-
----------------
+========================= EOKW
+-----------------------------
 * * * * *
 * * * *
 * * * 
 * *
 *
----------------
+----------------------------
+
 
 #include <iostream>
 using namespace std;
@@ -2224,11 +2232,13 @@ int main()
     }
     
     return 0;
-} ..
+} .
 
 
-    #58 Inverted half pyramid using numbers
-    Inverted half pyramid using numbers
+ Inverted half pyramid using numbers
+ =============================
+        #58
+        Inverted half pyramid using numbers
         Reverse half pyramid using numbers
         reverse half pyramid using numbers
         Reverse pyramid using numbers
@@ -2239,14 +2249,7 @@ int main()
         reverse pattern using numbers
         Reverse pattern using number
         reverse pattern using number
-
-
-
-
-
-=========================
- Inverted half pyramid using numbers
-
+==============================
 ---------------
 1 2 3 4 5
 1 2 3 4 
@@ -2276,12 +2279,14 @@ int main()
     }
 
     return 0;
-} ..
+} .
 
 
 
-    #59  Program to print full pyramid using *
-     Print full pyramid using *
+Program to print Full Pyramid using *
+============================ EOPN
+        #59  
+         Print full pyramid using *
      Full pyramid using *
      Complete pyramid using *
       Print full pattern using *
@@ -2289,8 +2294,7 @@ int main()
      Complete pattern using *
 
 
-=========================
-Full Pyramid using *
+========================= EOKW
 
 ------------------
         *
@@ -2324,13 +2328,14 @@ int main()
         cout << endl;
     }    
     return 0;
-} ..
+} .
 
 
-
-    #60  Program to print pyramid using numbers
+Full Pyramid using numbers
+========================== EOPN
+    #60 
     Print pyramid using numbers
-        pyramid using numbers
+    pyramid using numbers
     Pyramid using numbers
     pyramid using number
     Pyramid using number
@@ -2339,10 +2344,7 @@ int main()
     Pattern using number
     pattern using number
 
-
-=========================
-Full Pyramid using numbers
-
+========================= EOKW
 ------------------
         1
       2 3 2
@@ -2350,7 +2352,6 @@ Full Pyramid using numbers
   4 5 6 7 6 5 4
 5 6 7 8 9 8 7 6 5
 ------------------
-
 
 #include <iostream>
 using namespace std;
@@ -2389,10 +2390,13 @@ int main()
         cout << endl;
     }
     return 0;
-} ..
+} .
 
 
-    #61  Inverted full pyramid using *
+Inverted full pyramid using *
+=========================== EOPN
+    #61  
+
      Print inverted full pyramid using *
      Inverted full pyramid using *
      inverted full pyramid using *
@@ -2401,9 +2405,7 @@ int main()
      Full reverse pattern using *
      Complete reverse pattern using *
 
-=========================
-Inverted full pyramid using *
-
+========================= EOKW
 ------------------
  * * * * * * * * *
   * * * * * * *
@@ -2438,21 +2440,18 @@ int main()
     }
 
     return 0;
-} ..
+} .
 
 
-
-    #62  Print Pascal's triangle
+Pascal's triangle
+====================== EOPN
+    #62  
         Pascal triangle
         pascal triang
         Pascal's triangle
         Pascals triangle
         pascals triangle
-
-
-=========================
- Pascal's triangle
-
+========================= EOKW
 ------------------
  * * * * * * * * *
   * * * * * * *
@@ -2489,28 +2488,25 @@ int main()
     }
 
     return 0;
-} ..
+} .
 
-
-
-
-    #63 Print Floyd's Triangle
-
+Floyd's Triangle
+========================= EOPN
+    #63 
         Floyds triangle
         Floyd's triangle
         floyds triangle
         Floyd triangle
 
-=========================
-Floyd's Triangle
-
-------------------
+========================= EOKW
+-------------------
  * * * * * * * * *
   * * * * * * *
     * * * * *
       * * *
         *
 ------------------
+
 #include <iostream>
 using namespace std;
 
@@ -2533,27 +2529,27 @@ int main()
     }
 
     return 0;
-} ..
+} .
 
+Program to Display Factors of a Number
+============================ EOPN
+    #64 
+        Display factors of a number
+        factors of a number
+        factors of number
+        find factors of a number
+        Find factors of a number
 
+===================== EOKW
 
+----------------------------
+Expected Output:
 
-    #64 Program to Display Factors of a Number
-            Display factors of a number
-            factors of a number
-            factors of number
-            find factors of a number
-            Find factors of a number
+Enter a positive integer: 60
 
-
-
-
-
-
-
-
-=====================
-
+Factors of 60 are:
+1 2 3 4 5 6 12 15 20 30 60
+----------------------------
 
 #include <iostream>
 using namespace std;
@@ -2573,14 +2569,12 @@ int main()
     }
 
     return 0;
-}..
+}.
 
 
-
-
-
-
-    #65 Program to Display Armstrong Number Between Two Intervals
+Program to Display Armstrong Number Between Two Intervals
+============================================ EOPN
+    #65 
 Display armstrong number between two intervals
 display armstrong number between two intervals
 Armstrong number between two intervals
@@ -2588,10 +2582,19 @@ armstrong number between two intervals
 armstrong number between intervals
 Armstrong number between intervals
 
+=========================================== EOKW
 
+-------------------------
+Expected Output:
 
+Enter first number: 100
+Enter second number: 400
 
-==================================
+Armstrong numbers between 100 and 400 are:
+153
+370
+371
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -2625,18 +2628,23 @@ int main()
   }
 
   return 0;
-}..
+}.
 
-
-    #66 Program to Check Armstrong Number
+Program to Check Armstrong Number
+======================== EOPN
+#66 
     Armstrong Number
     Armstrong number
 
+===================== EOKW
 
+-----------------------------
+Expected Output:
 
+Enter a positive integer: 371
 
-
-=====================
+371 is an Armstrong number.
+-----------------------------
 
 #include <iostream>
 using namespace std;
@@ -2658,24 +2666,34 @@ int main() {
     }
 
     if (result == num)
-        cout << num << " is an Armstrong number..";
+        cout << num << " is an Armstrong number.";
     else
-        cout << num << " is not an Armstrong number..";
+        cout << num << " is not an Armstrong number.";
 
     return 0;
-} ..
+} .
 
 
 
-    #67 Program to Display Prime Numbers Between Two Intervals
+Program to Display Prime Numbers Between Two Intervals
+============================ EOPN
+    #67 
 Display prime numbers between two intervals
 Display prime numbers between two intervals
 prime numbers between two intervals
 Prime numbers between two intervals
 
+========================= EOKW
 
+-----------------------------------
+Expected Output:
 
-=========================
+Enter two numbers(intervals): 20 50 
+
+Prime numbers between 20 and 50 are:
+ 23 29 31 37 41 43 47
+-----------------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -2708,12 +2726,13 @@ int main()
     }
 
     return 0;
-} ..
+} .
 
 
 
-    #68 Program to Check Whether a Number is Prime or Not
-
+ Program to Check Whether a Number is Prime or Not
+ ============================ EOPN
+    #68
 Program to check whether a number is prime or not
 check whether a number is prime or not
 Check whether a number is prime or not
@@ -2722,11 +2741,15 @@ Number is prime or not
  prime or not
  Prime or not
 
+============================= EOKW
 
+-------------------------
+Expected Output:
 
+Enter a positive integer: 29
 
-================
-
+29 is a prime number.
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -2750,21 +2773,29 @@ int main() {
       cout << n << " is not a prime number";
 
    return 0;
-} ..
+} .
 
 
 
 
 
 
-    #69  Program to Check Whether a Number is Palindrome or Not
+Program to Check Whether a Number is Palindrome or Not
+=========================== EOPN
+    #69  
 Number is palindrome or not
 number is palindrome or not
 palindrome or not
 
+======================== EOKW
 
+-------------------------
+Expected Output:
 
-========================
+ter a positive number: 12321
+The reverse of the number is: 12321
+The number is a palindrome.
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -2788,21 +2819,30 @@ int main()
      cout << " The reverse of the number is: " << rev << endl;
 
      if (n == rev)
-         cout << " The number is a palindrome..";
+         cout << " The number is a palindrome.";
      else
-         cout << " The number is not a palindrome..";
+         cout << " The number is not a palindrome.";
 
     return 0;
-} ..
+} .
 
 
 
-    #70 Program to Multiply two Numbers
- Multiply two numbers
+ Program to Multiply two Numbers
+ ============================= EOPN
+    #70
+  Multiply two numbers
   multiply two numbers
 
+============================= EOKW
 
-=============================
+-------------------------
+Expected Output:
+
+Enter two numbers: 3.4
+5.5
+Product = 18.7
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -2821,14 +2861,11 @@ int main()
     cout << "Product = " << productOfTwoNumbers;    
     
     return 0;
-} ..
+} .
 
-
-
-
-
-    #71 Program to Find ASCII Value of a Character
-
+Program to Find ASCII Value of a Character
+============================ EOPN
+#71 
      Find ASCII value of a character
      find ASCII value of a character
      Find ascii value of a character
@@ -2838,11 +2875,8 @@ int main()
      ascii value 
      ASCII value 
      ASCII
+=========================== EOKW
 
-
-
-
-===========================
 #include <iostream>
 using namespace std;
 
@@ -2853,16 +2887,34 @@ int main()
  cin >> c;
  cout << "ASCII Value of " << c << " is " << int(c);
  return 0;
-} ..
+} .
 
-    #72 Program to Subtract Complex Number Using Operator Overloading 
+
+Program to Subtract Complex Number Using Operator Overloading 
+========================== EOPN
+    #72 
 Subtract complex number using operator overloading 
 subtract complex number using operator overloading 
 Subtract complex number
 subtract complex number 
 
+=========================== EOKW
 
-===========================
+
+-------------------------
+Expected Output:
+
+Enter first complex number:                                                                                                          
+Enter real and imaginary parts respectively: 
+3
+2i                                                                                                                                   
+Enter second complex number:  
+Enter real and imaginary parts respectively:
+2
+3i   
+
+Output Complex number: 5+5i                                                             
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -2885,8 +2937,8 @@ class Complex
        Complex operator - (Complex c2)
        {
            Complex temp;
-           temp..real = real - c2..real;
-           temp..imag = imag - c2..imag;
+           temp.real = real - c2.real;
+           temp.imag = imag - c2.imag;
 
            return temp;
        }
@@ -2905,31 +2957,35 @@ int main()
     Complex c1, c2, result;
 
     cout<<"Enter first complex number:\n";
-    c1..input();
+    c1.input();
 
     cout<<"Enter second complex number:\n";
-    c2..input();
+    c2.input();
 
     // In case of operator overloading of binary operators in C++ programming, 
-    // the object on right hand side of operator is always assumed as argument by compiler..
+    // the object on right hand side of operator is always assumed as argument by compiler.
     result = c1 - c2;
-    result..output();
+    result.output();
 
     return 0;
-} ..
+} .
 
 
-    #73 Increment ++ and Decrement -- Operator Overloading in C++ Programming
-
+Increment ++ and Decrement -- Operator Overloading 
+============================ EOPN
+#73 
 Increment and decrement 
 increment and decrement 
 Decrement and increment 
 decrement and increment 
 
+====================== EOKW
+-------------------------
+Expected Output:
 
-
-======================
-
+i=0
+i=1
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -2950,18 +3006,20 @@ int main()
     Check obj;
 
     // Displays the value of data member i for object obj
-    obj..Display();
+    obj.Display();
 
     // Invokes operator function void operator ++( )
     ++obj; 
   
     // Displays the value of data member i for object obj
-    obj..Display();
+    obj.Display();
 
     return 0;
-} ..
+} .
 
-    #74 Program to Calculate Power of a Number
+ Program to Calculate Power of a Number
+ ==================================== EOPN
+    #74
 Calculate power of a number
  power of a number
   Power of a number
@@ -2970,8 +3028,18 @@ Calculate power of a number
    power of num
   Power of num
 
-=====================================
+===================================== EOKW
 
+-------------------------
+Expected Output:
+
+Enter base and exponent respectively: 
+3.4
+5
+
+
+3.4^5 = 454.354
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -2993,23 +3061,23 @@ int main()
     cout << result;
     
     return 0;
-} ..
+} .
 
-
-
-
-
-
-    #75  Program to Reverse a Number
+Program to Reverse a Number
+============================ EOPN
+#75
     Reverse a number
     reverse a number
     Reverse of a number
     reverse of a number
 
+============================= EOKW
+-------------------------
+Expected Output:
 
-
-
-=============================
+Enter an integer: 12345
+Reversed number = 54321
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -3031,23 +3099,24 @@ int main()
     cout << "Reversed Number = " << reversedNumber;
 
     return 0;
-} ..
+} .
 
 
 
-
-
-
-
-    #76 Program to Find LCM
+ Program to Find LCM
+ ===================== EOPN
+    #76
     LCM
     lcm
+====================== EOKW
 
+-------------------------
+Expected Output:
 
-
-
-
-===================
+Enter two numbers: 12
+18
+LCM = 36
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -3074,13 +3143,24 @@ int main()
     } while (true);
     
     return 0;
-} ..
+} .
 
 
-    #77 Program to Find GCD gcd
+Program to Find GCD 
+==================== EOPN
+gcd
+GCD
+GCD of two numbers
+gcd of two numbers
+==================== EOKW
 
+-------------------------
+Expected Output:
 
-====================
+Enter two numbers: 78
+52
+HCF = 26
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -3101,10 +3181,12 @@ int main()
 
     cout << "HCF = " << n1;
     return 0;
-} ..
+} .
 
 
-    #78 Program to Display Fibonacci Series
+Program to Display Fibonacci Series
+=========================== EOPN
+    #78 
     Display fibonacci series
     display fibonacci series
     Fibonacci series
@@ -3112,7 +3194,14 @@ int main()
     fibo
     Fibo
 
-=========================
+========================= EOKW
+
+-------------------------
+Expected Output:
+
+The Fibonacci sequence:
+0, 1, 1, 2, 3, 5, 8, 13, 21
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -3127,7 +3216,7 @@ int main()
 
     for (int i = 1; i <= n; ++i)
     {
-        // Prints the first two terms..
+        // Prints the first two terms.
         if(i == 1)
         {
             cout << " " << t1;
@@ -3145,17 +3234,35 @@ int main()
         cout << nextTerm << " ";
     }
     return 0;
-} ..
+} .
 
 
 
 
 
-    #79 Program to Generate Multiplication Table
+Program to Generate Multiplication Table
+=========================== EOPN
+    #79 
 Multiplication table
 
+========================= EOKW
 
-=========================
+
+-------------------------
+Expected Output:
+
+Enter an integer: 5
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -3174,15 +3281,21 @@ int main()
     }
     
     return 0;
-} ..
+} .
 
-    #80 Program to Find Factorial
-
+Program to Find Factorial
+========================== EOPN
+    #80 
 factorial
 fact
 Fact
-===========================
+=========================== EOKW
+-------------------------
+Expected Output:
 
+Enter a positive integer:12
+Factorial of 12 = 479001600
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -3202,20 +3315,22 @@ int main()
 
     cout << "Factorial of " << n << " = " << factorial;    
     return 0;
-} ..
+} .
 
 
-
-
-
-
-
-    #81 Program to Check Leap Year
+ Program to Check Leap Year
+ ======================== EOPN
+    #81
  Leap year
   leap year
 
-==========================
+========================== EOKW
+-------------------------
+Expected Output:
 
+Enter a year: 2014
+2014 is not a leap year
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -3231,30 +3346,38 @@ int main()
         if (year % 100 == 0)
         {
             if (year % 400 == 0)
-                cout << year << " is a leap year..";
+                cout << year << " is a leap year.";
             else
-                cout << year << " is not a leap year..";
+                cout << year << " is not a leap year.";
         }
         else
-            cout << year << " is a leap year..";
+            cout << year << " is a leap year.";
     }
     else
-        cout << year << " is not a leap year..";
+        cout << year << " is not a leap year.";
 
     return 0;
-} ..
+} .
 
 
 
 
 
 
-    #82 Program to Calculate Sum of Natural Numbers
-    Sum of natural numbers
+ Program to Calculate Sum of Natural Numbers
+ ====================================== EOPN
+    #82
+
+        Sum of natural numbers
     sum of natural numbers
+====================================== EOKW
 
+-------------------------
+Expected Output:
 
-========================
+Enter a positive integer: 50
+Sum = 1275
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -3272,21 +3395,26 @@ int main()
 
     cout << "Sum = " << sum;
     return 0;
-}..
+}.
 
 
+ Program to Find All Roots of a Quadratic Equation
+ ==================================== EOPN
 
-
-
-
-
-
-     #83 Program to Find All Roots of a Quadratic Equation
+#83
      find all roots of a quadratic equation
 
+===================================== EOKW
+-------------------------
+Expected Output:
 
-
-=========================
+Enter coefficients a, b and c: 4
+5
+1
+Roots are real and different.
+x1 = -0.25
+x2 = -1
+------------------------
 
 #include <iostream>
 #include <cmath>
@@ -3302,13 +3430,13 @@ int main() {
     if (discriminant > 0) {
         x1 = (-b + sqrt(discriminant)) / (2*a);
         x2 = (-b - sqrt(discriminant)) / (2*a);
-        cout << "Roots are real and different.." << endl;
+        cout << "Roots are real and different." << endl;
         cout << "x1 = " << x1 << endl;
         cout << "x2 = " << x2 << endl;
     }
     
     else if (discriminant == 0) {
-        cout << "Roots are real and same.." << endl;
+        cout << "Roots are real and same." << endl;
         x1 = (-b + sqrt(discriminant)) / (2*a);
         cout << "x1 = x2 =" << x1 << endl;
     }
@@ -3316,22 +3444,33 @@ int main() {
     else {
         realPart = -b/(2*a);
         imaginaryPart =sqrt(-discriminant)/(2*a);
-        cout << "Roots are complex and different.."  << endl;
+        cout << "Roots are complex and different."  << endl;
         cout << "x1 = " << realPart << "+" << imaginaryPart << "i" << endl;
         cout << "x2 = " << realPart << "-" << imaginaryPart << "i" << endl;
     }
 
     return 0;
-} ..
+} .
 
 
 
-
-    #84 Program to Find Largest Number Among Three Numbers
+Program to Find Largest Number Among Three Numbers
+===============================  EOPN
+#84
 find largest number among three numbers
 Largest number among three numbers
 
-===============================
+=============================== EOKW
+
+-------------------------
+Expected Output:
+
+Enter three numbers: 2.3
+8.3
+-4.2
+Largest number: 8.3
+-------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -3357,18 +3496,23 @@ int main()
     }
 
     return 0;
-} ..
+} .
 
 
 
-    #85 Program to Check Whether a character is Vowel or Consonant
-
+Program to Check Whether a character is Vowel or Consonant
+================================ EOPN
+#85 
 Character is vowel or consonant
 
+================================ EOKW
+-------------------------
+Expected Output:
 
+Enter an alphabet: u
+u is a vowel.
+-------------------------
 
-
-================================
 #include <iostream>
 using namespace std;
 
@@ -3388,24 +3532,28 @@ int main()
 
     // evaluates to 1 (true) if either isLowercaseVowel or isUppercaseVowel is true
     if (isLowercaseVowel || isUppercaseVowel)
-        cout << c << " is a vowel..";
+        cout << c << " is a vowel.";
     else
-        cout << c << " is a consonant..";
+        cout << c << " is a consonant.";
 
     return 0;
-} ..
+} .
 
 
 
-    #86 Program to Check Whether Number is Even or Odd
+Program to Check Whether Number is Even or Odd
+===================== EOPN
+#86 
 Number is even or odd
 Check number is even or odd
 
+==================== EOKW
+-------------------------
+Expected Output:
 
-
-
-====================
-
+Enter an integer: 23
+23 is odd.
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -3417,24 +3565,31 @@ int main()
     cin >> n;
 
     if ( n % 2 == 0)
-        cout << n << " is even..";
+        cout << n << " is even.";
     else
-        cout << n << " is odd..";
+        cout << n << " is odd.";
 
     return 0;
-} ..
+} .
 
 
 
+ Program to Swap Two Numbers
+========================= EOPN
+    Swap two numbers
+    swap two numbers
+========================= EOKW
+-------------------------
 
+Expected Output:
 
+Before swapping
+a = 5, b = 10
 
-    #87 Program to Swap Two Numbers
+After swapping
+a = 10, b = 5
 
-Swap two numbers
-swap two numbers
-
-=========================
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -3443,33 +3598,40 @@ int main()
 {
     int a = 5, b = 10, temp;
 
-    cout << "Before swapping.." << endl;
+    cout << "Before swapping." << endl;
     cout << "a = " << a << ", b = " << b << endl;
 
     temp = a;
     a = b;
     b = temp;
 
-    cout << "\nAfter swapping.." << endl;
+    cout << "\nAfter swapping." << endl;
     cout << "a = " << a << ", b = " << b << endl;
 
     return 0;
-}..
+}.
 
 
 
 
 
 
-    #88 Swap Numbers Without Using Temporary Variables
+Swap Numbers Without Using Temporary Variables
+=========================== EOPN
+    #88 
+    Swap numbers without using temporary variables 
 
-     Swap numbers without using temporary variables
+=========================== EOKW
 
+-------------------------
+Expected Output:
 
+Before swapping.
+a = 5, b = 10
 
-
-===========================
-
+After swapping.
+a = 10, b = 5
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -3478,27 +3640,37 @@ int main()
     
     int a = 5, b = 10;
 
-    cout << "Before swapping.." << endl;
+    cout << "Before swapping." << endl;
     cout << "a = " << a << ", b = " << b << endl;
 
     a = a + b;
     b = a - b;
     a = a - b;
 
-    cout << "\nAfter swapping.." << endl;
+    cout << "\nAfter swapping." << endl;
     cout << "a = " << a << ", b = " << b << endl;
 
     return 0;
-} ..
+} .
 
 
 
-    #89 Program to Find Size of int, float, double and char in Your System
+Program to Find Size of int, float, double and char in Your System
+====================== EOPN
+ #89
         Size of int float double and char in your system
 
+================================== EOKW
 
+-------------------------
+Expected Output:
 
-==================================
+Size of char: 1 byte
+Size of int: 4 bytes
+Size of float: 4 bytes
+Size of double: 8 bytes
+-------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -3510,19 +3682,25 @@ int main()
     cout << "Size of double: " << sizeof(double) << " bytes" << endl;
 
     return 0;
-}..
+}.
 
 
 
 
-    #90 Program to Find Quotient and Remainder
+ Program to Find Quotient and Remainder
+ ========================== EOPN
+#90
 Find quotient and remainder
+========================== EOKW
 
+-------------------------
+Expected Output:
 
-
-
-==========================
-
+Enter dividend: 13
+Enter divisor: 4
+Quotient = 3
+Remainder = 1
+-------------------------
 #include <iostream>
 using namespace std;
 
@@ -3543,7 +3721,7 @@ int main()
     cout << "Remainder = " << remainder;
 
     return 0;
-}..
+}.
 
 
 
@@ -3551,13 +3729,19 @@ int main()
 
 
 
-
-    #91  Program to Add Two Numbers
+ Program to Add Two Numbers
+ ========================== EOPN
+#91 
 add two numbers
+=========================== EOKW
 
+-------------------------
+Expected Output:
 
-
-=======================
+Enter two integers: 4
+5
+4 + 5 = 9
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -3576,13 +3760,25 @@ int main()
     cout << firstNumber << " + " <<  secondNumber << " = " << sumOfTwoNumbers;     
 
     return 0;
-} ..
+} .
 
-    #92 Program to Print Number Entered by User
 
+
+
+
+Program to Print Number Entered by User
+============================== EOPN
+    #92 
 Print Number entered by user
 Print number given by User
-=============================
+============================= EOKW
+
+-------------------------
+Expected Output:
+
+Enter an integer: 23
+You entered 23
+-------------------------
 
 #include <iostream>
 using namespace std;
@@ -3596,13 +3792,24 @@ int main()
 
     cout << "You entered " << number;    
     return 0;
-} ..
+} .
 
-    #93 Hello World Program
+
+
+
+ Hello World Program in Cpp
+ ================= EOPN
+    #93
     hello world
     Hello world
     basic cpp program
-==================
+================== EOKW
+
+-------------------------
+Expected Output:
+
+Hello World!
+-------------------------
 
 // Your First C++ Program
 
@@ -3611,4 +3818,4 @@ int main()
 int main() {
     std::cout << "Hello World!";
     return 0;
-}..
+}.
