@@ -6,6 +6,7 @@ import string
 import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import re
 API_TOKEN = '1095762894:AAH1y_gd31l3qimubyq0fYFNRYkeTPi-HCI'
             
 bot = telebot.TeleBot(API_TOKEN)
@@ -138,7 +139,7 @@ def codename(message):
           #robo_response1 = re.findall("%%(.*)%%",robo_response)[0]
           '''program_name=robo_response.split("EOPN")[0]
           program_code=robo_response.split("EOKW")[1]'''
-          return robo_response.split("EOKW")[1]
+          return re.split("EOKW",robo_response)[1]
           #return robo_response
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
