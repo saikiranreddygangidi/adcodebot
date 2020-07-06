@@ -133,7 +133,8 @@ def codename(message):
       req_tfidf = flat[-2]
       if(req_tfidf==0):
           robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
-          return robo_response
+          a=re.split(" ",robo_response)
+          return a[0]
       else:
           robo_response = robo_response+sent_tokens[idx]
           #robo_response1 = re.findall("%%(.*)%%",robo_response)[0]
