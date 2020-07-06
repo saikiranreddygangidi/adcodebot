@@ -2,7 +2,6 @@ import nltk
 import telebot
 from flask import Flask, request
 import os
-import re
 import string
 import random
 from sklearn.feature_extraction.text import TfidfVectorizer
