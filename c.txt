@@ -1,5 +1,7 @@
 String is Palindrome
-===========================
+=========================== EOPN
+string is palindrome
+=========================== EOKW
 #include <stdio.h> 
 #include <string.h> 
   
