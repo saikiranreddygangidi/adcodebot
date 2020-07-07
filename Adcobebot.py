@@ -138,12 +138,12 @@ def codename(message):
       else:
           robo_response = robo_response+sent_tokens[idx]
           #robo_response1 = re.findall("%%(.*)%%",robo_response)[0]
-          '''program_name=robo_response.split("EOPN")[0]
-          program_code=robo_response.split("EOKW")[1]'''
-          list1=nltk.word_tokenize(robo_response)
+          program_name=robo_response.split("eopn")[0]
+          program_code=robo_response.split("eokw")[1]
+          '''list1=nltk.word_tokenize(robo_response)
           program_name=' '.join(list1[:list1.index('=')])
-          progran_code=' '.join(list1[list1.index('eokw')+1:])
-          return program_name+progran_code
+          program_code=' '.join(list1[list1.index('eokw')+4:])'''
+          return program_name+program_code
           #return robo_response
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
