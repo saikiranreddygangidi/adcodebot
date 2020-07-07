@@ -136,7 +136,7 @@ def codename(message):
           a=re.split(" ",robo_response)
           return a[0]
       else:
-          robo_response = robo_response+sent_tokens[idx]
+          robo_response = robo_response+sent_tokens[idx+1]
           #robo_response1 = re.findall("%%(.*)%%",robo_response)[0]
           '''program_name=robo_response.split("EOPN")[0]
           program_code=robo_response.split("EOKW")[1]'''
