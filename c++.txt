@@ -5,7 +5,8 @@ Program to Store and Display Information Using Structure
 program to store and display information using structure 
 store and display information using structure 
 store and display details using structure 
-=============================== EOKW.
+=============================== E
+
 
 -------------------------
 Expected Output:
@@ -79,7 +80,7 @@ Program to Calculate Difference Between Two Time Period
 calculate difference between two time period
 calculate difference between two time periods
 
-================================= EOKW.
+================================= EOKW
 
 ------------------------------
 Expected Output:
@@ -161,7 +162,7 @@ add complex numbers by passing structure to a function
  Add complex numbers by passing structure to a function
   add complex numbers using function 
 
-===================================== EOKW.
+===================================== EOKW
 
 -------------------------
 Expected Output:
@@ -230,7 +231,7 @@ complexNumber addComplexNumbers(complex n1,complex n2)
  add two distances in inch using structures
  Add two distances in feet using structures 
  add two distances in feet using structures
-=========================================== EOKW.
+=========================================== EOKW
 
 -------------------------
 Expected Output:
@@ -291,7 +292,7 @@ Store information of a student in a structure
 store details of a student in a structure Store details of a student
 store details of a student
 
-========================================= EOKW.
+========================================= EOKW
 
 
 -------------------------
@@ -344,7 +345,7 @@ Sort elements in lexicographical order
 sort elements in lexicographical order
 Sort elements in dictionary order  
 sort elements in dictionary order 
-============================== EOKW.
+============================== EOKW
 
 
 -------------------------
@@ -422,7 +423,7 @@ Program to Copy Strings
  copy strings
  Copy Strings   
 
-================================ EOKW.
+================================ EOKW
 
 
 -------------------------
@@ -460,7 +461,7 @@ Program to Concatenate Two Strings
      Concatenate two strings
      Concatenate two string
 
-================================= EOKW.
+================================= EOKW
 
 -------------------------
 Expected Output:
@@ -506,7 +507,7 @@ int main()
     find string length 
     Find string length
 
-========================================= EOKW.
+========================================= EOKW
 
 -------------------------
 Expected Output:
@@ -536,7 +537,7 @@ Program to remove all characters in a string except alphabets
 remove all characters in a string except alphabets
 Remove all characters in a string except alphabets
 
-================================================= EOKW.
+================================================= EOKW
 
 -------------------------
 Expected Output:
@@ -573,7 +574,7 @@ Find the number of vowels, consonants, digits and white spaces in a string
 find the number of vowels consonants digits white spaces in a string
 find the number of vowels consonants digits and white spaces in a string
 
-================================================ EOKW.
+================================================ EOKW
 
 
 -------------------------
@@ -640,7 +641,7 @@ int main()
         frequency of characters in a string
          Frequency of characters in a string
 
-=============================================== EOKW.
+=============================================== EOKW
 
 #include <iostream>
 using namespace std;
@@ -673,7 +674,7 @@ Program to Swap Numbers in Cyclic Order Using Call by Reference
   swap numbers in cyclic order using call by reference
   Swap numbers in cyclic order
   swap numbers in cyclic order
-======================================== EOKW.
+======================================== EOKW
 
 -------------------------
 Expected Output:
@@ -734,7 +735,7 @@ Program to access elements of an array using pointer
 Access elements of an array using pointer
 access elements of an array using pointer
 
-==================================== EOKW.
+==================================== EOKW
 
 
 
@@ -780,7 +781,7 @@ Program to Multiply two Matrices by Passing Matrix to Function
 Multiply two matrices by passing matrix to function
 multiply two matrices by passing matrix to function
 
-============================================ EOKW.
+============================================ EOKW
 
 
 -------------------------
@@ -937,7 +938,7 @@ Program to Find Transpose of a Matrix
       transpose of a Matrix 
       Transpose of Matrix
 
-================================= EOKW.
+================================= EOKW
 
 -------------------------
 Expected Output:
@@ -1019,7 +1020,7 @@ Program to multiply two matrix using multi dimensional arrays
 Multiply two matrix using multi dimensional arrays
 Multiply two matrices using multi dimensional arrays
 
-============================================ EOKW.
+============================================ EOKW
 
 -------------------------
 Expected Output:
@@ -1138,7 +1139,7 @@ Program to Add Two Matrix Using Multi-dimensional Arrays
     Add two matrices using multi dimensional arrays
     Add two matrices using multi dimensional arrays
 
-======================================== EOKW.
+======================================== EOKW
 -------------------------
 Expected Output:
 
@@ -1221,7 +1222,7 @@ Program to calculate standard deviation
 Calculate standard deviation
 calculate standard deviation
 
-===================================== EOKW.
+===================================== EOKW
 
 
 #include <iostream>
@@ -1277,7 +1278,7 @@ float calculateSD(float data[])
         Largest element of array
 
 
-====================================== EOKW.
+====================================== EOKW
 
 
 -------------------------
@@ -1341,7 +1342,7 @@ Program to Calculate Average of Numbers Using Arrays
      Avg of numbers using arrays
      avg of numbers using arrays
 
-========================================== EOKW.
+========================================== EOKW
 
 
 -------------------------
@@ -1398,7 +1399,7 @@ Program to Calculate Power Using Recursion
          Power using recursion
          power using recursion
 
-============================== EOKW.
+============================== EOKW
 
 
 -------------------------
@@ -1448,7 +1449,7 @@ Program to Reverse a Sentence Using Recursion
    Reverse a sentence using recursion
  reverse a sentence using recursion
 
-============================================ EOKW.
+============================================ EOKW
 
 -------------------------
 Expected Output:
@@ -1495,7 +1496,7 @@ Program to Convert Binary Number to Octal and vice versa
  convert binary to octal 
  Convert binary to octal 
 
-============================================= EOKW.
+============================================= EOKW
 
 -------------------------
 Expected Output:
@@ -1562,7 +1563,7 @@ Convert octal to decimal number
 Convert octal to decimal
 convert octal to decimal
 
-============================== EOKW.
+============================== EOKW
 
 
 
@@ -1618,7 +1619,7 @@ Convert binary to decimal number
 convert binary to decimal 
 Convert binary to decimal 
 
-====================================== EOKW.
+====================================== EOKW
 -------------------------
 Expected Output:
 
@@ -1670,7 +1671,7 @@ int convertBinaryToDecimal(long long n)
   gcd using recursion
  Gcd using recursion
        
-================================= EOKW.
+================================= EOKW
 
 -------------------------
 Expected Output:
@@ -1722,7 +1723,7 @@ int hcf(int n1, int n2)
        Factorial using recursion
        
 
-========================= EOKW..
+========================= EOKW.
 
 -------------------------
 Expected Output:
@@ -1768,7 +1769,7 @@ Sum of natural numbers using recursion
 Sum of natural numbers
 sum of natural numbers
 
-======================================= EOKW.
+======================================= EOKW
 
 -------------------------
 Expected Output:
@@ -1811,7 +1812,7 @@ Program to Check Whether a Number can be Express as Sum of Two Prime Numbers
         check whether a number can be expressed as sum of two prime numbers
         Check whether a number can be expressed as sum of two prime numbers
 
-=============================== EOKW.
+=============================== EOKW
 
 -------------------------
 Expected Output:
@@ -1885,7 +1886,7 @@ Prime number using function
 prime num using function
 Prime num using function
 
-================================= EOKW.
+================================= EOKW
 
 -------------------------
 Expected Output:
@@ -1941,7 +1942,7 @@ int checkPrimeNumber(int n)
         Prime numbers between intervals using functions
         prime numbers between intervals using functions
 
-======================================= EOKW.
+======================================= EOKW
 
 -------------------------
 Expected Output:
@@ -2001,7 +2002,7 @@ Program to Make a Simple Calculator to Add, Subtract, Multiply or Divide Using s
 Program to make a simple calculator to add, subtract, multiply or divide using switch case
 Calculator calculator
 Simple calculator
-========================= EOKW.
+========================= EOKW
 
 -------------------------
 Expected Output:
@@ -2069,7 +2070,7 @@ Program to print half pyramid using *
     pattern using *
 
 
-================================ EOKW.
+================================ EOKW
 
 
 --------------------
@@ -2108,7 +2109,7 @@ Program to print half pyramid a using numbers
     Print half pyramid using  numbers
     Half pyramid using numbers
     half pyramid using numbers
-========================================= EOKW.
+========================================= EOKW
 
 
 --------------------------
@@ -2156,7 +2157,7 @@ Program to print half pyramid using alphabets
     pattern using alphabets
     Pattern using alphabet
     pattern using alphabet
-================================== EOKW.
+================================== EOKW
 
 
 ------------------------------------
@@ -2202,7 +2203,7 @@ Inverted half pyramid using *
         reverse pattern using *
         Reverse pattern using *
 
-========================= EOKW.
+========================= EOKW
 -----------------------------
 * * * * *
 * * * *
@@ -2294,7 +2295,7 @@ Program to print Full Pyramid using *
      Complete pattern using *
 
 
-========================= EOKW.
+========================= EOKW
 
 ------------------
         *
@@ -2344,7 +2345,7 @@ Full Pyramid using numbers
     Pattern using number
     pattern using number
 
-========================= EOKW.
+========================= EOKW
 ------------------
         1
       2 3 2
@@ -2405,7 +2406,7 @@ Inverted full pyramid using *
      Full reverse pattern using *
      Complete reverse pattern using *
 
-========================= EOKW.
+========================= EOKW
 ------------------
  * * * * * * * * *
   * * * * * * *
@@ -2451,7 +2452,7 @@ Pascal's triangle
         Pascal's triangle
         Pascals triangle
         pascals triangle
-========================= EOKW.
+========================= EOKW
 ------------------
  * * * * * * * * *
   * * * * * * *
@@ -2498,7 +2499,7 @@ Floyd's Triangle
         floyds triangle
         Floyd triangle
 
-========================= EOKW.
+========================= EOKW
 -------------------
  * * * * * * * * *
   * * * * * * *
@@ -2540,7 +2541,7 @@ Program to Display Factors of a Number
         find factors of a number
         Find factors of a number
 
-===================== EOKW.
+===================== EOKW
 
 ----------------------------
 Expected Output:
@@ -2582,7 +2583,7 @@ armstrong number between two intervals
 armstrong number between intervals
 Armstrong number between intervals
 
-=========================================== EOKW.
+=========================================== EOKW
 
 -------------------------
 Expected Output:
@@ -2636,7 +2637,7 @@ Program to Check Armstrong Number
     Armstrong Number
     Armstrong number
 
-===================== EOKW.
+===================== EOKW
 
 -----------------------------
 Expected Output:
@@ -2683,7 +2684,7 @@ Display prime numbers between two intervals
 prime numbers between two intervals
 Prime numbers between two intervals
 
-========================= EOKW.
+========================= EOKW
 
 -----------------------------------
 Expected Output:
@@ -2741,7 +2742,7 @@ Number is prime or not
  prime or not
  Prime or not
 
-============================= EOKW.
+============================= EOKW
 
 -------------------------
 Expected Output:
@@ -2787,7 +2788,7 @@ Number is palindrome or not
 number is palindrome or not
 palindrome or not
 
-======================== EOKW.
+======================== EOKW
 
 -------------------------
 Expected Output:
@@ -2834,7 +2835,7 @@ int main()
   Multiply two numbers
   multiply two numbers
 
-============================= EOKW.
+============================= EOKW
 
 -------------------------
 Expected Output:
@@ -2875,7 +2876,7 @@ Program to Find ASCII Value of a Character
      ascii value 
      ASCII value 
      ASCII
-=========================== EOKW.
+=========================== EOKW
 
 #include <iostream>
 using namespace std;
@@ -2898,7 +2899,7 @@ subtract complex number using operator overloading
 Subtract complex number
 subtract complex number 
 
-=========================== EOKW.
+=========================== EOKW
 
 
 -------------------------
@@ -2979,7 +2980,7 @@ increment and decrement
 Decrement and increment 
 decrement and increment 
 
-====================== EOKW.
+====================== EOKW
 -------------------------
 Expected Output:
 
@@ -3028,7 +3029,7 @@ Calculate power of a number
    power of num
   Power of num
 
-===================================== EOKW.
+===================================== EOKW
 
 -------------------------
 Expected Output:
@@ -3071,7 +3072,7 @@ Program to Reverse a Number
     Reverse of a number
     reverse of a number
 
-============================= EOKW.
+============================= EOKW
 -------------------------
 Expected Output:
 
@@ -3108,7 +3109,7 @@ int main()
     #76
     LCM
     lcm
-====================== EOKW.
+====================== EOKW
 
 -------------------------
 Expected Output:
@@ -3152,7 +3153,7 @@ gcd
 GCD
 GCD of two numbers
 gcd of two numbers
-==================== EOKW.
+==================== EOKW
 
 -------------------------
 Expected Output:
@@ -3194,7 +3195,7 @@ Program to Display Fibonacci Series
     fibo
     Fibo
 
-========================= EOKW.
+========================= EOKW
 
 -------------------------
 Expected Output:
@@ -3245,7 +3246,7 @@ Program to Generate Multiplication Table
     #79 
 Multiplication table
 
-========================= EOKW.
+========================= EOKW
 
 
 -------------------------
@@ -3289,7 +3290,7 @@ Program to Find Factorial
 factorial
 fact
 Fact
-=========================== EOKW.
+=========================== EOKW
 -------------------------
 Expected Output:
 
@@ -3324,7 +3325,7 @@ int main()
  Leap year
   leap year
 
-========================== EOKW.
+========================== EOKW
 -------------------------
 Expected Output:
 
@@ -3370,7 +3371,7 @@ int main()
 
         Sum of natural numbers
     sum of natural numbers
-====================================== EOKW.
+====================================== EOKW
 
 -------------------------
 Expected Output:
@@ -3404,7 +3405,7 @@ int main()
 #83
      find all roots of a quadratic equation
 
-===================================== EOKW.
+===================================== EOKW
 -------------------------
 Expected Output:
 
@@ -3460,7 +3461,7 @@ Program to Find Largest Number Among Three Numbers
 find largest number among three numbers
 Largest number among three numbers
 
-=============================== EOKW.
+=============================== EOKW
 
 -------------------------
 Expected Output:
@@ -3505,7 +3506,7 @@ Program to Check Whether a character is Vowel or Consonant
 #85 
 Character is vowel or consonant
 
-================================ EOKW.
+================================ EOKW
 -------------------------
 Expected Output:
 
@@ -3547,7 +3548,7 @@ Program to Check Whether Number is Even or Odd
 Number is even or odd
 Check number is even or odd
 
-==================== EOKW.
+==================== EOKW
 -------------------------
 Expected Output:
 
@@ -3578,7 +3579,7 @@ int main()
 ========================= EOPN
     Swap two numbers
     swap two numbers
-========================= EOKW.
+========================= EOKW
 -------------------------
 
 Expected Output:
@@ -3621,7 +3622,7 @@ Swap Numbers Without Using Temporary Variables
     #88 
     Swap numbers without using temporary variables 
 
-=========================== EOKW.
+=========================== EOKW
 
 -------------------------
 Expected Output:
@@ -3660,7 +3661,7 @@ Program to Find Size of int, float, double and char in Your System
  #89
         Size of int float double and char in your system
 
-================================== EOKW.
+================================== EOKW
 
 -------------------------
 Expected Output:
@@ -3691,7 +3692,7 @@ int main()
  ========================== EOPN
 #90
 Find quotient and remainder
-========================== EOKW.
+========================== EOKW
 
 -------------------------
 Expected Output:
@@ -3733,7 +3734,7 @@ int main()
  ========================== EOPN
 #91 
 add two numbers
-=========================== EOKW.
+=========================== EOKW
 
 -------------------------
 Expected Output:
@@ -3771,7 +3772,7 @@ Program to Print Number Entered by User
     #92 
 Print Number entered by user
 Print number given by User
-============================= EOKW.
+============================= EOKW
 
 -------------------------
 Expected Output:
@@ -3803,7 +3804,7 @@ int main()
     hello world
     Hello world
     basic cpp program
-================== EOKW.
+================== EOKW
 
 -------------------------
 Expected Output:

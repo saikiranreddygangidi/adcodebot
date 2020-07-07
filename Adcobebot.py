@@ -141,8 +141,9 @@ def codename(message):
           '''program_name=robo_response.split("EOPN")[0]
           program_code=robo_response.split("EOKW")[1]'''
           list1=nltk.word_tokenize(robo_response)
-          result=' '.join(list1[:list1.index('eopn')])
-          return result
+          program_name=' '.join(list1[:list1.index('=')])
+          progran_code=' '.join(list1[list1.index('eokw')+1:])
+          return program_name+progran_code
           #return robo_response
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
@@ -165,7 +166,7 @@ def codename(message):
       else:
           reply=response(user_response)
   #bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
-  msg=bot.send_message(tid,reply)
+  msg=bot.send_message(tid,reply+"--------------------------\n If you want to continue please type Y or else type N")
   bot.register_next_step_handler(msg, recheck_lang)
 def recheck_lang(message):
   global f
