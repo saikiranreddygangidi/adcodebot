@@ -95,8 +95,8 @@ def codename(message):
   c_name = message.text
   lemmer = nltk.stem.WordNetLemmatizer()
     #Wo#rdNet is a semantically-oriented dictionary of English included in NLTK.
-  file1 = open("data.txt", "a") 
-  file1.write(c_name)
+  '''file1 = open("data.txt", "a") 
+  file1.write(c_name)'''
   raw=f.read()
   raw=raw.lower()# converts to lowercase
   nltk.download('punkt') # first-time use only
@@ -140,7 +140,7 @@ def codename(message):
           #robo_response1 = re.findall("%%(.*)%%",robo_response)[0]
           '''program_name=robo_response.split("EOPN")[0]
           program_code=robo_response.split("EOKW")[1]'''
-          return robo[re.search("EOKW",robo_response)+4:]
+          return robo_response
           #return robo_response
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
