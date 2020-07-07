@@ -141,7 +141,7 @@ def codename(message):
           '''program_name=robo_response.split("EOPN")[0]
           program_code=robo_response.split("EOKW")[1]'''
           list1=nltk.word_tokenize(robo_response)
-          result=' '.join(list1[:list1['EOPN']])
+          result=' '.join(list1[:list1.index("EOPN")])
           return result
           #return robo_response
   flag=True
