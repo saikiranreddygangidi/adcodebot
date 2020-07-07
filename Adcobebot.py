@@ -140,7 +140,9 @@ def codename(message):
           #robo_response1 = re.findall("%%(.*)%%",robo_response)[0]
           '''program_name=robo_response.split("EOPN")[0]
           program_code=robo_response.split("EOKW")[1]'''
-          return nltk.word_tokenize(robo_response)[0]
+          list1=nltk.word_tokenize(robo_response)
+          result=' '.join(list1[:list1['EOPN']])
+          return result
           #return robo_response
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
