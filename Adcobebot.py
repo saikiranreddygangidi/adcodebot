@@ -142,7 +142,7 @@ def codename(message):
           program_code=robo_response.split("EOKW")[1]'''
           list1=nltk.word_tokenize(robo_response)
           #result=' '.join(list1[:list1.index("EOPN")])
-          return list1
+          return len(list1)
           #return robo_response
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
