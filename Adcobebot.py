@@ -8,7 +8,18 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import re
 API_TOKEN = '1095762894:AAH1y_gd31l3qimubyq0fYFNRYkeTPi-HCI'
-            
+from pymongo import MongoClient
+
+#Step 1: Connect to MongoDB - Note: Change connection string as needed
+client = MongoClient("mongodb+srv://saikiran:saikiran0074@codebotdb.vok7o.mongodb.net/codebotdb?retryWrites=true&w=majority")
+db=client.codebotdb
+
+
+
+    #Step 4: Print to the console the ObjectID of the new document
+
+#Step 5: Tell us that you are done
+         
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 PORT = int(os.environ.get('PORT', '8443'))                
@@ -132,6 +143,7 @@ def codename(message):
       flat.sort()
       req_tfidf = flat[-2]
       if(req_tfidf==0):
+          result=db.userkeywords.insert_one({'programname':user_response})
           robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
           a=re.split(" ",robo_response)
           return a[0]
@@ -166,7 +178,7 @@ def codename(message):
       else:
           reply=response(user_response)
   #bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
-  msg=bot.send_message(tid,reply+"--------------------------\n If you want to continue please type Y or else type N")
+  msg=bot.send_message(tid,reply+"\n--------------------------\n If you want to continue please type Y or else type N")
   bot.register_next_step_handler(msg, recheck_lang)
 def recheck_lang(message):
   global f

@@ -1029,7 +1029,7 @@ Enter rows and column for first matrix: 3
 2
 Enter rows and column for second matrix: 3
 2
-Error! column of first matrix not equal to row of second.
+Error! column of first matrix not equal to row of second
 
 Enter rows and column for first matrix: 2
 3
