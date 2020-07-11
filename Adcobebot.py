@@ -145,8 +145,8 @@ def codename(message):
       if(req_tfidf==0):
           result=db.userkeywords.insert_one({'programname':user_response})
           robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
-          a=re.split(" ",robo_response)
-          return a[0]
+
+          return robo_response
       else:
           robo_response = robo_response+sent_tokens[idx]
           #robo_response1 = re.findall("%%(.*)%%",robo_response)[0]

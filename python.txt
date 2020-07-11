@@ -12,3 +12,107 @@ if ans:
     print("Yes") 
 else: 
     print("No") .
+------------------------
+ Python Program to Print Hello world!
+ ================================ EOPN
+ Hello world hello world Hello World
+ ================================ EOKW 
+ Expected Output:
+ Hello, world!
+ ================================
+ # This program prints Hello, world!
+
+print('Hello, world!').
+--------------------------------
+
+
+
+
+
+
+ Python Program to Add Two Numbers
+ ================================ EOPN
+ add 
+add two numbers 
+Add two numbers
+ ================================ EOKW 
+ Expected Output:
+ The sum of 1.5 and 6.3 is 7.8
+ ================================
+
+ # This program adds two numbers
+
+num1 = 1.5
+num2 = 6.3
+
+# Add two numbers
+sum = num1 + num2
+
+# Display the sum
+print('The sum of {0} and {1} is {2}'.format(num1, num2, sum)).
+--------------------------------
+
+
+
+
+
+
+
+
+ Python Program to Find the Square Root
+ ================================ EOPN
+ square root
+find the square root
+Find the square root
+Find square root
+ ================================ EOKW 
+ Expected Output:
+The square root of 8.000 is 2.828
+ ================================
+
+ # Find square root of real or complex numbers
+# Importing the complex math module
+import cmath
+
+num = 1+2j
+
+# To take input from the user
+#num = eval(input('Enter a number: '))
+
+num_sqrt = cmath.sqrt(num)
+print('The square root of {0} is {1:0.3f}+{2:0.3f}j'.format(num ,num_sqrt.real,num_sqrt.imag)).
+--------------------------------
+
+
+
+
+
+
+ Python Program to Calculate the Area of a Triangle
+ ================================ EOPN
+ Area of triangle area of triangle
+ ================================ EOKW 
+ Expected Output:
+ The area of the triangle is 14.70
+ ================================
+
+ # Python Program to find the area of triangle
+
+a = 5
+b = 6
+c = 7
+
+# Uncomment below to take inputs from the user
+# a = float(input('Enter first side: '))
+# b = float(input('Enter second side: '))
+# c = float(input('Enter third side: '))
+
+# calculate the semi-perimeter
+s = (a + b + c) / 2
+
+# calculate the area
+area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+print('The area of the triangle is %0.2f' %area).
+--------------------------------
+
+
