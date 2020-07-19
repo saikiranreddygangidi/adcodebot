@@ -32,12 +32,24 @@ def send_welcome(message):
 def userdetails(message):
  details=message.text
  details=details.split(":")
+ regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
  if(len(details)==2):
-   result=db.user_details.insert_one({'fullname':details[0],'gmail':details[1]})
-   bot.reply_to(message, "Hi "+details[0]+" 👋, Welcome to Codebot. \n I'm here to help you in finding the code you want.\n To begin tap /search\n if you want any help type '/help' command")
-
+    if len(details[0])>3:
+      if(re.search(regex,details[1])):
+        if db.user_details.findOne({'fullname':details[0],'gmail':details[1]}):
+          result=db.user_details.insert_one({'fullname':details[0],'gmail':details[1]})
+          bot.reply_to(message, "Hi "+details[0]+" 👋, Welcome to Codebot. \n I'm here to help you in finding the code you want.\n To begin tap /search\n if you want any help type '/help' command")
+        else:
+          bot.reply_to(message, "user details is already present")
+      else:
+        msg=bot.send_message(tid,"enter vaild gmail reenter data in format fullname:gmail")
+        bot.register_next_step_handler(msg, userdetails)
+    else:
+     msg=bot.send_message(tid,"enter vaild fullname reenter data in format fullname:gmail")
+     bot.register_next_step_handler(msg, userdetails)
  else:
-   bot.reply_to(message, "enter the correct details")
+    msg=bot.send_message(message, "please enter the details in specified format, correct details")
+    bot.register_next_step_handler(msg, userdetails)
 
   # Handle '/start' and '/help'
 # @bot.message_handler(commands=['start'])
@@ -159,8 +171,9 @@ def codename(message):
       req_tfidf = flat[-2]
       if(req_tfidf==0):
           language=filename.split('.')[0]
-          result=db.userkeywords.insert_one({'language':language,'programname':user_response})
-          robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
+          if(db.userkeywords.findOne({'language':language,'programname':user_response}))
+            result=db.userkeywords.insert_one({'language':language,'programname':user_response})
+            robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
 
           return robo_response
       else:
