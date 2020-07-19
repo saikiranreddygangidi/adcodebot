@@ -37,7 +37,7 @@ def userdetails(message):
  if(len(details)==2):
     if len(details[0])>3:
       if(re.search(regex,details[1])):
-        if db.user_details.find({'fullname':details[0],'gmail':details[1]}):
+        if db.user_details.find({'fullname':details[0],'gmail':details[1]}) is None:
           result=db.user_details.insert_one({'fullname':details[0],'gmail':details[1]})
           bot.reply_to(message, "Hi "+details[0]+" 👋, Welcome to Codebot. \n I'm here to help you in finding the code you want.\n To begin tap /search\n if you want any help type '/help' command")
         else:
