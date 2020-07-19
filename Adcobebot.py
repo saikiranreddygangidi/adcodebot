@@ -1,6 +1,6 @@
 import nltk
 import telebot
-from flask import Flask, request
+from flask import Flask, request,redirect
 import os
 import string
 import random
@@ -22,12 +22,27 @@ db=client.codebotdb
          
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
-PORT = int(os.environ.get('PORT', '8443'))                
-            
-  # Handle '/start' and '/help'
+PORT = int(os.environ.get('PORT', '8443'))   
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
- bot.reply_to(message, "Hi 👋, Welcome to Codebot. \n I'm here to help you in finding the code you want.\n To begin tap /search\n if you want any help type '/help' command")
+ tid = str(message.from_user.id)
+ msg=bot.send_message(tid,"To start bot can please enter the fullname and gmail in format fullname:gmail")
+ bot.register_next_step_handler(msg, userdetails)
+def userdetails(message):
+ details=message.text
+ details=details.split(":")
+ if(len(details)==2):
+   result=db.user_details.insert_one({'fullname':details[0],'gmail':details[1]})
+   bot.reply_to(message, "Hi "+details[0]+" 👋, Welcome to Codebot. \n I'm here to help you in finding the code you want.\n To begin tap /search\n if you want any help type '/help' command")
+
+ else:
+   redirect('/start')
+
+  # Handle '/start' and '/help'
+# @bot.message_handler(commands=['start'])
+# def send_welcome(message):
+#  bot.reply_to(message, "Hi 👋, Welcome to Codebot. \n I'm here to help you in finding the code you want.\n To begin tap /search\n if you want any help type '/help' command")
 
 @bot.message_handler(commands=['help'])
 def help(message):

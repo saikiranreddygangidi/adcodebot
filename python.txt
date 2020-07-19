@@ -24,12 +24,6 @@ else:
 
 print('Hello, world!').
 --------------------------------
-
-
-
-
-
-
  Python Program to Add Two Numbers
  ================================ EOPN
  add 
