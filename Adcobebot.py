@@ -37,7 +37,7 @@ def userdetails(message):
  if(len(details)==2):
     if len(details[0])>3:
       if(re.search(regex,details[1])):
-        if db.user_details.findOne({'fullname':details[0],'gmail':details[1]}):
+        if db.user_details.find({'fullname':details[0],'gmail':details[1]}):
           result=db.user_details.insert_one({'fullname':details[0],'gmail':details[1]})
           bot.reply_to(message, "Hi "+details[0]+" 👋, Welcome to Codebot. \n I'm here to help you in finding the code you want.\n To begin tap /search\n if you want any help type '/help' command")
         else:
@@ -172,7 +172,7 @@ def codename(message):
       req_tfidf = flat[-2]
       if(req_tfidf==0):
           language=filename.split('.')[0]
-          if(db.userkeywords.findOne({'language':language,'programname':user_response})):
+          if(db.userkeywords.find({'language':language,'programname':user_response})):
             result=db.userkeywords.insert_one({'language':language,'programname':user_response})
             robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
 
