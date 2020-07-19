@@ -158,7 +158,8 @@ def codename(message):
       flat.sort()
       req_tfidf = flat[-2]
       if(req_tfidf==0):
-          result=db.userkeywords.insert_one({'programname':user_response})
+          language=filename.split('.')[0]
+          result=db.userkeywords.insert_one({'language':language,'programname':user_response})
           robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
 
           return robo_response
