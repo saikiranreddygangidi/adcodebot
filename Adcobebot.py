@@ -37,7 +37,7 @@ def userdetails(message):
    bot.reply_to(message, "Hi "+details[0]+" 👋, Welcome to Codebot. \n I'm here to help you in finding the code you want.\n To begin tap /search\n if you want any help type '/help' command")
 
  else:
-   redirect('/start')
+   bot.reply_to(message, "enter the correct details")
 
   # Handle '/start' and '/help'
 # @bot.message_handler(commands=['start'])
