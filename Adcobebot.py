@@ -39,9 +39,7 @@ def userdetails(message):
       if(re.search(regex,details[1])):
         if db.user_details.find_one({'fullname':details[0],'gmail':details[1]}) is None:
           result=db.user_details.insert_one({'fullname':details[0],'gmail':details[1]})
-          bot.reply_to(message, "Hi "+details[0]+" 👋, Welcome to Codebot. \n I'm here to help you in find_oneing the code you want.\n To begin tap /search\n if you want any help type '/help' command")
-        else:
-          bot.reply_to(message, "user details is already present")
+        bot.reply_to(message, "Hi "+details[0]+" 👋, Welcome to Codebot. \n I'm here to help you in find_oneing the code you want.\n To begin tap /search\n if you want any help type '/help' command")
       else:
         msg=bot.send_message(tid,"enter vaild gmail reenter data in format fullname:gmail")
         bot.register_next_step_handler(msg, userdetails)
