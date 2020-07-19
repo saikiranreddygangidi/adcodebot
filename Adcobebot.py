@@ -30,6 +30,7 @@ def send_welcome(message):
  msg=bot.send_message(tid,"To start bot can please enter the fullname and gmail in format fullname:gmail")
  bot.register_next_step_handler(msg, userdetails)
 def userdetails(message):
+ tid = str(message.from_user.id)
  details=message.text
  details=details.split(":")
  regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
@@ -171,7 +172,7 @@ def codename(message):
       req_tfidf = flat[-2]
       if(req_tfidf==0):
           language=filename.split('.')[0]
-          if(db.userkeywords.findOne({'language':language,'programname':user_response}))
+          if(db.userkeywords.findOne({'language':language,'programname':user_response})):
             result=db.userkeywords.insert_one({'language':language,'programname':user_response})
             robo_response=robo_response+"Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
 
