@@ -1,0 +1,4888 @@
+ C Program to Check if a given Integer is Odd or Even 
+================================ EOPN
+#include <stdio.h> void main(){    int ival, remainder;     printf("Enter an integer : ");    scanf("%d", &ival);    remainder = ival % 2;    if (remainder == 0)        printf("%d is an even integer\n", ival);    else        printf("%d is an odd integer\n", ival);}
+================================ EOKW
+--------------------------------
+output:
+ 
+Case 1:
+Enter an integer : 24
+24 is an even integer
+ 
+Case 2:
+Enter an integer : 75
+75 is an odd integer
+ 
+Case 3:
+Enter an integer : 0
+0 is an even integer
+--------------------------------
+#include <stdio.h>
+ 
+void main()
+{
+    int ival, remainder;
+ 
+    printf("Enter an integer : ");
+    scanf("%d", &ival);
+    remainder = ival % 2;
+    if (remainder == 0)
+        printf("%d is an even integer\n", ival);
+    else
+        printf("%d is an odd integer\n", ival);
+}
+ . 
+*******************
+ C Program to Calculate the Sum of Odd & Even Numbers 
+================================ EOPN
+ #include <stdio.h> void main(){    int i, num, odd_sum = 0, even_sum = 0;     printf("Enter the value of num\n");    scanf("%d", &num);    for (i = 1; i <= num; i++)    {        if (i % 2 == 0)            even_sum = even_sum + i;        else            odd_sum = odd_sum + i;    }    printf("Sum of all odd numbers  = %d\n", odd_sum);    printf("Sum of all even numbers = %d\n", even_sum);}
+================================ EOKW
+--------------------------------
+output:
+Case 1:
+Enter the value of num
+10
+Sum of all odd numbers  = 25
+Sum of all even numbers = 30
+ 
+Case 2:
+Enter the value of num
+100
+Sum of all odd numbers  = 2500
+Sum of all even numbers = 2550
+--------------------------------
+ 
+#include <stdio.h>
+ 
+void main()
+{
+    int i, num, odd_sum = 0, even_sum = 0;
+ 
+    printf("Enter the value of num\n");
+    scanf("%d", &num);
+    for (i = 1; i <= num; i++)
+    {
+        if (i % 2 == 0)
+            even_sum = even_sum + i;
+        else
+            odd_sum = odd_sum + i;
+    }
+    printf("Sum of all odd numbers  = %d\n", odd_sum);
+    printf("Sum of all even numbers = %d\n", even_sum);
+}
+ . 
+*******************
+ C Program to Check if a given Integer is Positive or Negative 
+================================ EOPN
+#include <stdio.h> void main(){    int number;     printf("Enter a number \n");    scanf("%d", &number);    if (number >= 0)        printf("%d is a positive number \n", number);    else        printf("%d is a negative number \n", number);}
+================================ EOKW
+--------------------------------
+output:
+Case:1
+Enter a number
+-10
+-10 is a negative number
+ 
+Case:2
+Enter a number
+45
+45 is a positive number
+--------------------------------
+#include <stdio.h>
+ 
+void main()
+{
+    int number;
+ 
+    printf("Enter a number \n");
+    scanf("%d", &number);
+    if (number >= 0)
+        printf("%d is a positive number \n", number);
+    else
+        printf("%d is a negative number \n", number);
+}
+ . 
+*******************
+ C Program to Find the Number of Integers Divisible by 5  
+================================ EOPN
+/* * C program to find the number of integers divisible by  * 5 between the given range num1 and num2, where num1 < num2. * * Also find the sum of all these integer numbers which are divisible * by 5 and display the total. 
+================================ EOKW
+--------------------------------
+output:
+Case:1
+Enter the value of num1 and num2
+12 17
+Integers divisible by 5 are
+ 15,
+Number of integers divisible by 5 between 12 and 17 = 1
+Sum of all integers that are divisible by 5 = 15
+ 
+Case:2
+Enter the value of num1 and num2
+1 10
+Integers divisible by 5 are
+ 5,10
+Number of integers divisible by 5 between 1 and 10 = 2
+Sum of all integers that are divisible by 5 = 15
+--------------------------------
+/*
+ * C program to find the number of integers divisible by 
+ * 5 between the given range num1 and num2, where num1 < num2.
+ *
+ * Also find the sum of all these integer numbers which are divisible
+ * by 5 and display the total.
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    int i, num1, num2, count = 0, sum = 0;
+ 
+    printf("Enter the value of num1 and num2 \n");
+    scanf("%d %d", &num1, &num2);
+    /* Count the number and compute their sum*/
+    printf("Integers divisible by 5 are \n");
+    for (i = num1; i < num2; i++)
+    {
+        if (i % 5 == 0)
+        {
+            printf("%3d,", i);
+            count++;
+            sum = sum + i;
+        }
+    }
+    printf("\n Number of integers divisible by 5 between %d and %d =
+ %d\n", num1, num2, count);
+    printf("Sum of all integers that are divisible by 5 = %d\n", sum);
+}
+ . 
+*******************
+ C Program to Read Two Integers M and N & Swap their Values 
+================================ EOPN
+/* * C program to read two integers M and N and to swap their values. * Use a user-defined function for swapping. Output the values of M * and N before and after swapping. 
+================================ EOKW
+--------------------------------
+output:
+Enter the values of M and N
+2 3
+Before Swapping:M =  2.00    N =  3.00
+After Swapping:M  =  3.00    N =  2.00
+--------------------------------
+/*
+ * C program to read two integers M and N and to swap their values.
+ * Use a user-defined function for swapping. Output the values of M
+ * and N before and after swapping.
+ */
+#include <stdio.h>
+void swap(float *ptr1, float  *ptr2);
+ 
+void main()
+{
+    float m, n;
+ 
+    printf("Enter the values of M and N \n");
+    scanf("%f %f", &m, &n);
+    printf("Before Swapping:M = %5.2ftN = %5.2f\n", m, n);
+    swap(&m, &n);
+    printf("After Swapping:M  = %5.2ftN = %5.2f\n", m, n);
+}
+/*  Function swap - to interchanges the contents of two items */
+void swap(float *ptr1, float *ptr2)
+{
+    float temp;
+ 
+    temp = *ptr1;
+    *ptr1 = *ptr2;
+    *ptr2 = temp;
+}
+ . 
+*******************
+ C Program to Accept two Integers and Check if they are Equal 
+================================ EOPN
+/* * C program to accept two integers and check if they are equal 
+================================ EOKW
+--------------------------------
+output:
+Case:1
+Enter the values for M and N
+3 3
+M and N are equal
+ 
+Case:2
+Enter the values for M and N
+5 8
+M and N are not equal
+--------------------------------
+/*
+ * C program to accept two integers and check if they are equal
+ */
+#include <stdio.h>
+void main()
+{
+    int m, n;
+ 
+    printf("Enter the values for M and N\n");
+    scanf("%d %d", &m, &n);
+    if (m == n)
+        printf("M and N are equal\n");
+    else
+        printf("M and N are not equal\n");
+}
+ . 
+*******************
+ C Program to Compute the Sum of Digits in a given Integer 
+================================ EOPN
+/* * C program to accept an integer & find the sum of its digits 
+================================ EOKW
+--------------------------------
+output:
+Enter the number
+300
+Given number = 300
+Sum of the digits 300 = 3
+ 
+ 
+Enter the number
+16789
+Given number = 16789
+Sum of the digits 16789 = 31
+--------------------------------
+/*
+ * C program to accept an integer & find the sum of its digits
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    long num, temp, digit, sum = 0;
+ 
+    printf("Enter the number \n");
+    scanf("%ld", &num);
+    temp = num;
+    while (num > 0)
+    {
+        digit = num % 10;
+        sum  = sum + digit;
+        num /= 10;
+    }
+    printf("Given number = %ld\n", temp);
+    printf("Sum of the digits %ld = %ld\n", temp, sum);
+}
+ . 
+*******************
+ C Program to Convert the given Binary Number into Decimal 
+================================ EOPN
+/* * C program to convert the given binary number into decimal 
+================================ EOKW
+--------------------------------
+output:
+ 
+Enter a binary number(1s and 0s)
+10101001
+The Binary number is = 10101001
+Its decimal equivalent is = 169
+--------------------------------
+/*
+ * C program to convert the given binary number into decimal
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    int  num, binary_val, decimal_val = 0, base = 1, rem;
+ 
+    printf("Enter a binary number(1s and 0s) \n");
+    scanf("%d", &num); /* maximum five digits */
+    binary_val = num;
+    while (num > 0)
+    {
+        rem = num % 10;
+        decimal_val = decimal_val + rem * base;
+        num = num / 10 ;
+        base = base * 2;
+    }
+    printf("The Binary number is = %d \n", binary_val);
+    printf("Its decimal equivalent is = %d \n", decimal_val);
+}
+ . 
+*******************
+ C Program to Convert a Decimal Number to Binary & Count the Number of 1s 
+================================ EOPN
+/*
+ * C program to accept a decimal number and convert it to binary
+ * and count the number of 1's in the binary number
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm46.c
+$ a.out
+Enter a decimal integer
+134
+Input number is = 134
+Its binary equivalent is = 10000110
+No.of 1's in the binary number is = 3
+--------------------------------
+ . 
+*******************
+ C Program to Convert a Given Number of Days in terms of Years, Weeks & Days 
+================================ EOPN
+/* * C program to convert given number of days to a measure of time given * in years, weeks and days. For example 375 days is equal to 1 year * 1 week and 3 days (ignore leap year) 
+================================ EOKW
+--------------------------------
+output:
+Case:1
+Enter the number of days
+29
+29 is equivalent to 0 years, 4 weeks and 1 days
+ 
+Case:2
+Enter the number of days
+1000
+1000 is equivalent to 2 years, 38 weeks and 4 days
+--------------------------------
+/*
+ * C program to convert given number of days to a measure of time given
+ * in years, weeks and days. For example 375 days is equal to 1 year
+ * 1 week and 3 days (ignore leap year)
+ */
+#include <stdio.h>
+#define DAYSINWEEK 7
+ 
+void main()
+{
+    int ndays, year, week, days;
+ 
+    printf("Enter the number of days\n");
+    scanf("%d", &ndays);
+    year = ndays / 365;
+    week =(ndays % 365) / DAYSINWEEK;
+    days =(ndays % 365) % DAYSINWEEK;
+    printf ("%d is equivalent to %d years, %d weeks and %d daysn",
+            ndays, year, week, days);
+}
+ . 
+*******************
+C Program to Convert Binary to Octal
+================================ EOPN
+/* * C Program to Convert Binary to Octal 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+Enter the value for  binary number: 10101
+Equivalent octal value: 25
+--------------------------------
+/*
+ * C Program to Convert Binary to Octal
+ */
+ #include <stdio.h>
+ 
+int main()
+{
+    long int binarynum, octalnum = 0, j = 1, remainder;
+ 
+    printf("Enter the value for  binary number: ");
+    scanf("%ld", &binarynum);
+    while (binarynum != 0)
+    {
+        remainder = binarynum % 10;
+        octalnum = octalnum + remainder * j;
+        j = j * 2;
+        binarynum = binarynum / 10;
+    }
+    printf("Equivalent octal value: %lo", octalnum);
+    return 0;
+}
+ . 
+*******************
+C Program to Convert Binary to Hexadecimal
+================================ EOPN
+/* * C Program to Convert Binary to Hexadecimal  
+================================ EOKW
+--------------------------------
+output:
+Output:
+Enter the binary number: 10000
+Equivalent hexadecimal value: 10
+--------------------------------
+/*
+ * C Program to Convert Binary to Hexadecimal 
+ */
+#include <stdio.h>
+ 
+int main()
+{
+    long int binaryval, hexadecimalval = 0, i = 1, remainder;
+ 
+    printf("Enter the binary number: ");
+    scanf("%ld", &binaryval);
+    while (binaryval != 0)
+    {
+        remainder = binaryval % 10;
+        hexadecimalval = hexadecimalval + remainder * i;
+        i = i * 2;
+        binaryval = binaryval / 10;
+    }
+    printf("Equivalent hexadecimal value: %lX", hexadecimalval);
+    return 0;
+}
+ . 
+*******************
+C Program to Convert Decimal to Octal 
+================================ EOPN
+/* * C program to Convert Decimal to Octal 
+================================ EOKW
+--------------------------------
+output:
+Output:
+Enter the decimal number: 68
+Equivalent octal value of decimal no 68: 104
+--------------------------------
+/*
+ * C program to Convert Decimal to Octal
+ */
+#include <stdio.h>
+ 
+int main()
+{
+    long decimalnum, remainder, quotient;
+    int octalNumber[100], i = 1, j;
+ 
+    printf("Enter the decimal number: ");
+    scanf("%ld", &decimalnum);
+    quotient = decimalnum;
+    while (quotient != 0)
+    {
+        octalNumber[i++] = quotient % 8;
+        quotient = quotient / 8;
+    }
+    printf("Equivalent octal value of decimal no %d: ", decimalnum);
+    for (j = i - 1; j > 0; j--)
+        printf("%d", octalNumber[j]);
+    return 0;
+}
+ . 
+*******************
+C program to Convert Decimal to Hexadecimal
+================================ EOPN
+/* * C program to Convert Decimal to Hexadecimal 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+Enter decimal number: 12
+Equivalent hexadecimal value of 12 : C
+--------------------------------
+/*
+ * C program to Convert Decimal to Hexadecimal
+ */
+#include <stdio.h>
+ 
+int main()
+{
+    long decimalnum, quotient, remainder;
+    int i, j = 0;
+    char hexadecimalnum[100];
+ 
+    printf("Enter decimal number: ");
+    scanf("%ld", &decimalnum);
+ 
+    quotient = decimalnum;
+ 
+    while (quotient != 0)
+    {
+        remainder = quotient % 16;
+        if (remainder < 10)
+            hexadecimalnum[j++] = 48 + remainder;
+        else
+            hexadecimalnum[j++] = 55 + remainder;
+        quotient = quotient / 16;
+    }
+ 
+    // display integer into character
+    for (i = j; i >= 0; i--)
+            printf("%c", hexadecimalnum[i]);
+    return 0;
+}
+ . 
+*******************
+C Program to Convert Roman Number to Decimal Number
+================================ EOPN
+/
+================================ EOKW
+--------------------------------
+output:
+Output:
+Enter any roman number (Valid digits are I, V, X, L, C, D, M):
+XVII
+Its decimal value is: 17
+--------------------------------
+/*
+/*
+ * C Program to Convert Roman Number to Decimal Number
+ */
+ 
+#include<stdio.h>
+#include<string.h>
+ 
+int digit(char);
+ 
+int main(){
+ 
+    char roman_Number[1000];
+    int i=0;
+    long int number =0;
+ 
+    printf("Enter any roman number (Valid digits are I, V, X, L, C, D, M):  \n");
+    scanf("%s",roman_Number);
+ 
+    while(roman_Number[i]){
+ 
+         if(digit(roman_Number[i]) < 0){
+             printf("Invalid roman digit : %c",roman_Number[i]);
+             return 0;
+         }
+ 
+         if((strlen(roman_Number) -i) > 2){
+             if(digit(roman_Number[i]) < digit(roman_Number[i+2])){
+                 printf("Invalid roman number");
+                 return 0;
+             }
+         }
+ 
+         if(digit(roman_Number[i]) >= digit(roman_Number[i+1]))
+             number = number + digit(roman_Number[i]);
+         else{
+             number = number + (digit(roman_Number[i+1]) - digit(roman_Number[i]));
+             i++;
+         }
+         i++;
+    }
+ 
+    printf("Its decimal value is : %ld",number);
+ 
+    return 0;
+ 
+}
+ 
+int digit(char c){
+ 
+    int value=0;
+ 
+    switch(c){
+         case 'I': value = 1; break;
+         case 'V': value = 5; break;
+         case 'X': value = 10; break;
+         case 'L': value = 50; break;
+         case 'C': value = 100; break;
+         case 'D': value = 500; break;
+         case 'M': value = 1000; break;
+         case '\0': value = 0; break;
+         default: value = -1; 
+    }
+ 
+    return value;
+}
+ . 
+*******************
+C Program to Convert Octal to Binary
+================================ EOPN
+/* * C Program to Convert Octal to Binary 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+Enter any octal number: a
+Equivalent binary value:
+Invalid octal digit a
+ 
+ 
+Enter any octal number: 160
+Equivalent binary value: 001110000
+--------------------------------
+/*
+ * C Program to Convert Octal to Binary
+ */
+#include <stdio.h>
+#define MAX 1000
+ 
+int main()
+{
+    char octalnum[MAX];
+    long i = 0;
+ 
+    printf("Enter any octal number: ");
+    scanf("%s", octalnum);
+    printf("Equivalent binary value: ");
+    while (octalnum[i])
+    {
+        switch (octalnum[i])
+        {
+        case '0':
+            printf("000"); break;
+        case '1':
+            printf("001"); break;
+        case '2':
+            printf("010"); break;
+        case '3':
+            printf("011"); break;
+        case '4':
+            printf("100"); break;
+        case '5':
+            printf("101"); break;
+        case '6':
+            printf("110"); break;
+        case '7':
+            printf("111"); break;
+        default:
+            printf("\n Invalid octal digit %c ", octalnum[i]);
+            return 0;
+        }
+        i++;
+    }
+    return 0;
+}
+ . 
+*******************
+C Program to Convert Hexadecimal to Binary
+================================ EOPN
+/* * C Program to Convert Hexadecimal to Binary 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+Enter the value for hexadecimal ab
+Equivalent binary value: 10101011
+--------------------------------
+/*
+ * C Program to Convert Hexadecimal to Binary
+ */
+#include <stdio.h>
+#define MAX 1000
+ 
+int main()
+{
+    char binarynum[MAX], hexa[MAX];
+    long int i = 0;
+ 
+    printf("Enter the value for hexadecimal ");
+    scanf("%s", hexa);
+    printf("\n Equivalent binary value: ");
+    while (hexa[i])
+    {
+        switch (hexa[i])
+        {
+        case '0':
+            printf("0000"); break;
+        case '1':
+            printf("0001"); break;
+        case '2':
+            printf("0010"); break;
+        case '3':
+            printf("0011"); break;
+        case '4':
+            printf("0100"); break;
+        case '5':
+            printf("0101"); break;
+        case '6':
+            printf("0110"); break;
+        case '7':
+            printf("0111"); break;
+        case '8':
+            printf("1000"); break;
+        case '9':
+            printf("1001"); break;
+        case 'A':
+            printf("1010"); break;
+        case 'B':
+            printf("1011"); break;
+        case 'C':
+            printf("1100"); break;
+        case 'D':
+            printf("1101"); break;
+        case 'E':
+            printf("1110"); break;
+        case 'F':
+            printf("1111"); break;
+        case 'a':
+            printf("1010"); break;
+        case 'b':
+            printf("1011"); break;
+        case 'c':
+            printf("1100"); break;
+        case 'd':
+            printf("1101"); break;
+        case 'e':
+            printf("1110"); break;
+        case 'f':
+            printf("1111"); break;
+        default:
+            printf("\n Invalid hexa digit %c ", hexa[i]);
+            return 0;
+        }
+        i++;
+    }
+    return 0;
+}
+ . 
+*******************
+C Program to Convert Numbers to Roman Numerals
+================================ EOPN
+/* * C Program to Convert Numbers to Roman Numerals 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+Enter the number: 500
+Roman number is be: D
+--------------------------------
+/*
+ * C Program to Convert Numbers to Roman Numerals
+ */
+#include <stdio.h>
+ 
+void predigit(char num1, char num2);
+void postdigit(char c, int n);
+ 
+char romanval[1000];
+int i = 0;
+int main()
+{
+    int j;
+    long number;
+ 
+    printf("Enter the number: ");
+    scanf("%d", &number);
+    if (number <= 0)
+    {
+        printf("Invalid number");
+        return 0;
+    }
+    while (number != 0)
+    {
+        if (number >= 1000)
+        {
+            postdigit('M', number / 1000);
+            number = number - (number / 1000) * 1000;
+        }
+        else if (number >= 500)
+        {
+            if (number < (500 + 4 * 100))
+            {
+                postdigit('D', number / 500);
+                number = number - (number / 500) * 500;
+            }
+            else
+            {
+                predigit('C','M');
+                number = number - (1000-100);
+            }
+        }
+        else if (number >= 100)
+        {
+            if (number < (100 + 3 * 100)) 
+            {
+                postdigit('C', number / 100);
+                number = number - (number / 100) * 100;
+            }
+            else
+            {
+                predigit('L', 'D');
+                number = number - (500 - 100);
+            }
+        }
+        else if (number >= 50 )
+        {
+            if (number < (50 + 4 * 10))
+            {
+                postdigit('L', number / 50);
+                number = number - (number / 50) * 50;
+            }
+            else
+            {
+                predigit('X','C');
+                number = number - (100-10);
+            }
+        }
+        else if (number >= 10)
+        {
+            if (number < (10 + 3 * 10))
+            {
+                postdigit('X', number / 10);
+                number = number - (number / 10) * 10;
+            }
+            else
+            {
+                predigit('X','L');
+                number = number - (50 - 10);
+            }
+        }
+        else if (number >= 5)
+        {
+            if (number < (5 + 4 * 1))
+            {
+                postdigit('V', number / 5);
+                number = number - (number / 5) * 5;
+            }
+            else
+            {
+                predigit('I', 'X');
+                number = number - (10 - 1);
+            }
+        }
+        else if (number >= 1)
+        {
+            if (number < 4)
+            {
+                postdigit('I', number / 1);
+                number = number - (number / 1) * 1;
+            }
+            else
+            {
+                predigit('I', 'V');
+                number = number - (5 - 1);
+            }
+        }
+    }
+    printf("Roman number is: ");
+    for(j = 0; j < i; j++)
+        printf("%c", romanval[j]);
+    return 0;
+}
+ 
+void predigit(char num1, char num2)
+{
+    romanval[i++] = num1;
+    romanval[i++] = num2;
+}
+ 
+void postdigit(char c, int n)
+{
+    int j;
+    for (j = 0; j < n; j++)
+        romanval[i++] = c;
+}
+ . 
+*******************
+C Program to Convert Octal to Decimal 
+================================ EOPN
+/* * C Program to Convert Octal to Decimal 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+Enter any octal number: 67
+Equivalent decimal value: 55
+--------------------------------
+/*
+ * C Program to Convert Octal to Decimal
+ */
+#include <stdio.h>
+#include <math.h>
+ 
+int main()
+{
+ 
+    long int octal, decimal = 0;
+    int i = 0;
+ 
+    printf("Enter any octal number: ");
+    scanf("%ld", &octal);
+    while (octal != 0)
+    {
+        decimal =  decimal +(octal % 10)* pow(8, i++);
+        octal = octal / 10;
+    }
+    printf("Equivalent decimal value: %ld",decimal);
+    return 0;
+}
+ . 
+*******************
+C Program to Convert a Number Decimal System to Binary System using Recursion
+================================ EOPN
+/*  
+ * C Program to Convert a Number Decimal System to Binary System using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm31.c
+$ a.out
+Enter a decimal number: 10
+The binary equivalent of 10 is 1010.
+--------------------------------
+ . 
+*******************
+C Program to Convert Binary Code of a Number into its Equivalent Gray’s Code without using Recursion
+================================ EOPN
+/*  
+ * C Program to Convert Binary Code of a Number into its Equivalent 
+ * Gray's Code without using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm26.c -lm
+$ a.out
+Enter a binary number: 1111001010
+The gray code of 1111001010 is 1000101111
+--------------------------------
+ . 
+*******************
+C Program to Convert Binary Code of a Number into its Equivalent Gray’s Code using Recursion
+================================ EOPN
+/* 
+ * C Program to Convert Binary Code of a Number into its Equivalent 
+ * Gray's Code using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm21.c
+$ a.out
+Enter a binary number:  1011101
+The gray code of 1011101 is 1110011
+--------------------------------
+ . 
+*******************
+C Program to find Sum of Digits of a Number using Recursion
+================================ EOPN
+/*  
+ * C Program to find Sum of Digits of a Number using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm25.c
+$ a.out
+Enter the number: 2345
+Sum of digits in 2345 is 14
+--------------------------------
+ . 
+*******************
+C Program to find Reverse of a Number using Recursion
+================================ EOPN
+/*  
+ * C program to find the reverse of a number using recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm34.c
+$ a.out
+Enter an integer number to reverse: 1234
+The reverse of 1234 is 4321.
+--------------------------------
+ . 
+*******************
+C Program to find Sum of N Numbers using Recursion
+================================ EOPN
+/*  
+ * C Program to find Sum of N Numbers using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm33.c
+$ a.out
+Enter the Nth number: 3
+Sum of first N numbers is 6
+ 
+$ a.out
+Enter the Nth number: 5
+Sum of first N numbers is 15
+--------------------------------
+ . 
+*******************
+C Program to find whether a Number is Prime or Not using Recursion
+================================ EOPN
+/*
+ * C Program to find whether a Number is Prime or Not using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm24.c
+$ a.out
+Enter a number: 456
+456 is not a prime number
+ 
+$ a.out
+Enter a number: 89
+89 is a prime number
+--------------------------------
+ . 
+*******************
+C Program to Print Binary Equivalent of an Integer using Recursion
+================================ EOPN
+/*  
+ * C Program to Print Binary Equivalent of an Integer using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ gcc binary_recr.c -o binary_recr
+$ a.out
+Enter a decimal number: 10
+The binary equivalent of 10 is 1010
+--------------------------------
+ . 
+*******************
+C Program to find Product of 2 Numbers using Recursion
+================================ EOPN
+/*  
+ * C Program to find Product of 2 Numbers using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm20.c
+$ a.out
+Enter two numbers to find their product: 176 340
+Product of 176 and 340 is 59840
+--------------------------------
+ . 
+*******************
+ C Program to Find the Biggest of 3 Numbers 
+================================ EOPN
+/* * C program to find the biggest of three numbers 
+================================ EOKW
+--------------------------------
+output:
+Case:1
+Enter the values of num1, num2 and num3
+6 8 10
+num1 = 6  num2 = 8  num3 = 10
+num3 is the greatest among three
+ 
+Case:2
+Enter the values of num1, num2 and num3
+10 87 99
+num1 = 10  num2 = 87  num3 = 99
+num3 is the greatest among three
+--------------------------------
+/*
+ * C program to find the biggest of three numbers
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    int num1, num2, num3;
+ 
+    printf("Enter the values of num1, num2 and num3\n");
+    scanf("%d %d %d", &num1, &num2, &num3);
+    printf("num1 = %d\tnum2 = %d\tnum3 = %d\n", num1, num2, num3);
+    if (num1 > num2)
+    {
+        if (num1 > num3)
+        {
+            printf("num1 is the greatest among three \n");
+        }
+        else
+        {
+            printf("num3 is the greatest among three \n");
+        }
+    }
+    else if (num2 > num3)
+        printf("num2 is the greatest among three \n");
+    else
+        printf("num3 is the greatest among three \n");
+}
+ . 
+*******************
+ C Program to Reverse a Given Number 
+================================ EOPN
+ #include <stdio.h> void main(){    long  num, reverse = 0, temp, remainder;     printf("Enter the number\n");    scanf("%ld", &num);    temp = num;    while (num > 0)    {        remainder = num % 10;        reverse = reverse * 10 + remainder;        num /= 10;    }    printf("Given number = %ld\n", temp);    printf("Its reverse is = %ld\n", reverse);}
+================================ EOKW
+--------------------------------
+output:
+Case:1
+Enter the number
+567865
+Given number   = 567865
+Its reverse is = 568765
+ 
+Case:2
+Enter the number
+00001
+Given number   = 00001
+Its reverse is = 10000
+--------------------------------
+ 
+#include <stdio.h>
+ 
+void main()
+{
+    long  num, reverse = 0, temp, remainder;
+ 
+    printf("Enter the number\n");
+    scanf("%ld", &num);
+    temp = num;
+    while (num > 0)
+    {
+        remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num /= 10;
+    }
+    printf("Given number = %ld\n", temp);
+    printf("Its reverse is = %ld\n", reverse);
+}
+ . 
+*******************
+ C Program to Reverse a Number & Check if it is a Palindrome 
+================================ EOPN
+  #include <stdio.h> void main(){    int num, temp, remainder, reverse = 0;     printf("Enter an integer \n");    scanf("%d", &num);    /*  original number is stored at temp 
+================================ EOKW
+--------------------------------
+output:
+Case:1
+Enter an integer
+6789
+Given number is = 6789
+Its reverse is  = 9876
+Number is not a palindrome
+ 
+Case:2
+Enter an integer
+58085
+Given number is = 58085
+Its reverse is  = 58085
+Number is a palindrome
+--------------------------------
+ 
+ 
+#include <stdio.h>
+ 
+void main()
+{
+    int num, temp, remainder, reverse = 0;
+ 
+    printf("Enter an integer \n");
+    scanf("%d", &num);
+    /*  original number is stored at temp */
+    temp = num;
+    while (num > 0)
+    {
+        remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num /= 10;
+    }
+    printf("Given number is = %d\n", temp);
+    printf("Its reverse is  = %d\n", reverse);
+    if (temp == reverse)
+        printf("Number is a palindrome \n");
+    else
+        printf("Number is not a palindrome \n");
+}
+ . 
+*******************
+C Program to Find the Sum of two Binary Numbers
+================================ EOPN
+/* * C Program to Find the Sum of two Binary Numbers 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+Enter the first binary number: 100000
+Enter the second binary number: 101010
+Sum of two binary numbers: 1001010
+--------------------------------
+/*
+ * C Program to Find the Sum of two Binary Numbers
+ */
+#include <stdio.h>
+ 
+int main()
+{
+ 
+    long binary1, binary2;
+    int i = 0, remainder = 0, sum[20];
+ 
+    printf("Enter the first binary number: ");
+    scanf("%ld", &binary1);
+    printf("Enter the second binary number: ");
+    scanf("%ld", &binary2);
+    while (binary1 != 0 || binary2 != 0)
+    {
+        sum[i++] =(binary1 % 10 + binary2 % 10 + remainder) % 2;
+        remainder =(binary1 % 10 + binary2 % 10 + remainder) / 2;
+        binary1 = binary1 / 10;
+        binary2 = binary2 / 10;
+    }
+    if (remainder != 0)
+        sum[i++] = remainder;
+    --i;
+    printf("Sum of two binary numbers: ");
+    while (i >= 0)
+        printf("%d", sum[i--]);
+    return 0;
+}
+ . 
+*******************
+C Program to Find Multiplication of two Binary Numbers
+================================ EOPN
+/* * C Program to Find Multiplication of two Binary Numbers 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+Enter the first binary number: 10010
+Enter the second binary number: 10101
+Product of two binary numbers: 101111010
+--------------------------------
+/*
+ * C Program to Find Multiplication of two Binary Numbers
+ */
+#include <stdio.h>
+ 
+int binaryproduct(int, int);
+ 
+int main()
+{
+ 
+    long binary1, binary2, multiply = 0;
+    int digit, factor = 1;
+ 
+    printf("Enter the first binary number: ");
+    scanf("%ld", &binary1);
+    printf("Enter the second binary number: ");
+    scanf("%ld", &binary2);
+    while (binary2 != 0)
+    {
+        digit =  binary2 % 10;
+        if (digit == 1)
+        {
+            binary1 = binary1 * factor;
+            multiply = binaryproduct(binary1, multiply);
+        }
+        else
+            binary1 = binary1 * factor;
+        binary2 = binary2 / 10;
+        factor = 10;
+    }
+    printf("Product of two binary numbers: %ld", multiply);
+    return 0;
+}
+ 
+int binaryproduct(int binary1, int binary2)
+{
+    int i = 0, remainder = 0, sum[20];
+    int binaryprod = 0;
+ 
+    while (binary1 != 0 || binary2 != 0)
+    {
+        sum[i++] =(binary1 % 10 + binary2 % 10 + remainder) % 2;
+        remainder =(binary1 % 10 + binary2 % 10 + remainder) / 2;
+        binary1 = binary1 / 10;
+        binary2 = binary2 / 10;
+    }
+    if (remainder != 0)
+        sum[i++] = remainder;
+    --i;
+    while (i >= 0)
+        binaryprod = binaryprod * 10 + sum[i--];
+    return binaryprod;
+}
+ . 
+*******************
+C Program to find Product of 2 Numbers without using Recursion
+================================ EOPN
+/*  
+ * C Program to find Product of 2 Numbers without using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm19.c
+$ a.out
+Enter two numbers to find their product:  89  458
+Product of 89 and 458 is 40762
+--------------------------------
+ . 
+*******************
+C Program to Check whether a given Number is Armstrong
+================================ EOPN
+/*
+ * C Program to Check whether a given Number is Armstrong
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+Output:
+$ cc pgm41.c -lm
+$ a.out
+enter a number370
+The given no is armstrong no
+ 
+$ a.out
+enter a number1500
+The given no is not a armstrong no
+--------------------------------
+ . 
+*******************
+C Program to Check whether a given Number is Perfect Number
+================================ EOPN
+/*
+ * C Program to Check whether a given Number is Perfect Number
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+Output:
+$ cc pgm42.c
+$ a.out
+Enter a Number
+6
+Entered Number is perfect number
+ 
+$ a.out
+Enter a Number
+100
+Entered Number is not a perfect number
+--------------------------------
+ . 
+*******************
+C Program to Print Armstrong Number from 1 to 1000
+================================ EOPN
+/*
+ * C Program to Print Armstrong Number from 1 to 1000
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+Output:
+$ cc pgm44.c
+$ a.out
+Print all Armstrong numbers between 1 and 1000:
+ 
+Amstrong no is:1
+Amstrong no is:153
+Amstrong no is:370
+Amstrong no is:371
+Amstrong no is:407
+--------------------------------
+ . 
+*******************
+C Program to Add two Complex Numbers
+================================ EOPN
+/*
+ * C Program to Add two Complex Numbers
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm55.c
+$ a.out
+Enter value of a and b complex number a + ib.
+value of complex number a is = 10
+value of complex number b is = 12
+Enter value of c and d complex number c + id.
+value of complex number c is = 15
+value of complex number d is = 22
+complex numbers sum is = 25 + 34i
+--------------------------------
+ . 
+*******************
+C Program to Generate Fibonacci Series of N Numbers using Command-Line Argument
+================================ EOPN
+/*
+ * C program to generate Fibonacci Series. Fibonacci Series
+ * is 0 1 1 2 3 5 8 13 21 ...
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm40.c
+$ a.out
+Enter the limit to generate the Fibonacci Series
+6
+Fibonacci Series is ...
+0
+1
+1
+2
+3
+5
+--------------------------------
+ . 
+*******************
+ C Program to Find the Sum of first 50 Natural Numbers using For Loop   
+================================ EOPN
+/*
+ * C program to find the sum of first 50 natural numbers
+ * using for loop
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm73.c
+$ a.out
+Sum = 1275
+--------------------------------
+ . 
+*******************
+ C Program to Swap the Contents of two Numbers using Bitwise XOR Operation 
+================================ EOPN
+/*
+ * C program to swap the contents of two numbers using bitwise XOR
+ * operation. Don't use either the temporary variable or arithmetic
+ * operators
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm48.c
+$ a.out
+Enter two integers
+45
+89
+ 
+Before swapping i= 45 and k = 89
+After swapping i= 89 and k = 45
+--------------------------------
+ . 
+*******************
+ C Program to Multiply given Number by 4 using Bitwise Operators  
+================================ EOPN
+/*
+ * C program to multiply given number by 4 using bitwise operators
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm62.c
+$ a.out
+Enter an integer
+450
+450 x 4 = 1800
+--------------------------------
+ . 
+*******************
+ C Program to Illustrate how User Authentication is Done 
+================================ EOPN
+/* * C program is to illustrate how user authentication is done. * Program asks for the user name and password and displays * the password as '*' character 
+================================ EOKW
+--------------------------------
+output:
+ 
+Enter User name: rajaraman
+Enter the password <any 8 characters>: shashi12
+********
+Your password is :shashi12
+--------------------------------
+/*
+ * C program is to illustrate how user authentication is done.
+ * Program asks for the user name and password and displays
+ * the password as '*' character
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    char password[10], username[10], ch;
+    int i;
+ 
+    printf("Enter User name: ");
+    gets(username);
+    printf("Enter the password < any 8 characters>: ");
+    for (i = 0; i < 8; i++)
+    {
+            ch = getchar();
+            password[i] = ch;
+            ch = '*' ;
+            printf("%c", ch);
+    }
+        password[i] = '\0';
+    /*  Original password can be printed, if needed */
+    printf("\n Your password is :");
+    for (i = 0; i < 8; i++)
+    {
+            printf("%c", password[i]);
+    }
+}
+ . 
+*******************
+C Program to Display the IP Address of the System
+================================ EOPN
+/* * C Program to Get IP Address 
+================================ EOKW
+--------------------------------
+output:
+ 
+IP Address is eth0 - 192.168.225.135
+--------------------------------
+/*
+ * C Program to Get IP Address
+ */
+#include <stdio.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/ioctl.h>
+#include <netinet/in.h>
+#include <net/if.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+ 
+int main()
+{
+    int n;
+    struct ifreq ifr;
+    char array[] = "eth0";
+ 
+    n = socket(AF_INET, SOCK_DGRAM, 0);
+    //Type of address to retrieve - IPv4 IP address
+    ifr.ifr_addr.sa_family = AF_INET;
+    //Copy the interface name in the ifreq structure
+    strncpy(ifr.ifr_name , array , IFNAMSIZ - 1);
+    ioctl(n, SIOCGIFADDR, &ifr);
+    close(n);
+    //display result
+    printf("IP Address is %s - %s\n" , array , inet_ntoa(( (struct sockaddr_in *)&ifr.ifr_addr )->sin_addr) );
+    return 0;
+}
+ . 
+*******************
+C Program to Shutdown or Turn Off the Computer in Linux
+================================ EOPN
+/* * C Program to Shutdown or Turn Off the Computer in Linux. 
+================================ EOKW
+--------------------------------
+output:
+ 
+shutdown: Need to be root
+--------------------------------
+/*
+ * C Program to Shutdown or Turn Off the Computer in Linux.
+ */
+#include <stdio.h>
+ 
+int main()
+{
+    system("shutdown -P now");
+    return 0;
+}
+ . 
+*******************
+ C Program to Find if a given Year is a Leap Year 
+================================ EOPN
+/* * C program to find whether a given year is leap year or not 
+================================ EOKW
+--------------------------------
+output:
+ 
+Enter a year
+2012
+2012 is a leap year
+ 
+ 
+Enter a year
+2009
+2009 is not a leap year
+--------------------------------
+/*
+ * C program to find whether a given year is leap year or not
+ */
+void main()
+{
+    int year;
+ 
+    printf("Enter a year \n");
+    scanf("%d", &year);
+    if ((year % 400) == 0)
+        printf("%d is a leap year \n", year);
+    else if ((year % 100) == 0)
+        printf("%d is a not leap year \n", year);
+    else if ((year % 4) == 0)
+        printf("%d is a leap year \n", year);
+    else
+        printf("%d is not a leap year \n", year);
+}
+ . 
+*******************
+C Program to Extract Last two Digits of a given Year
+================================ EOPN
+/* * C Program to Extract Last two Digits of a given Year 
+================================ EOKW
+--------------------------------
+output:
+Output:
+Enter the year 2012
+Last two digits of year is: 12
+--------------------------------
+/*
+ * C Program to Extract Last two Digits of a given Year
+ */
+#include <stdio.h>
+ 
+int main()
+{
+    int year, yr;
+ 
+    printf("Enter the year ");
+    scanf("%d", &year);
+    yr = year % 100;
+    printf("Last two digits of year is: %02d", yr);
+    return 0;
+}
+ . 
+*******************
+ C Program to Display the Inventory of Items in a Store 
+================================ EOPN
+/*
+ * C program to display the inventory of items in a store / shop
+ * The inventory maintains details such as name, price, quantity
+ * and manufacturing date of each item.
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm60.c
+$ a.out
+Enter number of items:3
+Item name:
+pendrive
+Item code:
+123
+Quantity:
+6
+price:
+3000
+Manufacturing date(dd-mm-yyyy):
+30-9-2012
+Item name:
+computer
+Item code:
+124
+Quantity:
+10
+price:
+10000
+Manufacturing date(dd-mm-yyyy):
+30-7-2012
+Item name:
+optical mouse
+Item code:
+Quantity:
+price:
+Manufacturing date(dd-mm-yyyy):
+             *****  INVENTORY *****
+------------------------------------------------------------------
+S.N.|    NAME           |   CODE   |  QUANTITY |  PRICE  | MFG.DATE
+------------------------------------------------------------------
+1     pendrive               123          6        3000     30/9/2012
+2     computer               124          10       10000    30/7/2012
+3     optical                0            0        0        0/0/0
+------------------------------------------------------------------
+ 
+$ a.out
+Enter number of items:3
+Item name:
+pendrive
+Item code:
+123
+Quantity:
+6
+price:
+3000
+Manufacturing date(dd-mm-yyyy):
+30-9-2012
+Item name:
+computer
+Item code:
+124
+Quantity:
+10
+price:
+10000
+Manufacturing date(dd-mm-yyyy):
+30-7-2012
+Item name:
+Mouse
+Item code:
+125
+Quantity:
+10
+price:
+1500
+Manufacturing date(dd-mm-yyyy):
+30-6-2012
+ 
+             *****  INVENTORY *****
+------------------------------------------------------------------
+S.N.|    NAME           |   CODE   |  QUANTITY |  PRICE    | MFG.DATE
+------------------------------------------------------------------
+1     pendrive               123          6        3000      30/9/2012
+2     computer               124          10       10000     30/7/2012
+3     Mouse                  125          10       1500      30/6/2012
+------------------------------------------------------------------
+--------------------------------
+ . 
+*******************
+C Program to Display the ATM Transaction
+================================ EOPN
+/* * C Program to Display the ATM Transaction 
+================================ EOKW
+--------------------------------
+output:
+ 
+ 
+ENTER YOUR SECRET PIN NUMBER:1520
+********Welcome to ATM Service**************
+1. Check Balance
+2. Withdraw Cash
+3. Deposit Cash
+4. Quit
+******************?**************************?*
+ 
+Enter your choice: 1
+ 
+YOUR BALANCE IN Rs : 1000
+ 
+ 
+DO U WISH TO HAVE ANOTHER TRANSCATION?(y/n):
+********Welcome to ATM Service**************
+1. Check Balance
+2. Withdraw Cash
+3. Deposit Cash
+4. Quit
+******************?**************************?*
+ 
+Enter your choice: 2
+ 
+ENTER THE AMOUNT TO WITHDRAW: 200
+ 
+ 
+PLEASE COLLECT CASH
+YOUR CURRENT BALANCE IS 800
+ 
+DO U WISH TO HAVE ANOTHER TRANSCATION?(y/n):
+********Welcome to ATM Service**************
+1. Check Balance
+2. Withdraw Cash
+3. Deposit Cash
+4. Quit
+******************?**************************?*
+ 
+Enter your choice: 3
+ 
+ENTER THE AMOUNT TO DEPOSIT 5000
+YOUR BALANCE IS 5800
+ 
+ 
+DO U WISH TO HAVE ANOTHER TRANSCATION?(y/n):
+********Welcome to ATM Service**************
+1. Check Balance
+2. Withdraw Cash
+3. Deposit Cash
+4. Quit
+******************?**************************?*
+ 
+Enter your choice: 1
+ 
+YOUR BALANCE IN Rs : 5800
+ 
+ 
+DO U WISH TO HAVE ANOTHER TRANSCATION?(y/n):
+********Welcome to ATM Service**************
+1. Check Balance
+2. Withdraw Cash
+3. Deposit Cash
+4. Quit
+******************?**************************?*
+ 
+Enter your choice: 4
+ 
+THANK U USING ATM
+ 
+ 
+DO U WISH TO HAVE ANOTHER TRANSCATION?(y/n):
+********Welcome to ATM Service**************
+1. Check Balance
+2. Withdraw Cash
+3. Deposit Cash
+4. Quit
+******************?**************************?*
+ 
+Enter your choice: 4
+ 
+THANK U USING ATM
+ 
+ 
+DO U WISH TO HAVE ANOTHER TRANSCATION?(y/n):
+********Welcome to ATM Service**************
+1. Check Balance
+2. Withdraw Cash
+3. Deposit Cash
+4. Quit
+******************?**************************?*
+ 
+Enter your choice: n
+ 
+THANK U USING ATM
+ 
+ 
+DO U WISH TO HAVE ANOTHER TRANSCATION?(y/n):
+ 
+THANKS FOR USING OUT ATM SERVICE.
+--------------------------------
+/*
+ * C Program to Display the ATM Transaction
+ */
+#include <stdio.h>
+ 
+unsigned long amount=1000, deposit, withdraw;
+int choice, pin, k;
+char transaction ='y';
+ 
+void main()
+{
+    while (pin != 1520)
+    {
+        printf("ENTER YOUR SECRET PIN NUMBER:");
+        scanf("%d", &pin);
+        if (pin != 1520)
+        printf("PLEASE ENTER VALID PASSWORD\n");
+    }
+    do
+    {
+        printf("********Welcome to ATM Service**************\n");
+        printf("1. Check Balance\n");
+        printf("2. Withdraw Cash\n");
+        printf("3. Deposit Cash\n");
+        printf("4. Quit\n");
+        printf("******************?**************************?*\n\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("\n YOUR BALANCE IN Rs : %lu ", amount);
+            break;
+        case 2:
+            printf("\n ENTER THE AMOUNT TO WITHDRAW: ");
+            scanf("%lu", &withdraw);
+            if (withdraw % 100 != 0)
+            {
+                printf("\n PLEASE ENTER THE AMOUNT IN MULTIPLES OF 100");
+            }
+            else if (withdraw >(amount - 500))
+            {
+                printf("\n INSUFFICENT BALANCE");
+            }
+            else
+            {
+                amount = amount - withdraw;
+                printf("\n\n PLEASE COLLECT CASH");
+                printf("\n YOUR CURRENT BALANCE IS%lu", amount);
+            }
+            break;
+        case 3:
+            printf("\n ENTER THE AMOUNT TO DEPOSIT");
+            scanf("%lu", &deposit);
+                        amount = amount + deposit;
+            printf("YOUR BALANCE IS %lu", amount);
+            break;
+        case 4:
+            printf("\n THANK U USING ATM");
+            break;
+        default:
+            printf("\n INVALID CHOICE");
+        }
+        printf("\n\n\n DO U WISH TO HAVE ANOTHER TRANSCATION?(y/n): \n");
+        fflush(stdin);
+        scanf("%c", &transaction);
+        if (transaction == 'n'|| transaction == 'N')
+                    k = 1;
+    } while (!k);
+    printf("\n\n THANKS FOR USING OUT ATM SERVICE");
+}
+ . 
+*******************
+ C Program to Accept the Height of a Person & Categorize as Taller, Dwarf & Average 
+================================ EOPN
+/* * C program to accept the height of a person in centimeter and * categorize the person based on height as taller, dwarf and * average height person 
+================================ EOKW
+--------------------------------
+output:
+Enter  the Height (in centimetres)
+165
+Average Height
+ 
+Enter  the Height (in centimetres)
+140
+Dwarf
+ 
+Enter  the Height (in centimetres)
+190
+Taller
+--------------------------------
+/*
+ * C program to accept the height of a person in centimeter and
+ * categorize the person based on height as taller, dwarf and
+ * average height person
+ */
+ 
+#include <stdio.h>
+void main()
+{
+    float height;
+ 
+    printf("Enter  the Height (in centimetres) \n");
+    scanf("%f", &height);
+    if (height < 150.0)
+        printf("Dwarf \n");
+    else if ((height >= 150.0) && (height <= 165.0))
+        printf(" Average Height \n");
+    else if ((height > 165.0) && (height <= 195.0))
+        printf("Taller \n");
+    else
+        printf("Abnormal height \n");
+}
+ . 
+*******************
+ C Program to Read a Grade & Display the Equivalent Description 
+================================ EOPN
+/* * C Program to accept a grade and declare the equivalent description * if code is S, then print SUPER * if code is A, then print VERY GOOD * if code is B, then print FAIR * if code is Y, then print ABSENT * if code is F, then print FAILS 
+================================ EOKW
+--------------------------------
+output:
+ 
+Enter the grade
+s
+RESULT  :  SUPER
+ 
+Enter the grade
+a
+RESULT  :  VERY GOOD
+ 
+Enter the grade
+b
+RESULT  :  FAIR
+ 
+Enter the grade
+y
+RESULT  :  ABSENT
+ 
+Enter the grade
+f
+RESULT  :  FAILS
+--------------------------------
+/*
+ * C Program to accept a grade and declare the equivalent description
+ * if code is S, then print SUPER
+ * if code is A, then print VERY GOOD
+ * if code is B, then print FAIR
+ * if code is Y, then print ABSENT
+ * if code is F, then print FAILS
+ */
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+ 
+void main()
+{
+    char remark[15];
+    char grade;
+ 
+    printf("Enter the grade \n");
+    scanf("%c", &grade);
+    /*  lower case letter to upper case */
+    grade = toupper(grade);
+    switch(grade)
+    {
+    case 'S':
+        strcpy(remark, " SUPER");
+        break;
+    case 'A':
+        strcpy(remark, " VERY GOOD");
+        break;
+    case 'B':
+        strcpy(remark, " FAIR");
+        break;
+    case 'Y':
+        strcpy(remark, " ABSENT");
+        break;
+    case 'F':
+        strcpy(remark, " FAILS");
+        break;
+    default :
+        strcpy(remark, "ERROR IN GRADE \n");
+        break;
+    }
+    printf("RESULT  : %s\n", remark);
+}
+ . 
+*******************
+ C Program to Illustrate the Concept of Unions 
+================================ EOPN
+/* * C program to illustrate the concept of unions 
+================================ EOKW
+--------------------------------
+output:
+ 
+Enter the value of n1: 10
+Value of n1 = 10
+Enter the value of n2: 50
+Value of n2 = 50.000000
+--------------------------------
+/*
+ * C program to illustrate the concept of unions
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    union number
+    {
+        int  n1;
+        float n2;
+    };
+    union number x;
+ 
+    printf("Enter the value of n1: ");
+    scanf("%d", &x.n1);
+    printf("Value of n1 = %d", x.n1);
+    printf("\nEnter the value of n2: ");
+    scanf("%f", &x.n2);
+    printf("Value of n2 = %f\n", x.n2);
+}
+ . 
+*******************
+ C Program to Find the Size of a Union 
+================================ EOPN
+/* * C program to find the size of a union 
+================================ EOKW
+--------------------------------
+output:
+ 
+The size of union = 4
+25 0.000000 
+1045220557 0.200000
+1045220464 0.199999
+--------------------------------
+/*
+ * C program to find the size of a union
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    union sample
+    {
+        int   m;
+        float n;
+        char  ch;
+    };
+    union sample u;
+ 
+    printf("The size of union = %d\n", sizeof(u));
+    /*  initialization */
+    u.m = 25;
+    printf("%d %f %c\n", u.m, u.n, u.ch);
+    u.n = 0.2;
+    printf("%d %f %c\n", u.m, u.n, u.ch);
+    u.ch = 'p';
+    printf("%d %f %c\n", u.m, u.n, u.ch);
+}
+ . 
+*******************
+C Program to Display Function without using the Main Function
+================================ EOPN
+/* * C Program to display function without using the Main Function 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+helloworld
+--------------------------------
+/*
+ * C Program to display function without using the Main Function
+ */
+#include <stdio.h>
+#define decode(s,t,u,m,p,e,d) m##s##u##t
+#define begin decode(a,n,i,m,a,t,e)
+ 
+int begin()
+{
+    printf(" helloworld ");
+}
+ . 
+*******************
+C Program to Print a Semicolon without using a Semicolon anywhere in the Code
+================================ EOPN
+/* * C Program to Print a Semicolon without using a Semicolon * anywhere in the code 
+================================ EOKW
+--------------------------------
+output:
+ 
+;
+--------------------------------
+/*
+ * C Program to Print a Semicolon without using a Semicolon
+ * anywhere in the code
+ */
+#include <stdio.h>
+ 
+int main(void)
+{
+    //59 is the ascii value of semicolumn
+    if (printf("%c ", 59))
+    {
+    }
+    return 0;
+}
+ . 
+*******************
+C program to Increase 1 to all of the given Integer Digit
+================================ EOPN
+ /* * C program to Increase 1 to all of the given Integer Digit 
+================================ EOKW
+--------------------------------
+output:
+Enter a number: 3456
+increasing 1 to all digits:  22
+--------------------------------
+ 
+/*
+ * C program to Increase 1 to all of the given Integer Digit
+ */
+#include <stdio.h>
+ 
+int main()
+{
+    int number, sum = 0, remainder, count;
+ 
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    while (number)
+    {
+        remainder = number % 10;
+        sum  = sum + (remainder + 1);
+        number /= 10;
+    }
+    printf("increasing 1 to all digits:  %d", sum);
+    return 0;
+}
+ . 
+*******************
+C Program to Print Diamond Pattern
+================================ EOPN
+ /* * C Program to Print Diamond Pattern 
+================================ EOKW
+--------------------------------
+output:
+Enter number of rows
+5
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+ 
+Enter number of rows
+2
+ *
+***
+ *
+--------------------------------
+ 
+/*
+ * C Program to Print Diamond Pattern
+ */
+#include <stdio.h>
+ 
+int main()
+{
+    int number, i, k, count = 1;
+ 
+    printf("Enter number of rows\n");
+    scanf("%d", &number);
+    count = number - 1;
+    for (k = 1; k <= number; k++)
+    {
+        for (i = 1; i <= count; i++)
+            printf(" ");
+        count--;
+        for (i = 1; i <= 2 * k - 1; i++)
+            printf("*");
+        printf("\n");
+     }
+     count = 1;
+     for (k = 1; k <= number - 1; k++)
+     {
+         for (i = 1; i <= count; i++)
+             printf(" ");
+         count++;
+         for (i = 1 ; i <= 2 *(number - k)-  1; i++)
+             printf("*");
+         printf("\n");
+      }
+      return 0;
+}
+ . 
+*******************
+C Program to Print any Print Statement without using Semicolon
+================================ EOPN
+/* * C Program to Print any Print Statement without using Semicolon 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+Hi.. Welcome to sanfoundry
+--------------------------------
+/*
+ * C Program to Print any Print Statement without using Semicolon
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    if(printf("Hi.. Welcome to sanfoundry"))
+    {
+    }
+}
+ . 
+*******************
+C Program to Display its own Source Code as its Output
+================================ EOPN
+/* * C Program to Display its own Source Code as its Output 
+================================ EOKW
+--------------------------------
+output:
+Output:
+ 
+/*
+ * C Program to display its own source code as its output
+ */
+#include <stdio.h>
+ 
+int main()
+{
+    FILE *fp;
+    char ch;
+ 
+    fp = fopen(__FILE__,"r");
+    do
+    {
+        ch = getc(fp);
+        putchar(ch);
+     }
+     while (ch != EOF);
+     fclose(fp);
+     return 0;
+}
+--------------------------------
+/*
+ * C Program to Display its own Source Code as its Output
+ */
+#include <stdio.h>
+ 
+int main()
+{
+    FILE *fp;
+    char ch;
+ 
+    fp = fopen(__FILE__,"r");
+    do
+    {
+        ch = getc(fp);
+        putchar(ch);
+     }
+     while (ch != EOF);
+     fclose(fp);
+     return 0;
+}
+ . 
+*******************
+C Program to Illustrate Pass by Reference
+================================ EOPN
+/* * C Program to Illustrate Pass by Reference 
+================================ EOKW
+--------------------------------
+output:
+output:
+the cube of the given number is 1000
+--------------------------------
+/*
+ * C Program to Illustrate Pass by Reference
+ */
+#include <stdio.h>
+ 
+void cube( int *x);
+ 
+int main()
+{
+    int num = 10;
+ 
+    cube(&num);
+    printf("the cube of the given number is %d", num);
+    return 0;
+}
+ 
+void  cube(int *x)
+{
+    *x = (*x) * (*x) * (*x);
+}
+ . 
+*******************
+C Program to Illustrate Pass by Value
+================================ EOPN
+/* * C Program to Illustrate Pass by Value. 
+================================ EOKW
+--------------------------------
+output:
+ 
+Before swapping num1 = 10 num2 = 20
+After swapping num1 = 10 num2 = 20
+--------------------------------
+/*
+ * C Program to Illustrate Pass by Value.
+ */
+#include <stdio.h>
+ 
+void swap(int a, int b)
+{
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+ 
+int main()
+{
+    int num1 = 10, num2 = 20;
+ 
+    printf("Before swapping num1 = %d num2 = %d\n", num1, num2);
+    swap(num1, num2);
+    printf("After swapping num1 = %d num2 = %d \n", num1, num2);
+    return 0;
+}
+ . 
+*******************
+C Program to Input 3 Arguments and Operate Appropriately on the Numbers
+================================ EOPN
+/*  * C Program to Input 3 Arguments and Operate Appropriately on the  * Numbers 
+================================ EOKW
+--------------------------------
+output:
+arguments entered:
+5 4 +
+The result of the operation is 9
+ 
+arguments entered:
+8 7 -
+The result of the operation is 1
+ 
+arguments entered:
+9 6 x
+The result of the operation is 54
+ 
+arguments entered:
+100 10 /
+The result of the operation is 10
+--------------------------------
+/* 
+ * C Program to Input 3 Arguments and Operate Appropriately on the 
+ * Numbers
+ */
+#include <stdio.h>
+ 
+void main(int argc, char * argv[])
+{
+    int a, b, result;
+    char ch;
+ 
+    printf("arguments entered: \n");
+    a = atoi(argv[1]);
+    b = atoi(argv[2]);
+    ch  = *argv[3];
+    printf("%d %d %c", a, b, ch);
+    switch (ch)
+    {
+    case '+':
+        result = a + b;
+        break;
+    case '-':
+        result = a - b;
+        break;
+    case 'x':
+        result = a * b;
+        break;
+    case '/':
+        result = a / b;
+        break;
+    default:
+        printf("Enter a valid choice");
+    }
+    printf("\nThe result of the operation is %d", result);
+    printf("\n");    
+}
+ . 
+*******************
+ C Program to Check if a given String is Palindrome 
+================================ EOPN
+ /* * C program to read a string and check if it's a palindrome, without * using library functions. Display the result. 
+================================ EOKW
+--------------------------------
+output:
+ 
+Enter a string
+sanfoundry
+sanfoundry is not a palindrome
+ 
+ 
+Enter a string
+malayalam
+malayalam is a palindrome
+--------------------------------
+ 
+/*
+ * C program to read a string and check if it's a palindrome, without
+ * using library functions. Display the result.
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    char string[25], reverse_string[25] = {'\0'};
+    int  i, length = 0, flag = 0;
+ 
+    fflush(stdin);
+    printf("Enter a string \n");
+    gets(string);
+    /*  keep going through each character of the string till its end */
+    for (i = 0; string[i] != '\0'; i++)
+    {
+        length++;
+    }
+    for (i = length - 1; i >= 0; i--)
+    {
+       reverse_string[length - i - 1] = string[i];
+    }
+    /*
+     * Compare the input string and its reverse. If both are equal
+     * then the input string is palindrome.
+     */
+    for (i = 0; i < length; i++)
+    {
+        if (reverse_string[i] == string[i])
+            flag = 1;
+        else
+            flag = 0;
+    }
+    if (flag == 1)
+        printf("%s is a palindrome \n", string);
+    else
+        printf("%s is not a palindrome \n", string);
+}
+ . 
+*******************
+ C Program to Check if a String is a Palindrome without using the Built-in Function 
+================================ EOPN
+ /* * C program to find the length of a string without using the * built-in function also check whether it is a palindrome 
+================================ EOKW
+--------------------------------
+output:
+ 
+Enter a string
+how  are you
+The length of the string 'how  are you' = 12
+how  are you is not a palindrome
+ 
+ 
+Enter a string
+madam
+The length of the string 'madam' = 5
+madam is a palindrome
+ 
+ 
+Enter a string
+mam
+The length of the string 'mam' = 3
+mam is a palindrome
+--------------------------------
+ 
+/*
+ * C program to find the length of a string without using the
+ * built-in function also check whether it is a palindrome
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    char string[25], reverse_string[25] = {'\0'};
+    int i, length = 0, flag = 0;
+ 
+    printf("Enter a string \n");
+    gets(string);
+    /*  keep going through each character of the string till its end */
+    for (i = 0; string[i] != '\0'; i++)
+    {
+        length++;
+    }
+    printf("The length of the string '%s' = %d\n", string, length);
+    for (i = length - 1; i >= 0 ; i--)
+    {
+        reverse_string[length - i - 1] = string[i];
+    }
+   /*  Check if the string is a Palindrome */
+ 
+    for (flag = 1, i = 0; i < length ; i++)
+    {
+        if (reverse_string[i] != string[i])
+            flag = 0;
+    }
+    if (flag == 1)
+       printf ("%s is a palindrome \n", string);
+    else
+       printf("%s is not a palindrome \n", string);
+}
+ . 
+*******************
+C Program to Check whether a given String is Palindrome or not using Recursion
+================================ EOPN
+/*  
+ * C Program to Check whether a given String is Palindrome or not 
+ * using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ gcc palindrome.c -o palindrome
+$ a.out
+Enter a word to check if it is a palindrome
+malayalam
+The entered word is a palindrome
+--------------------------------
+ . 
+*******************
+ C Program To Print Smallest and Biggest possible Word which is Palindrome in a given String 
+================================ EOPN
+/*  
+ * C Program To Print Smallest and Biggest possible Word 
+ * which is Palindrome in a given String
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc string14i.c
+$ a.out
+Read a string:
+aba abcba abcdcba bcd
+aba abcba abcdcba bcd
+String aba is a Palindrome
+String abcba is a Palindrome
+String abcdcba is a Palindrome
+The minimum palindrome is aba
+The maximum palindrome is abcdcba
+ 
+$ a.out
+Read a string:
+abc abcd
+abc abcd
+given string has no pallindrome
+--------------------------------
+ . 
+*******************
+ C Program to Find the Largest & Smallest Word in a String 
+================================ EOPN
+/* 
+ * C Program to Find the Largest & Smallest Word in a String
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ gcc largestsmallest.c 
+$ ./a.out
+Enter string: amazing programmers exists here
+The largest word is 'programmers' and smallest word is 'here' in 'amazing programmers exists here'.
+--------------------------------
+ . 
+*******************
+ C Program to read two Strings & Concatenate the Strings 
+================================ EOPN
+  /* * C program to read two strings and concatenate them, without using * library functions. Display the concatenated string. 
+================================ EOKW
+--------------------------------
+output:
+Enter the first string : San
+Enter the second string: foundry
+First string  = San
+Second string = foundry
+Concatenated string = Sanfoundry
+--------------------------------
+ 
+ 
+/*
+ * C program to read two strings and concatenate them, without using
+ * library functions. Display the concatenated string.
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    char string1[20], string2[20];
+    int i, j, pos;
+ 
+    /*  Initialize the string to NULL values */
+    memset(string1, 0, 20);
+    memset(string2, 0, 20);
+ 
+    printf("Enter the first string : ");
+    scanf("%s", string1);
+    printf("Enter the second string: ");
+    scanf("%s", string2);
+    printf("First string  = %s\n", string1);
+    printf("Second string = %s\n", string2);
+ 
+    /*  Concate the second string to the end of the first string */
+    for (i = 0; string1[i] != '\0'; i++)
+    {
+        /*  null statement: simply traversing the string1 */
+        ;
+    }
+    pos = i;
+    for (j = 0; string2[j] != '\0'; i++)
+    {
+        string1[i] = string2[j++];
+    }
+    /*  set the last character of string1 to NULL */
+    string1[i] = '\0';
+    printf("Concatenated string = %s\n", string1);
+}
+ . 
+*******************
+ C Program to Concatenate two Strings Lexically 
+================================ EOPN
+/*  
+ * C Program to Concatenate the given two Strings Lexically
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc string17.c
+$ a.out
+ 
+Enter a string : hello this
+ 
+Enter another string to concat : is sanfoundry
+hello is sanfoundry this
+--------------------------------
+ . 
+*******************
+ C Program to Check if the Substring is present in the given String 
+================================ EOPN
+/*  
+ * C program to accept a string and a substring and
+ * check if the substring is present in the given string
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm44.c
+$ a.out
+Enter a string: hello
+Enter search substring: world
+SEARCH UNSUCCESSFUL!
+ 
+$ a.out
+Enter a string: helloworld
+Enter search substring:ld
+SEARCH SUCCESSFUL!
+--------------------------------
+ . 
+*******************
+ C Program to Accepts two Strings & Compare them  
+================================ EOPN
+ #include <stdio.h> int main (){    int count1 = 0, count2 = 0, flag = 0, i;    char string1[30], string2[30];  printf ("Enter the First string\n");    gets (string1);     printf ("Enter the Second string\n");   gets (string2);     while (string1[count1] != '\0')     count1 ++;  while (string2[count2] != '\0')     count2 ++;  i = 0;  while (string1[i] == string2[i] && string1[i] != '\0')  {       i ++;   }   if (string1[i] > string2[i])        printf ("First string is greater than Second string\n");    else if (string1[i] < string2[i])       printf("Second string is greater than First string\n"); else        printf ("Both strings are EQUAL\n");    return 0;}
+================================ EOKW
+--------------------------------
+output:
+Enter the First string
+object
+Enter the Second string
+class
+First string is greater than Second string
+ 
+Enter the First string
+object
+Enter the Second string
+object
+Both strings are EQUAL
+ 
+Enter the First string
+class
+Enter the Second string
+object
+Second string is greater than First string
+--------------------------------
+ 
+#include <stdio.h>
+ 
+int main ()
+{
+    int count1 = 0, count2 = 0, flag = 0, i;
+    char string1[30], string2[30];
+ 
+    printf ("Enter the First string\n");
+    gets (string1);
+ 
+    printf ("Enter the Second string\n");
+    gets (string2);
+ 
+    while (string1[count1] != '\0')
+        count1 ++;
+ 
+    while (string2[count2] != '\0')
+        count2 ++;
+ 
+    i = 0;
+ 
+    while (string1[i] == string2[i] && string1[i] != '\0')
+    {
+        i ++;
+    }
+ 
+    if (string1[i] > string2[i])
+        printf ("First string is greater than Second string\n");
+    else if (string1[i] < string2[i])
+        printf("Second string is greater than First string\n");
+    else
+        printf ("Both strings are EQUAL\n");
+ 
+    return 0;
+}
+ . 
+*******************
+ C Program to Find the Length of a String without using the Built-in Function 
+================================ EOPN
+ /* * C program to find the length of a string without using the * built-in function 
+================================ EOKW
+--------------------------------
+output:
+Enter a string
+Sanfoundry
+The length of a string is the number of characters in it
+So, the length of Sanfoundry = 10
+--------------------------------
+ 
+/*
+ * C program to find the length of a string without using the
+ * built-in function
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    char string[50];
+    int i, length = 0;
+ 
+    printf("Enter a string \n");
+    gets(string);
+    /*  keep going through each character of the string till its end */
+    for (i = 0; string[i] != '\0'; i++)
+    {
+        length++;
+    }
+    printf("The length of a string is the number of characters in it \n");
+    printf("So, the length of %s = %d\n", string, length);
+}
+ . 
+*******************
+ C Program to Replace Lowercase Characters by Uppercase & Vice-Versa 
+================================ EOPN
+/* * C program to read an English sentence and replace * lowercase characters by uppercase and vice-versa. * Output the given sentence as well as the converted * sentence on two different lines. 
+================================ EOKW
+--------------------------------
+output:
+Enter a sentence
+wELCOME tO sANFOUNDRY
+The given sentence is   : wELCOME tO sANFOUNDRY
+Case changed sentence is: Welcome To Sanfoundry
+--------------------------------
+/*
+ * C program to read an English sentence and replace
+ * lowercase characters by uppercase and vice-versa.
+ * Output the given sentence as well as the converted
+ * sentence on two different lines.
+ */
+#include <stdio.h>
+#include <ctype.h>
+ 
+void main()
+{
+    char sentence[100];
+    int count, ch, i;
+ 
+    printf("Enter a sentence \n");
+    for (i = 0;(sentence[i] = getchar()) != '\n'; i++)
+    {
+        ;
+    }
+    sentence[i] = '\0';
+    /*  shows the number of chars accepted in a sentence */
+    count = i;
+    printf("The given sentence is   : %s", sentence);
+    printf("\n Case changed sentence is: ");
+    for (i = 0; i < count; i++)
+    {
+        ch = islower(sentence[i])? toupper(sentence[i]) :
+tolower(sentence[i]);
+        putchar(ch);
+    }
+}
+ . 
+*******************
+ C Program to Remove given Word from a String 
+================================ EOPN
+ /* * C Program to Remove given Word from a String 
+================================ EOKW
+--------------------------------
+output:
+$ gcc remove-word.c -o remove-word
+$./remove-word
+ 
+Enter the string:
+Hello World hello world Hello W
+Enter the word to be removed: Hello
+ 
+World hello world W
+--------------------------------
+ 
+/*
+ * C Program to Remove given Word from a String
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+int main ()
+{
+    char str[100], word[100], twoD[10][30];
+    int i = 0, j = 0, k = 0, len1 = 0, len2 = 0;
+ 
+    printf ("Enter the string:\n");
+    gets (str);
+ 
+    printf ("Enter the word to be removed:\n");
+    gets (word);
+ 
+    // let us convert the string into 2D array
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] == ' ')
+        {
+            twoD[k][j] = '\0';
+            k ++;
+            j = 0;
+        }
+        else
+        {
+            twoD[k][j] = str[i];
+            j ++;
+        }
+    }
+ 
+    twoD[k][j] = '\0';
+ 
+    j = 0;
+    for (i = 0; i < k + 1; i++)
+    {
+        if (strcmp(twoD[i], word) == 0)
+        {
+            twoD[i][j] = '\0';
+        }
+    }
+ 
+    j = 0;
+ 
+    for (i = 0; i < k + 1; i++)
+    {
+        if (twoD[i][j] == '\0')
+            continue;
+        else
+            printf ("%s ", twoD[i]);
+    }
+ 
+    printf ("\n");
+ 
+    return 0;
+}
+ . 
+*******************
+ C Program to Remove all Characters in Second String which are present in First String 
+================================ EOPN
+/*
+ * C Program to Remove all Characters in Second String which are 
+ * present in First String 
+ 
+================================ EOKW
+--------------------------------
+output:
+$ gcc removecommonchar.c 
+$ ./a.out
+ 
+Enter the First string:
+Programming
+Enter the Second string:
+Computer
+ 
+On removing characters from second string we get: Cpute
+--------------------------------
+ . 
+*******************
+ C Program to Replace all the Characters by Lowercase 
+================================ EOPN
+/* * C Program to Replace all the Characters by Lowercase  
+================================ EOKW
+--------------------------------
+output:
+Input a string to convert to lower case
+CHANDANA chanikya
+rAVELLA
+ 
+Input string in lower case:
+chandana chanikya
+ravella
+--------------------------------
+/*
+ * C Program to Replace all the Characters by Lowercase 
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+int main()
+{
+   char string[1000];
+ 
+   printf("Input a string to convert to lower case\n");
+   gets(string);
+ 
+   printf("Input string in lower case: %s\n",strlwr(string));
+ 
+   return  0;
+}
+ . 
+*******************
+C Program to Reverse the String using Recursion
+================================ EOPN
+/*
+ * C Program to Reverse the String using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm12.c
+$ a.out
+Enter a string to reverse: malayalam
+The string after reversing is: malayalam
+ 
+$ a.out
+Enter a string to reverse: cprogramming
+The string after reversing is: gnimmargorpc
+--------------------------------
+ . 
+*******************
+ C Program to Reverse every Word of given String 
+================================ EOPN
+ /*  *  C Program to Reverse every Word of given String 
+================================ EOKW
+--------------------------------
+output:
+enter the string :C Programming Class
+C gnimmargorP ssalC
+--------------------------------
+ 
+/* 
+ *  C Program to Reverse every Word of given String
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    int i, j = 0, k = 0, x, len;
+    char str[100], str1[10][20], temp;
+ 
+    printf("enter the string :");
+    scanf("%[^\n]s", str);
+ 
+/* reads into 2d character array */
+    for (i = 0;str[i] != '\0'; i++)
+    {
+        if (str[i] == ' ')
+        {
+            str1[k][j]='\0';
+            k++;
+            j=0;
+        }
+        else
+        {
+            str1[k][j]=str[i];
+            j++;
+        }
+    }
+    str1[k][j] = '\0';
+ 
+/* reverses each word of a given string */
+    for (i = 0;i <= k;i++)
+    {
+        len = strlen(str1[i]);
+        for (j = 0, x = len - 1;j < x;j++,x--)
+        {
+            temp = str1[i][j];
+            str1[i][j] = str1[i][x];
+            str1[i][x] = temp;
+        }
+    }
+    for (i = 0;i <= k;i++)
+    {
+        printf("%s ", str1[i]);
+    }
+}
+ . 
+*******************
+ C Program to Count the Number of Vowels & Consonants in a Sentence 
+================================ EOPN
+/* * C program to read a sentence and count the total number of vowels * and consonants in the sentence. 
+================================ EOKW
+--------------------------------
+output:
+Enter a sentence
+welcome to sanfoundry
+No. of vowels in welcome to sanfoundry = 7
+No. of consonants in welcome to sanfoundry = 12
+--------------------------------
+/*
+ * C program to read a sentence and count the total number of vowels
+ * and consonants in the sentence.
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    char sentence[80];
+    int i, vowels = 0, consonants = 0, special = 0;
+ 
+    printf("Enter a sentence \n");
+    gets(sentence);
+    for (i = 0; sentence[i] != '\0'; i++)
+    {
+        if ((sentence[i] == 'a' || sentence[i] == 'e' || sentence[i] ==
+        'i' || sentence[i] == 'o' || sentence[i] == 'u') ||
+        (sentence[i] == 'A' || sentence[i] == 'E' || sentence[i] ==
+        'I' || sentence[i] == 'O' || sentence[i] == 'U'))
+        {
+            vowels = vowels + 1;
+        }
+        else
+        {
+            consonants = consonants + 1;
+        }
+        if (sentence[i] =='\t' ||sentence[i] =='\0' || sentence[i] ==' ')
+        {
+            special = special + 1;
+        }
+    }
+    consonants = consonants - special;
+    printf("No. of vowels in %s = %d\n", sentence, vowels);
+    printf("No. of consonants in %s = %d\n", sentence, consonants);
+}
+ . 
+*******************
+ C Program to Count the Total Number of Words in the Sentence using Command Line Argument 
+================================ EOPN
+/* * C Program to Count Number of Words in a given Text Or Sentence 
+================================ EOKW
+--------------------------------
+output:
+Enter the string:
+welcome to sanfoundry's c-programming class!
+Number of words in given string are: 5
+ 
+Enter the string:
+Best Reference Books in C Programming
+Number of words in given string are: 6
+--------------------------------
+/*
+ * C Program to Count Number of Words in a given Text Or Sentence
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    char s[200];
+    int count = 0, i;
+ 
+    printf("Enter the string:\n");
+    scanf("%[^\n]s", s);
+    for (i = 0;s[i] != '\0';i++)
+    {
+        if (s[i] == ' ' && s[i+1] != ' ')
+            count++;    
+    }
+    printf("Number of words in given string are: %d\n", count + 1);
+}
+ . 
+*******************
+ C Program to Find the Frequency of the Word ‘the’ in a given Sentence 
+================================ EOPN
+/* *  C program to accept a string and find the number of times the word * 'the' appears in that string 
+================================ EOKW
+--------------------------------
+output:
+Enter a string:
+The gandhi jayanthi is celeberated on october 2 is the day
+that he has born.
+Frequency of the word 'the' is 2
+--------------------------------
+/*
+ *  C program to accept a string and find the number of times the word
+ * 'the' appears in that string
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    int count = 0, i, times = 0, t, h, e, space;
+    char string[100];
+ 
+    puts("Enter a string:");
+    gets(string);
+   /*   Traverse the string to count the number of characters */
+    while (string[count] != '\0')
+    {
+        count++;
+    }
+    /*   Finding the frequency of the word 'the' */
+    for (i = 0; i <= count - 3; i++)
+    {
+        t =(string[i] == 't' || string[i] == 'T');
+        h =(string[i + 1] == 'h' || string[i + 1] == 'H');
+        e =(string[i + 2] == 'e'|| string[i + 2] == 'E');
+        space =(string[i + 3] == ' ' || string[i + 3] == '\0');
+        if ((t && h && e && space) == 1)
+            times++;
+    }
+    printf("Frequency of the word 'the' is %d\n", times);
+}
+ . 
+*******************
+ C Program to Read a String and find the Sum of all Digits in the String   
+================================ EOPN
+  /* * C program to find the sum of all digits present in the string 
+================================ EOKW
+--------------------------------
+output:
+Enter the string containing both digits and alphabet
+hello100
+NO. of Digits in the string = 3
+Sum of all digits = 1
+--------------------------------
+ 
+ 
+/*
+ * C program to find the sum of all digits present in the string
+ */
+#include <stdio.h>
+void main()
+{
+    char string[80];
+    int count, nc = 0, sum = 0;
+ 
+    printf("Enter the string containing both digits and alphabet \n");
+    scanf("%s", string);
+    for (count = 0; string[count] != '\0'; count++)
+    {
+        if ((string[count] >= '0') && (string[count] <= '9'))
+        {
+            nc += 1;
+            sum += (string[count] - '0');
+        }
+    }
+    printf("NO. of Digits in the string = %d\n", nc);
+    printf("Sum of all digits = %d\n", sum);
+}
+ . 
+*******************
+C Program to Copy One String to Another using Recursion
+================================ EOPN
+/*
+ * C Program to Copy One String to Another using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+$ gcc recursive-copy.c -o recursive-copy
+$ ./recursive-copy
+ 
+Enter string to copy: Welcome to Sanfoundry
+Copying success.
+ 
+The first string is: Welcome to Sanfoundry
+The second string is: Welcome to Sanfoundry
+--------------------------------
+ . 
+*******************
+C Program to find the First Capital Letter in a String using Recursion
+================================ EOPN
+/*
+ * C Program to find the first capital letter in a string using 
+ * Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm32.c
+$ a.out
+Enter a string to find it's first capital letter: iloveC
+The first capital letter in iloveC is C.
+--------------------------------
+ . 
+*******************
+C Program to find the First Capital Letter in a String without using Recursion
+================================ EOPN
+/*
+ * C Program to find the First Capital Letter in a String without 
+ * using Recursion
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc pgm35.c
+$ a.out
+Enter a string to find it's first capital letter: prOgraMmInG
+The first capital letter in prOgraMmInG is O.
+--------------------------------
+ . 
+*******************
+ C Program to Find the Frequency of Substring in the given String 
+================================ EOPN
+/*  * C Program to Find the Frequency of Substring in  * the given String 
+================================ EOKW
+--------------------------------
+output:
+Enter the string:
+prrrogram is prrrogramming
+Enter the substring to be matched:
+rr
+No of matches of substring in main string is: 4
+ 
+Enter the string:
+Sanfoundry C Programming
+Enter the substring to be matched:
+oun
+No of matches of substring in main string is: 1
+--------------------------------
+/* 
+ * C Program to Find the Frequency of Substring in 
+ * the given String
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    int count = 0, i, j = 0, k;
+    char str[100], str1[20];
+ 
+    printf("Enter the string:\n");
+    scanf(" %[^\n]s", str);
+ 
+    printf("Enter the substring to be matched:\n");
+    scanf(" %[^\n]s", str1);
+ 
+    k = strlen(str1);
+ 
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        while (str[i] == str[j])
+        {
+            j ++;
+        }
+ 
+        if (j == k)
+        {
+            count ++;
+            j = 0;
+        }
+    } 
+    printf("No of matches of substring in main string is: %d\n", count);
+}
+ . 
+*******************
+C Program to Check whether two Strings are Anagrams
+================================ EOPN
+ /* * C Program to Check whether two Strings are Anagrams 
+================================ EOKW
+--------------------------------
+output:
+ 
+Enter the string
+abll
+Enter another string
+ball
+"abll" and "ball" are anagrams.
+ 
+ 
+Enter the string
+tall
+Enter another string
+all
+"tall" and "all" are not anagrams.
+--------------------------------
+ 
+/*
+ * C Program to Check whether two Strings are Anagrams
+ */
+#include <stdio.h>
+ 
+int find_anagram(char [], char []);
+ 
+int main()
+{
+    char array1[100], array2[100];
+    int flag;
+ 
+    printf("Enter the string\n");
+    gets(array1);
+    printf("Enter another string\n");
+    gets(array2);
+    flag = find_anagram(array1, array2);
+    if (flag == 1)
+        printf(""%s" and "%s" are anagrams.\n", array1, array2);
+    else
+        printf(""%s" and "%s" are not anagrams.\n", array1, array2);
+    return 0;
+}
+ 
+int find_anagram(char array1[], char array2[])
+{
+    int num1[26] = {0}, num2[26] = {0}, i = 0;
+ 
+    while (array1[i] != '\0')
+    {
+        num1[array1[i] - 'a']++;
+        i++;
+    }
+    i = 0;
+    while (array2[i] != '\0')
+    {
+        num2[array2[i] -'a']++;
+        i++;
+    }
+    for (i = 0; i < 26; i++)
+    {
+        if (num1[i] != num2[i])
+            return 0;
+    }
+    return 1;
+}
+ . 
+*******************
+ C Program to Print the Words Ending with Letter S 
+================================ EOPN
+ /*  * C Program to Print the Words Ending with Letter S 
+================================ EOKW
+--------------------------------
+output:
+ 
+Enter a string : Welcome to Sanfoundry's C Programming Class, Welcome Again to C Class !
+Sanfoundry's
+Class
+--------------------------------
+ 
+/* 
+ * C Program to Print the Words Ending with Letter S
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+char str[100];
+ 
+void main()
+{
+    int i, t, j, len;
+ 
+    printf("Enter a string : ");
+    scanf("%[^\n]s", str);
+ 
+    len = strlen(str);
+ 
+    str[len] = ' ';
+ 
+    for (t = 0, i = 0; i < strlen(str); i++)
+    {
+        if ((str[i] == ' ') && (str[i - 1] == 's'))
+        {
+            for (j = t; j < i; j++)
+                printf("%c", str[j]);
+            t = i + 1;
+            printf("\n");
+        }
+        else
+        {
+            if (str[i] == ' ')
+            {
+                t = i + 1;
+            }
+        }
+    }
+}
+ . 
+*******************
+ C Program to Search a Word & Replace it with the Specified Word 
+================================ EOPN
+/*
+ * C Program to Search a Word & Replace it with the Specified Word
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc string31.c
+$ a.out
+Enter a string along with characters to be rep_strd:
+prrrogram C prrrogramming
+Enter the character to be rep_strd:
+rr
+Enter the new character:
+mmm
+prrrogram C prrrogramming
+pmmmrogram C pmmmrogramming
+--------------------------------
+ . 
+*******************
+ C Program to Display the Characters in Prime Position a given String 
+================================ EOPN
+/* * C Program to Display the Characters in Prime Position a given String 
+================================ EOKW
+--------------------------------
+output:
+enter string
+welcome to sanfoundry c-programming class!
+prime characters in a string are
+e
+l
+o
+e
+ 
+a
+u
+d
+c
+r
+m
+c
+s
+--------------------------------
+/*
+ * C Program to Display the Characters in Prime Position a given String
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    int i, j, k, count = 0;
+    char str[50];
+ 
+    printf("enter string\n");
+    scanf("%[^\n]s", str);
+    k = strlen(str);
+    printf("prime characters in a string are\n");
+    for (i = 2;i <= k;i++)
+    {    
+        count = 0;
+        for (j = 2;j <= k;j++)
+        {
+            if (i % j == 0)
+            {
+                count++;
+            }
+        }
+        if (count == 1)
+        {
+            printf("%c\n", str[i - 1]);
+        }
+    }
+}
+ . 
+*******************
+ C Program to Count Number of Words in a given Text Or Sentence 
+================================ EOPN
+/* * C Program to Count Number of Words in a given Text Or Sentence 
+================================ EOKW
+--------------------------------
+output:
+Enter the string:
+welcome to sanfoundry's c-programming class!
+Number of words in given string are: 5
+ 
+Enter the string:
+Best Reference Books in C Programming
+Number of words in given string are: 6
+--------------------------------
+/*
+ * C Program to Count Number of Words in a given Text Or Sentence
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    char s[200];
+    int count = 0, i;
+ 
+    printf("Enter the string:\n");
+    scanf("%[^\n]s", s);
+    for (i = 0;s[i] != '\0';i++)
+    {
+        if (s[i] == ' ' && s[i+1] != ' ')
+            count++;    
+    }
+    printf("Number of words in given string are: %d\n", count + 1);
+}
+ . 
+*******************
+ C Program to Print Combination of two Words of two given Strings without any Repetition 
+================================ EOPN
+/*
+ * C Program to Print Combination of two Words of two 
+ * given Strings without any Repetition
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc string3.c
+$ a.out
+Enter a string:welcome to sanfoundry's c programming class,  welcome again to c class
+Enter the word to check its occurence:welcome
+The number of occ is 2
+ 
+$ cc string3.c
+$ a.out
+Enter a string:welcome to sanfoundry's c programming class,  welcome again to c class
+Enter the word to check its occurence:c
+The number of occ is 2
+--------------------------------
+ . 
+*******************
+ C Program to Accept 2 String & check whether all Characters in first String is Present in second String & Print 
+================================ EOPN
+/*
+ * C Program to Accept 2 String & check whether all Characters
+ * in first String is Present in second String & Print 
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc allchar.c 
+$ ./a.out
+Enter string1: aspired
+Enter string2: despair
+All characters match in aspired and despair.
+The characters that match are: a, d, e, i, p, r, s,
+--------------------------------
+ . 
+*******************
+ C Program to Check whether a given Character is present in a String, Find Frequency & Position of Occurrence 
+================================ EOPN
+/* 
+ * C Program to Check whether a given Character is present in a
+ * String, Find Frequency & Position of Occurrence 
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ cc charfrequency.c
+$ ./a.out
+Enter character: r
+Now enter the word: programming
+Positions of 'r' in programming are: 2  5  
+Character 'r' occured for 2 times.
+--------------------------------
+ . 
+*******************
+ C Program to Find the First Occurence of the any Character of String2 in String1 
+================================ EOPN
+/
+================================ EOKW
+--------------------------------
+output:
+ 
+enter the string1:C Programming Class
+ 
+enter the string2:rnp
+ 
+first occurance of character of string2 in string1 is at position:3 and character is p
+--------------------------------
+/*
+/*
+ * C Program to Find the First Occurence of the any Character of 
+ * String2 in string1 & also its Position  
+ */
+#include <stdio.h>
+ 
+void main()
+{
+    char s1[50], s2[10];
+    int i, flag = 0;
+    char *ptr1, *ptr2;
+ 
+    printf("\nenter the string1:");
+    scanf(" %[^\n]s", s1);    
+    printf("\nenter the string2:");
+    scanf(" %[^\n]s", s2);
+ 
+    /*COMPARING THE STRING1 CHARACTER BY CHARACTER WITH ALL CHARACTERS OF STRING1*/
+    for (i = 0, ptr1 = s1;*ptr1 !=  '\0';ptr1++)
+    {
+        i++;
+        for (ptr2 = s2; *ptr2 != '\0';ptr2++)
+        {
+            if (*ptr1  ==  *ptr2)
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag  ==  1)
+            break;
+    }
+ 
+    if (flag  ==  1)
+        printf("\nfirst occurance of character of string2 in string1 is at position:%d and character is %c", i, *ptr2);
+    else
+        printf("\nnone of the characters of string1 match with mone of characters of string2");
+}
+ . 
+*******************
+ C Program to find First and Last Occurrence of given Character in a String 
+================================ EOPN
+/*  * C Program to find First and Last Occurrence of given  * Character in a String 
+================================ EOKW
+--------------------------------
+output:
+enter the string
+welcome to sanfoundry's c programming class!
+enter character to be searched
+m
+6 
+34
+--------------------------------
+/* 
+ * C Program to find First and Last Occurrence of given 
+ * Character in a String
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+void main()
+{
+    int i, count = 0, pos1, pos2;
+    char str[50], key, a[10];
+ 
+    printf("enter the string\n");
+    scanf(" %[^\n]s", str);
+    printf("enter character to be searched\n");
+    scanf(" %c", &key);
+    for (i = 0;i <= strlen(str);i++)
+    {
+        if (key == str[i])
+        {
+            count++;
+            if (count  == 1)
+            {
+                pos1 = i;
+                pos2 = i;
+                printf("%d\n", pos1 + 1);
+            }
+            else 
+            {
+                pos2 = i;
+            }
+        }
+    }
+    printf("%d\n", pos2 + 1);
+}
+ . 
+*******************
+ C Program to Find the Most/Least Repeated Character in the String 
+================================ EOPN
+/*
+ *C Program to Find the Most/Least Repeated Character in the String
+ 
+================================ EOKW
+--------------------------------
+output:
+ 
+$ gcc minmaxchar.c 
+$ ./a.out
+Enter string: I love C programming
+The string entered is: I love C programming
+The most repeated characters are: g i m o r 
+The least repeated characters are: a c e l n p v
+--------------------------------
+ . 
+*******************
+ C Program to Count the Occurence of a Substring in String 
+================================ EOPN
+/*  * C Program To Count the Occurrence of a Substring in String  
+================================ EOKW
+--------------------------------
+output:
+ 
+ 
+Enter a string : prrrogram c prrrogramming
+ 
+Enter a substring : rr
+rr occurs 2 times in prrrogram c prrrogramming
+--------------------------------
+/* 
+ * C Program To Count the Occurrence of a Substring in String 
+ */
+#include <stdio.h>
+#include <string.h>
+ 
+char str[100], sub[100];
+int count = 0, count1 = 0;
+ 
+void main()
+{
+    int i, j, l, l1, l2;
+ 
+    printf("\nEnter a string : ");
+    scanf("%[^\n]s", str);
+ 
+    l1 = strlen(str);
+ 
+    printf("\nEnter a substring : ");
+    scanf(" %[^\n]s", sub);
+ 
+    l2 = strlen(sub);
+ 
+    for (i = 0; i < l1;)
+    {
+        j = 0;
+        count = 0;
+        while ((str[i] == sub[j]))
+        {
+            count++;
+            i++;
+            j++;
+        }
+        if (count == l2)
+        {
+            count1++;                                   
+            count = 0;
+        }
+        else
+            i++;
+    }    
+    printf("%s occurs %d times in %s", sub, count1, str);
+}
+ . 
+*******************
+C Program to Search an Element in a Tree Recursively
+================================ EOPN
+/* * C Program to search an element in a Binary Search Tree 
+================================ EOKW
+--------------------------------
+output:
+If the input tree is              
+                    25
+                  /    \  
+                 17     35   
+                / \     / \ 
+              13  19   27 55 
+and the key to be searched for is 15,
+then the output will be : Key not found.
+--------------------------------
+/*
+ * C Program to search an element in a Binary Search Tree
+ */
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+    int info;
+    struct node *left, *right;
+};
+struct node *createnode(int key)
+{
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->info = key;
+    newnode->left = NULL;
+    newnode->right = NULL;
+    return(newnode);
+}
+int search(struct node *head, int key)
+{
+    while (head != NULL)
+    {
+        if (key > head->info)
+        {
+            return search(head->right, key);
+        }
+        else if (key < head->info)
+        {
+            return search(head->left, key);
+        }
+        else
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+/*
+ * Main Function
+ */
+int main()
+{
+    int flag = 0;
+    /* Creating first Tree. */
+    struct node *newnode = createnode(25);
+    newnode->left = createnode(17);
+    newnode->right = createnode(35);
+    newnode->left->left = createnode(13);
+    newnode->left->right = createnode(19);
+    newnode->right->left = createnode(27);
+    newnode->right->right = createnode(55);
+    /* Sample Tree 1:
+     *               25
+     *             /    \
+     *            17     35
+     *           / \     / \
+     *         13  19   27 55
+     */
+    flag = search(newnode,15);
+    if (flag)
+    {
+        printf("Key %d found in tree 1 \n", 15);
+    }
+    else
+    {
+        printf("Key %d not found in tree 1\n", 15);
+    }
+ 
+    /* Creating second Tree. */
+    struct node *node = createnode(1);
+    node->right = createnode(2);
+    node->right->right = createnode(3);
+    node->right->right->right = createnode(4);
+    node->right->right->right->right = createnode(5);
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+     *               1
+     *                \
+     *                 2
+     *                  \
+     *                   3
+     *                    \
+     *                     4
+     *                      \
+     *                       5
+     */
+    flag = search(node,4);
+    if (flag)
+    {
+        printf("Key %d found in tree 2\n", 4);
+    }
+    else
+    {
+        printf("Key %d not found in tree 2\n", 4);
+    }
+ 
+    /* Creating third Tree. */
+    struct node *root = createnode(15);
+    /* Sample Tree 3- Tree having just one root node.
+     *              15
+     */
+    flag = search(root,15);
+    if (flag)
+    {
+        printf("Key %d found in tree 3 \n", 15);
+    }
+    else
+    {
+        printf("Key %d not found in tree 3\n", 15);
+    }
+    return 0;
+}
+ . 
+*******************
+ C Program to Find the Largest value in a Tree using Inorder Traversal 
+================================ EOPN
+/* * C Program for finding the largest node * in a Binary Search Tree using  Inorder Traversal  
+================================ EOKW
+--------------------------------
+output:
+                    25
+                  /    \  
+                 17     35   
+                / \     / \ 
+              13  19   27 55
+--------------------------------
+/*
+ * C Program for finding the largest node
+ * in a Binary Search Tree using  Inorder Traversal 
+ */
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+    int info;
+    struct node *left, *right;
+};
+struct node *createnode(int key)
+{
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->info = key;
+    newnode->left = NULL;
+    newnode->right = NULL;
+    return(newnode);
+}
+void inorder(struct node *root)
+{
+    if(root != NULL)
+    {
+        inorder(root->left);
+        printf(" %d ",root->info);
+        inorder(root->right);
+    }
+}
+void largest(struct node *root)
+{
+    while (root != NULL && root->right != NULL)
+    {
+        root = root->right;
+    }
+    printf("\nLargest value is %d\n", root->info);
+}
+/*
+ * Main Function
+ */
+int main()
+{
+    /* Creating first Tree. */
+    struct node *newnode = createnode(25);
+    newnode->left = createnode(17);
+    newnode->right = createnode(35);
+    newnode->left->left = createnode(13);
+    newnode->left->right = createnode(19);
+    newnode->right->left = createnode(27);
+    newnode->right->right = createnode(55);
+    /* Sample Tree 1:
+     *               25
+     *             /    \
+     *            17     35
+     *           / \     / \
+     *         13  19   27 55
+     */
+    printf("Inorder traversal of tree 1 :");
+    inorder(newnode);
+    largest(newnode);
+ 
+    /* Creating second Tree. */
+    struct node *node = createnode(1);
+    node->right = createnode(2);
+    node->right->right = createnode(3);
+    node->right->right->right = createnode(4);
+    node->right->right->right->right = createnode(5);
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+     *               1
+     *                \
+     *                 2
+     *                  \
+     *                   3
+     *                    \
+     *                     4
+     *                      \
+     *                       5
+     */
+    printf("\nInorder traversal of tree 2 :");
+    inorder(node);
+    largest(node);
+ 
+    /* Creating third Tree. */
+    struct node *root = createnode(15);
+    /* Sample Tree 3- Tree having just one root node.
+     *              15
+     */
+    printf("\nInorder traversal of tree 3 :");
+    inorder(root);
+    largest(root);
+    return 0;
+}
+ . 
+*******************
+ C Program to Find the Largest value in a Tree using Inorder Traversal 
+================================ EOPN
+/* * C Program for finding the largest node * in a Binary Search Tree using  Inorder Traversal  
+================================ EOKW
+--------------------------------
+output:
+                    25
+                  /    \  
+                 17     35   
+                / \     / \ 
+              13  19   27 55
+--------------------------------
+/*
+ * C Program for finding the largest node
+ * in a Binary Search Tree using  Inorder Traversal 
+ */
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+    int info;
+    struct node *left, *right;
+};
+struct node *createnode(int key)
+{
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->info = key;
+    newnode->left = NULL;
+    newnode->right = NULL;
+    return(newnode);
+}
+void inorder(struct node *root)
+{
+    if(root != NULL)
+    {
+        inorder(root->left);
+        printf(" %d ",root->info);
+        inorder(root->right);
+    }
+}
+void largest(struct node *root)
+{
+    while (root != NULL && root->right != NULL)
+    {
+        root = root->right;
+    }
+    printf("\nLargest value is %d\n", root->info);
+}
+/*
+ * Main Function
+ */
+int main()
+{
+    /* Creating first Tree. */
+    struct node *newnode = createnode(25);
+    newnode->left = createnode(17);
+    newnode->right = createnode(35);
+    newnode->left->left = createnode(13);
+    newnode->left->right = createnode(19);
+    newnode->right->left = createnode(27);
+    newnode->right->right = createnode(55);
+    /* Sample Tree 1:
+     *               25
+     *             /    \
+     *            17     35
+     *           / \     / \
+     *         13  19   27 55
+     */
+    printf("Inorder traversal of tree 1 :");
+    inorder(newnode);
+    largest(newnode);
+ 
+    /* Creating second Tree. */
+    struct node *node = createnode(1);
+    node->right = createnode(2);
+    node->right->right = createnode(3);
+    node->right->right->right = createnode(4);
+    node->right->right->right->right = createnode(5);
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+     *               1
+     *                \
+     *                 2
+     *                  \
+     *                   3
+     *                    \
+     *                     4
+     *                      \
+     *                       5
+     */
+    printf("\nInorder traversal of tree 2 :");
+    inorder(node);
+    largest(node);
+ 
+    /* Creating third Tree. */
+    struct node *root = createnode(15);
+    /* Sample Tree 3- Tree having just one root node.
+     *              15
+     */
+    printf("\nInorder traversal of tree 3 :");
+    inorder(root);
+    largest(root);
+    return 0;
+}
+ . 
+*******************
+ C Program To Find the Smallest and Largest Elements in the Binary Search Tree 
+================================ EOPN
+/* * C Program for finding the smallest * and the largest node in a Binary Search Tree 
+================================ EOKW
+--------------------------------
+output:
+                    25
+                  /    \  
+                 17     35   
+                / \     / \ 
+              13  19   27 55
+--------------------------------
+/*
+ * C Program for finding the smallest
+ * and the largest node in a Binary Search Tree
+ */
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+    int info;
+    struct node *left, *right;
+};
+struct node *createnode(int key)
+{
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->info = key;
+    newnode->left = NULL;
+    newnode->right = NULL;
+    return(newnode);
+}
+void inorder(struct node *root)
+{
+    if(root != NULL)
+    {
+        inorder(root->left);
+        printf(" %d ",root->info);
+        inorder(root->right);
+    }
+}
+void smallest(struct node *root)
+{
+    while(root != NULL && root->left != NULL)
+    {
+        root = root->left;
+    }
+    printf("\nSmallest value is %d\n", root->info);
+}
+void largest(struct node *root)
+{
+    while (root != NULL && root->right != NULL)
+    {
+        root = root->right;
+    }
+    printf("\nLargest value is %d", root->info);
+}
+/*
+ * Main Function
+ */
+int main()
+{
+    /* Creating first Tree. */
+    struct node *newnode = createnode(25);
+    newnode->left = createnode(17);
+    newnode->right = createnode(35);
+    newnode->left->left = createnode(13);
+    newnode->left->right = createnode(19);
+    newnode->right->left = createnode(27);
+    newnode->right->right = createnode(55);
+    /* Sample Tree 1:
+     *               25
+     *             /    \
+     *            17     35
+     *           / \     / \
+     *         13  19   27 55
+     */
+    printf("Inorder traversal of tree 1 :");
+    inorder(newnode);
+    largest(newnode);
+    smallest(newnode);
+ 
+    /* Creating second Tree. */
+    struct node *node = createnode(1);
+    node->right = createnode(2);
+    node->right->right = createnode(3);
+    node->right->right->right = createnode(4);
+    node->right->right->right->right = createnode(5);
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+     *               1
+     *                \
+     *                 2
+     *                  \
+     *                   3
+     *                    \
+     *                     4
+     *                      \
+     *                       5
+     */
+    printf("\nInorder traversal of tree 2 :");
+    inorder(node);
+    largest(node);
+    smallest(node);
+ 
+    /* Creating third Tree. */
+    struct node *root = createnode(15);
+    /* Sample Tree 3- Tree having just one root node.
+     *              15
+     */
+    printf("\nInorder traversal of tree 3 :");
+    inorder(root);
+    largest(root);
+    smallest(root);
+    return 0;
+}
+ . 
+*******************
+ C Program to Count Number of Leaf Node in a Tree 
+================================ EOPN
+/* C Program to find the number of leaf nodes in a Tree 
+================================ EOKW
+--------------------------------
+output:
+If the input tree is      
+                    25
+                  /    \
+                 27     19
+                / \     / \
+              17  91   13 55
+then number of leaf nodes in this tree will be 4
+--------------------------------
+/* C Program to find the number of leaf nodes in a Tree */
+#include <stdio.h>
+#include <stdlib.h>
+ 
+struct node
+{
+    int info;
+    struct node* left, *right;
+ 
+};
+ 
+/*
+ * Function to create new nodes
+ */
+ 
+struct node* createnode(int key)
+{
+    struct node* newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->info = key;
+    newnode->left = NULL;
+    newnode->right = NULL;
+ 
+    return(newnode);
+}
+ 
+/* 
+ * Function to count number of leaf nodes
+ */
+ 
+int count = 0;
+int leafnodes(struct node* newnode)
+{
+ 
+    if(newnode != NULL)
+    {
+        leafnodes(newnode->left);
+        if((newnode->left == NULL) && (newnode->right == NULL))
+        {
+            count++;
+        }
+        leafnodes(newnode->right);
+    }
+    return count;
+ 
+}
+ 
+/*
+ * Main Function
+ */
+ 
+int main()
+{
+   /* Creating first Tree.*/
+ 
+    struct node *newnode = createnode(25);
+    newnode->left = createnode(27);
+    newnode->right = createnode(19);
+    newnode->left->left = createnode(17);
+    newnode->left->right = createnode(91);
+    newnode->right->left = createnode(13);
+    newnode->right->right = createnode(55);
+ 
+    /* Sample Tree 1- Balanced Tree
+ 
+ 
+                    25
+                  /    \
+                 27     19
+                / \     / \
+              17  91   13 55
+ 
+    */
+    printf("Number of leaf nodes in first Tree are\t%d\n",leafnodes(newnode));
+    count = 0;
+ 
+    struct node *node = createnode(1);
+    node->right = createnode(2);
+    node->right->right = createnode(3);
+    node->right->right->right = createnode(4);
+    node->right->right->right->right = createnode(5);
+ 
+    /* Sample Tree 2-   Right Skewed Tree (Unbalanced).
+ 
+                    1
+                     \
+                      2
+                       \
+                        3
+                         \
+                          4
+                           \
+                            5
+    */
+ 
+    printf("\nNumber of leaf nodes in second tree are\t%d\n",leafnodes(node));
+    count = 0;
+ 
+    /*Creating third Tree. */
+ 
+    struct node *root = createnode(15);
+ 
+    /* Sample Tree 3-  Tree having just one root node.
+ 
+                   15
+    */
+ 
+    printf("\nNumber of leaf nodes in third tree are\t%d",leafnodes(root));
+ 
+    return 0;
+}
+ . 
+*******************
+ C Program to Find the Number of Nodes in a Binary Tree 
+================================ EOPN
+/* C Program for counting the number of nodes in a Tree 
+================================ EOKW
+--------------------------------
+output:
+                    25
+                  /    \  
+                 27     19   
+                / \     / \ 
+              17  91   13 55
+--------------------------------
+/* C Program for counting the number of nodes in a Tree */
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+    int info;
+    struct node *left, *right;
+};
+struct node *createnode(int key)
+{
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->info = key;
+    newnode->left = NULL;
+    newnode->right = NULL;
+    return(newnode);
+}
+static int count = 0;
+int countnodes(struct node *root)
+{
+    if(root != NULL)
+    {
+        countnodes(root->left);
+        count++;
+        countnodes(root->right);
+    }
+    return count;
+}
+/*
+ * Main Function
+ */
+int main()
+{
+    /* Creating first Tree. */
+    struct node *newnode = createnode(25);
+    newnode->left = createnode(27);
+    newnode->right = createnode(19);
+    newnode->left->left = createnode(17);
+    newnode->left->right = createnode(91);
+    newnode->right->left = createnode(13);
+    newnode->right->right = createnode(55);
+    /* Sample Tree 1:
+     *                25
+     *             /    \
+     *            27     19
+     *           / \     / \
+     *         17  91   13 55
+     */
+    printf("Number of nodes in tree 1 = %d ",countnodes(newnode));
+    printf("\n");
+    count = 0;
+ 
+    /* Creating second Tree. */
+    struct node *node = createnode(1);
+    node->right = createnode(2);
+    node->right->right = createnode(3);
+    node->right->right->right = createnode(4);
+    node->right->right->right->right = createnode(5);
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+     *               1
+     *                \
+     *                 2
+     *                  \
+     *                   3
+     *                    \
+     *                     4
+     *                      \
+     *                       5
+     */
+    printf("Number of nodes in tree 2 = %d ",countnodes(node));
+    printf("\n");
+    count = 0;
+ 
+    /* Creating third Tree. */
+    struct node *root = createnode(15);
+    /* Sample Tree 3- Tree having just one root node.
+     *              15
+     */
+    printf("Number of nodes in tree 3 = %d",countnodes(root));
+    return 0;
+}
+ . 
+*******************
+ C Program to Count Number of Non Leaf Nodes of a given Tree 
+================================ EOPN
+/* C Program to find the number of non leaf nodes in a Tree 
+================================ EOKW
+--------------------------------
+output:
+If the input tree is   
+                    25
+                  /    \
+                 27     19
+                / \     / \
+              17  91   13 55 
+The number of internal or non leaf nodes in this tree are 3
+--------------------------------
+/* C Program to find the number of non leaf nodes in a Tree */
+#include <stdio.h>
+#include <stdlib.h>
+ 
+struct node
+{
+    int info;
+    struct node* left, *right;
+ 
+};
+ 
+/*
+ * Function to create new nodes
+ */
+ 
+struct node* createnode(int key)
+{
+    struct node* newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->info = key;
+    newnode->left = NULL;
+    newnode->right = NULL;
+ 
+    return(newnode);
+}
+ 
+/* 
+ * Function to count number of leaf nodes
+ */
+ 
+int count = 0;
+int nonleafnodes(struct node* newnode)
+{
+ 
+    if(newnode != NULL)
+    {
+        nonleafnodes(newnode->left);
+        if((newnode->left != NULL) || (newnode->right != NULL))
+        {
+            count++;
+        }
+        nonleafnodes(newnode->right);
+    }
+    return count;
+ 
+}
+ 
+/*
+ * Main Function
+ */
+ 
+int main()
+{
+   /* Creating first Tree.*/
+ 
+    struct node *newnode = createnode(25);
+    newnode->left = createnode(27);
+    newnode->right = createnode(19);
+    newnode->left->left = createnode(17);
+    newnode->left->right = createnode(91);
+    newnode->right->left = createnode(13);
+    newnode->right->right = createnode(55);
+ 
+    /* Sample Tree 1- Balanced Tree
+ 
+ 
+                    25
+                  /    \
+                 27     19
+                / \     / \
+              17  91   13 55
+ 
+    */
+    printf("Number of non leaf nodes in first Tree are\t%d",nonleafnodes(newnode));
+    printf("\n");
+    count = 0;
+ 
+    struct node *node = createnode(1);
+    node->right = createnode(2);
+    node->right->right = createnode(3);
+    node->right->right->right = createnode(4);
+    node->right->right->right->right = createnode(5);
+ 
+    /* Sample Tree 2-   Right Skewed Tree (Unbalanced).
+ 
+                    1
+                     \
+                      2
+                       \
+                        3
+                         \
+                          4
+                           \
+                            5
+    */
+    printf("\n");
+    printf("Number of non leaf nodes in second tree are\t%d",nonleafnodes(node));
+    printf("\n");
+    count = 0;
+ 
+    /*Creating third Tree. */
+ 
+    struct node *root = createnode(15);
+ 
+    /* Sample Tree 3-  Tree having just one root node.
+ 
+                   15
+    */
+    printf("\n");
+    printf("Number of non leaf nodes in third tree are\t%d",nonleafnodes(root));
+ 
+    return 0;
+}
+ . 
+*******************
+ C Program to Convert Binary Tree to Binary Search Tree 
+================================ EOPN
+/* C Program to convert given binary tree to BST 
+================================ EOKW
+--------------------------------
+output:
+ 
+                    25                   |          25   
+                  /    \                 |        /    \
+                 27     19               |       17     55
+                / \     / \              |      /  \    / \
+              17  91   13 55             |    13   19  27  91
+ 
+                 Binary Tree                  Binary Search Tree
+--------------------------------
+/* C Program to convert given binary tree to BST */
+ 
+#include <stdio.h>
+#include <stdlib.h>
+ 
+struct node
+{
+    int info;
+    struct node* left, *right;
+};
+ 
+int data[100];
+int i = 0;
+ 
+/*creates a new node */
+ 
+struct node* createnode(int key)
+{
+    struct node* newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->info = key;
+    newnode->left = NULL;
+    newnode->right = NULL;
+ 
+    return(newnode);
+}
+ 
+/* counts the number of nodes in a tree */
+ 
+int count(struct node *n)
+{
+    int c = 1;
+ 
+    if (n == NULL)
+        return 0;
+    else
+    {
+        c += count(n->left);
+        c += count(n->right);
+        return c;
+    }
+}
+ 
+/*
+ * Copies the nodes of Binary Tree in an array
+ */
+void binarytoarray(struct node * root, int data[], int *ptr)
+{
+    if(root != NULL)
+    {
+    binarytoarray(root->left, data, ptr);
+    data[*ptr] = root->info;
+    (*ptr)++;
+    binarytoarray(root->right, data, ptr);
+    }
+}
+ 
+/*
+ * Copies the element of array to bst
+ */
+void arraytobst(int *arr, struct node *root, int *index)
+{
+    if(root != NULL)
+    {
+        arraytobst(arr, root->left, index);
+        root->info = arr[i++];
+        arraytobst(arr, root->right, index);
+    }
+}
+ 
+int compare(const void *a, const void *b)
+{
+    return *(int*)a-*(int*)b;
+}
+ 
+/*
+ * Inorder traversal of a tree
+ */
+ 
+void inorder(struct node *root)
+{
+    if(root !=NULL)
+    {
+        inorder(root->left);
+        printf("%d\t",root->info);
+        inorder(root->right);
+    }
+}
+ 
+/*
+ * Converts binary tree to bst
+ */
+void binary_to_bst(struct node *root)
+{
+    int n, i;
+ 
+    if (root == NULL)
+        return;
+    n = count(root);
+    i = 0;
+    binarytoarray(root, data, &i);
+    qsort(&data, n, sizeof(data[0]), compare);
+    i = 0;
+    arraytobst(data, root, &i);
+}
+ 
+/*
+ * Main Function
+ */
+ 
+int main()
+{
+    int flag = 0;
+    struct node *newnode = createnode(25);
+    newnode->left = createnode(27);
+    newnode->right = createnode(19);
+    newnode->left->left = createnode(17);
+    newnode->left->right = createnode(91);
+    newnode->right->left = createnode(13);
+    newnode->right->right = createnode(55);
+ 
+    /* Sample Tree 1- Balanced Tree
+ 
+ 
+                    25                   |          25   
+                  /    \                 |        /    \
+                 27     19               |       17      55
+                / \     / \              |      /  \    /  \
+              17  91   13 55             |    13   19  27   91
+ 
+    */
+ 
+    printf("Inorder traversal of Input Binary Tree is\n");
+    inorder(newnode);
+    binary_to_bst(newnode);
+    printf("\nInorder traversal of the converted Binary Search Tree is\n");
+    inorder(newnode);
+    return 0;
+}
+ . 
+*******************
+ C Program to Find the Sum of All Nodes in a Binary Tree 
+================================ EOPN
+/* C Program for finding the sum of all the nodes in a Tree 
+================================ EOKW
+--------------------------------
+output:
+                    25
+                  /    \  
+                 27     19   
+                / \     / \ 
+              17  91   13 55
+--------------------------------
+/* C Program for finding the sum of all the nodes in a Tree */
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+    int info;
+    struct node *left, *right;
+};
+struct node *createnode(int key)
+{
+    struct node *newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->info = key;
+    newnode->left = NULL;
+    newnode->right = NULL;
+    return(newnode);
+}
+int sumofnodes(struct node *root)
+{
+    int rightsubtree, leftsubtree, sum = 0;
+    if(root != NULL)
+    {
+        leftsubtree = sumofnodes(root->left);
+        rightsubtree = sumofnodes(root->right);
+        sum = (root->info) + leftsubtree + rightsubtree;
+        return sum;
+    }
+}
+/*
+ * Main Function
+ */
+int main()
+{
+   /* Creating first Tree. */
+    struct node *newnode = createnode(25);
+    newnode->left = createnode(27);
+    newnode->right = createnode(19);
+    newnode->left->left = createnode(17);
+    newnode->left->right = createnode(91);
+    newnode->right->left = createnode(13);
+    newnode->right->right = createnode(55);
+    /* Sample Tree 1:
+     *                25
+     *             /    \
+     *            27     19
+     *           / \     / \
+     *         17  91   13 55
+     */
+    printf("Sum of nodes in tree 1 = %d", sumofnodes(newnode));
+    printf("\n");
+ 
+    /* Creating second Tree. */
+    struct node *node = createnode(1);
+    node->right = createnode(2);
+    node->right->right = createnode(3);
+    node->right->right->right = createnode(4);
+    node->right->right->right->right = createnode(5);
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+     *               1
+     *                \
+     *                 2
+     *                  \
+     *                   3
+     *                    \
+     *                     4
+     *                      \
+     *                       5
+     */
+    printf("Sum of nodes in tree 2 = %d", sumofnodes(node));
+    printf("\n");
+ 
+    /* Creating third Tree. */
+    struct node *root = createnode(15);
+    /* Sample Tree 3: Tree having just one root node.
+     *              15
+     */
+    printf("Sum of nodes in tree 3 = %d", sumofnodes(root));
+    printf("\n");
+    return 0;
+}
+ . 
+*******************
