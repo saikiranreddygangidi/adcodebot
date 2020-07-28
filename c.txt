@@ -1411,8 +1411,8 @@ complex numbers sum is = 25 + 34i
 C Program to Generate Fibonacci Series of N Numbers using Command-Line Argument
 ================================ EOPN
 /*
- * C program to generate Fibonacci Series. Fibonacci Series
- * is 0 1 1 2 3 5 8 13 21 ...
+ * C program to generate Fibonacci Series Fibonacci Series
+ * is 0 1 1 2 3 5 8 13 21 
  
 ================================ EOKW
 --------------------------------
@@ -1422,7 +1422,7 @@ $ cc pgm40.c
 $ a.out
 Enter the limit to generate the Fibonacci Series
 6
-Fibonacci Series is ...
+Fibonacci Series is  
 0
 1
 1
@@ -2863,7 +2863,7 @@ int main ()
 *******************
  C Program to Find the Second Largest & Smallest Elements in an Array 
 ================================ EOPN
-     /*     * C program to accept a list of data items and find the second largest     * and smallest elements in it. Compute the average of both and search     * for the average value if it is present in the array.     * Display appropriate message on successful search.    
+     /*     * C program to accept a list of data items and find the second largest     * and smallest elements in it. Compute the average of both and search     * for the average value if it is present in the array.     * Display appropriate message on successful search    
 ================================ EOKW
 --------------------------------
 output:
@@ -2888,7 +2888,7 @@ The average of 450  and 340 is = 395 is not in the array
      * C program to accept a list of data items and find the second largest
      * and smallest elements in it. Compute the average of both and search
      * for the average value if it is present in the array.
-     * Display appropriate message on successful search.
+     * Display appropriate message on successful search
     */
  
     #include <stdio.h>
@@ -3450,7 +3450,7 @@ The numbers arranged in descending order are given below
         for (i = 0; i < n; ++i)
 	        scanf("%d", &number[i]);
  
-        /*  sorting begins ... */
+        /*  sorting begins   */
  
         for (i = 0; i < n; ++i) 
         {
@@ -3734,7 +3734,7 @@ The resultant array is
 ================================ EOKW
 --------------------------------
 output:
-How many Elements...
+How many Elements 
 4
 Enter Elements one by one
 23
@@ -3742,7 +3742,7 @@ Enter Elements one by one
 45
 15
  
-Resultant Array...
+Resultant Array 
 X[0] = 23.000000
 X[1] = 67.000000
 X[2] = 15.000000
@@ -3750,7 +3750,7 @@ X[3] = 45.000000
 --------------------------------
     /*
      * C program to accept an array of 10 elements and swap 3rd element
-     * with 4th element using pointers and display the results.
+     * with 4th element using pointers and display the results
      */
  
     #include <stdio.h>
@@ -3761,7 +3761,7 @@ X[3] = 45.000000
         float x[10];
         int i, n;
  
-        printf("How many Elements...\n");
+        printf("How many Elements \n");
         scanf("%d", &n);
  
         printf("Enter Elements one by one\n");
@@ -3773,7 +3773,7 @@ X[3] = 45.000000
         /*  Function call:Interchanging 3rd element by 4th */
  
         swap34(x + 2, x + 3);
-        printf("\nResultant Array...\n");
+        printf("\nResultant Array \n");
  
         for (i = 0; i < n; i++) 
         {
@@ -3797,7 +3797,7 @@ X[3] = 45.000000
 *******************
  C Program to Read an Array and Search for an Element 
 ================================ EOPN
-     /*     * C program accept an array of N elements and a key to search.     * If the search is successful, it displays "SUCCESSFUL SEARCH".     * Otherwise, a message "UNSUCCESSFUL SEARCH" is displayed.     
+     /*     * C program accept an array of N elements and a key to search     * If the search is successful, it displays "SUCCESSFUL SEARCH"     * Otherwise, a message "UNSUCCESSFUL SEARCH" is displayed    
 ================================ EOKW
 --------------------------------
 output:
@@ -3826,9 +3826,9 @@ UNSUCCESSFUL SEARCH
 --------------------------------
  
     /*
-     * C program accept an array of N elements and a key to search.
-     * If the search is successful, it displays "SUCCESSFUL SEARCH".
-     * Otherwise, a message "UNSUCCESSFUL SEARCH" is displayed.
+     * C program accept an array of N elements and a key to search
+     * If the search is successful, it displays "SUCCESSFUL SEARCH"
+     * Otherwise, a message "UNSUCCESSFUL SEARCH" is displayed
      */
  
     #include <stdio.h>
@@ -3880,18 +3880,18 @@ UNSUCCESSFUL SEARCH
 *******************
 C Program to accept Sorted Array and do Search using Binary Search 
 ================================ EOPN
-/* * C program to accept N numbers sorted in ascending order * and to search for a given number using Binary Search. * Report success or failure. 
+/* * C program to accept N numbers sorted in ascending order * and to search for a given number using Binary search * Report success or failure 
 ================================ EOKW
 --------------------------------
 output:
 If the input array is {1, 2, 3, 4, 5, 6}
 and the key to be searched for is 6
-then the expected output will be "Search Successful".
+then the expected output will be "Search Successful"
 --------------------------------
 /*
  * C program to accept N numbers sorted in ascending order
- * and to search for a given number using Binary Search.
- * Report success or failure.
+ * and to search for a given number using Binary search
+ * Report success or failure
  */
 #include <stdio.h>
  
@@ -3925,7 +3925,7 @@ void main()
             }
         }
     }
-    printf("Sorted array is...\n");
+    printf("Sorted array is \n");
     for (i = 0; i < num; i++)
     {
         printf("%d\n", array[i]);
@@ -5357,8 +5357,8 @@ int main (void)
  C Program to Determine if a given Matrix is a Sparse Matrix 
 ================================ EOPN
 /*
- * C program to determine if a given matrix is a sparse matrix.
- * Sparse martix has more zero elements than nonzero elements.
+ * C program to determine if a given matrix is a sparse matrix
+ * Sparse martix has more zero elements than nonzero elements
  
 ================================ EOKW
 --------------------------------
@@ -5984,7 +5984,7 @@ Matrix is a Lower triangular matrix
 *******************
  C Program to Check if a given String is Palindrome 
 ================================ EOPN
- /* * C program to read a string and check if it's a palindrome, without * using library functions. Display the result. 
+ /* * C program to read a string and check if it's a palindrome, without * using library functions Display the result. 
 ================================ EOKW
 --------------------------------
 output:
@@ -6001,7 +6001,7 @@ malayalam is a palindrome
  
 /*
  * C program to read a string and check if it's a palindrome, without
- * using library functions. Display the result.
+ * using library functions Display the result.
  */
 #include <stdio.h>
 #include <string.h>
@@ -6169,7 +6169,7 @@ The largest word is 'programmers' and smallest word is 'here' in 'amazing progra
 *******************
  C Program to read two Strings & Concatenate the Strings 
 ================================ EOPN
-  /* * C program to read two strings and concatenate them, without using * library functions. Display the concatenated string. 
+  /* * C program to read two strings and concatenate them, without using * library functions Display the concatenated string. 
 ================================ EOKW
 --------------------------------
 output:
@@ -6183,7 +6183,7 @@ Concatenated string = Sanfoundry
  
 /*
  * C program to read two strings and concatenate them, without using
- * library functions. Display the concatenated string.
+ * library functions Display the concatenated string.
  */
 #include <stdio.h>
 #include <string.h>
@@ -10776,7 +10776,7 @@ project        stack
 *******************
  C Program to Read an Array and Search for an Element 
 ================================ EOPN
-     /*     * C program accept an array of N elements and a key to search.     * If the search is successful, it displays "SUCCESSFUL SEARCH".     * Otherwise, a message "UNSUCCESSFUL SEARCH" is displayed.     
+     /*     * C program accept an array of N elements and a key to search     * If the search is successful, it displays "SUCCESSFUL SEARCH"     * Otherwise, a message "UNSUCCESSFUL SEARCH" is displayed     
 ================================ EOKW
 --------------------------------
 output:
@@ -10805,9 +10805,9 @@ UNSUCCESSFUL SEARCH
 --------------------------------
  
     /*
-     * C program accept an array of N elements and a key to search.
-     * If the search is successful, it displays "SUCCESSFUL SEARCH".
-     * Otherwise, a message "UNSUCCESSFUL SEARCH" is displayed.
+     * C program accept an array of N elements and a key to search
+     * If the search is successful, it displays "SUCCESSFUL SEARCH"
+     * Otherwise, a message "UNSUCCESSFUL SEARCH" is displayed
      */
  
     #include <stdio.h>
@@ -10859,18 +10859,18 @@ UNSUCCESSFUL SEARCH
 *******************
 C Program to accept Sorted Array and do Search using Binary Search 
 ================================ EOPN
-/* * C program to accept N numbers sorted in ascending order * and to search for a given number using Binary Search. * Report success or failure. 
+/* * C program to accept N numbers sorted in ascending order * and to search for a given number using Binary search * Report success or failure 
 ================================ EOKW
 --------------------------------
 output:
 If the input array is {1, 2, 3, 4, 5, 6}
 and the key to be searched for is 6
-then the expected output will be "Search Successful".
+then the expected output will be "Search Successful"
 --------------------------------
 /*
  * C program to accept N numbers sorted in ascending order
- * and to search for a given number using Binary Search.
- * Report success or failure.
+ * and to search for a given number using Binary search
+ * Report success or failure
  */
 #include <stdio.h>
  
@@ -10904,7 +10904,7 @@ void main()
             }
         }
     }
-    printf("Sorted array is...\n");
+    printf("Sorted array is \n");
     for (i = 0; i < num; i++)
     {
         printf("%d\n", array[i]);
@@ -10941,7 +10941,7 @@ C Program to Perform Binary Search using Recursion
 output:
 If the input array is {1, 2, 3, 4, 5, 6}
 and the key to be searched for is 6
-then the expected output will be "Search Successful".
+then the expected output will be "Search Successful"
 --------------------------------
 /*
  * C Program to Perform Binary Search using Recursion
@@ -11016,7 +11016,7 @@ void binary_search(int list[], int lo, int hi, int key)
 *******************
 C Program to Implement Linear Search
 ================================ EOPN
-/* * C program to input N numbers and store them in an array. * Do a linear search for a given key and report success * or failure. 
+/* * C program to input N numbers and store them in an array. * Do a linear search for a given key and report success * or failure 
 ================================ EOKW
 --------------------------------
 output:
@@ -11027,7 +11027,7 @@ then the expected output will be Position 2.
 /*
  * C program to input N numbers and store them in an array.
  * Do a linear search for a given key and report success
- * or failure.
+ * or failure
  */
 #include <stdio.h>
  
@@ -11120,7 +11120,7 @@ If the input tree is
                 / \     / \ 
               13  19   27 55 
 and the key to be searched for is 15,
-then the output will be : Key not found.
+then the output will be : Key not found
 --------------------------------
 /*
  * C Program to search an element in a Binary Search Tree
@@ -11165,7 +11165,7 @@ int search(struct node *head, int key)
 int main()
 {
     int flag = 0;
-    /* Creating first Tree. */
+    /* Creating first Tree */
     struct node *newnode = createnode(25);
     newnode->left = createnode(17);
     newnode->right = createnode(35);
@@ -11190,13 +11190,13 @@ int main()
         printf("Key %d not found in tree 1\n", 15);
     }
  
-    /* Creating second Tree. */
+    /* Creating second Tree */
     struct node *node = createnode(1);
     node->right = createnode(2);
     node->right->right = createnode(3);
     node->right->right->right = createnode(4);
     node->right->right->right->right = createnode(5);
-    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced)
      *               1
      *                \
      *                 2
@@ -11217,9 +11217,9 @@ int main()
         printf("Key %d not found in tree 2\n", 4);
     }
  
-    /* Creating third Tree. */
+    /* Creating third Tree */
     struct node *root = createnode(15);
-    /* Sample Tree 3- Tree having just one root node.
+    /* Sample Tree 3- Tree having just one root node
      *              15
      */
     flag = search(root,15);
@@ -11288,7 +11288,7 @@ void largest(struct node *root)
  */
 int main()
 {
-    /* Creating first Tree. */
+    /* Creating first Tree */
     struct node *newnode = createnode(25);
     newnode->left = createnode(17);
     newnode->right = createnode(35);
@@ -11307,13 +11307,13 @@ int main()
     inorder(newnode);
     largest(newnode);
  
-    /* Creating second Tree. */
+    /* Creating second Tree */
     struct node *node = createnode(1);
     node->right = createnode(2);
     node->right->right = createnode(3);
     node->right->right->right = createnode(4);
     node->right->right->right->right = createnode(5);
-    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced)
      *               1
      *                \
      *                 2
@@ -11328,9 +11328,9 @@ int main()
     inorder(node);
     largest(node);
  
-    /* Creating third Tree. */
+    /* Creating third Tree */
     struct node *root = createnode(15);
-    /* Sample Tree 3- Tree having just one root node.
+    /* Sample Tree 3- Tree having just one root node
      *              15
      */
     printf("\nInorder traversal of tree 3 :");
@@ -11393,7 +11393,7 @@ void largest(struct node *root)
  */
 int main()
 {
-    /* Creating first Tree. */
+    /* Creating first Tree */
     struct node *newnode = createnode(25);
     newnode->left = createnode(17);
     newnode->right = createnode(35);
@@ -11412,13 +11412,13 @@ int main()
     inorder(newnode);
     largest(newnode);
  
-    /* Creating second Tree. */
+    /* Creating second Tree */
     struct node *node = createnode(1);
     node->right = createnode(2);
     node->right->right = createnode(3);
     node->right->right->right = createnode(4);
     node->right->right->right->right = createnode(5);
-    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced)
      *               1
      *                \
      *                 2
@@ -11433,9 +11433,9 @@ int main()
     inorder(node);
     largest(node);
  
-    /* Creating third Tree. */
+    /* Creating third Tree */
     struct node *root = createnode(15);
-    /* Sample Tree 3- Tree having just one root node.
+    /* Sample Tree 3- Tree having just one root node
      *              15
      */
     printf("\nInorder traversal of tree 3 :");
@@ -11506,7 +11506,7 @@ void largest(struct node *root)
  */
 int main()
 {
-    /* Creating first Tree. */
+    /* Creating first Tree */
     struct node *newnode = createnode(25);
     newnode->left = createnode(17);
     newnode->right = createnode(35);
@@ -11526,13 +11526,13 @@ int main()
     largest(newnode);
     smallest(newnode);
  
-    /* Creating second Tree. */
+    /* Creating second Tree */
     struct node *node = createnode(1);
     node->right = createnode(2);
     node->right->right = createnode(3);
     node->right->right->right = createnode(4);
     node->right->right->right->right = createnode(5);
-    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced)
      *               1
      *                \
      *                 2
@@ -11548,9 +11548,9 @@ int main()
     largest(node);
     smallest(node);
  
-    /* Creating third Tree. */
+    /* Creating third Tree */
     struct node *root = createnode(15);
-    /* Sample Tree 3- Tree having just one root node.
+    /* Sample Tree 3- Tree having just one root node
      *              15
      */
     printf("\nInorder traversal of tree 3 :");
@@ -11627,7 +11627,7 @@ int leafnodes(struct node* newnode)
  
 int main()
 {
-   /* Creating first Tree.*/
+   /* Creating first Tree*/
  
     struct node *newnode = createnode(25);
     newnode->left = createnode(27);
@@ -11656,7 +11656,7 @@ int main()
     node->right->right->right = createnode(4);
     node->right->right->right->right = createnode(5);
  
-    /* Sample Tree 2-   Right Skewed Tree (Unbalanced).
+    /* Sample Tree 2-   Right Skewed Tree (Unbalanced)
  
                     1
                      \
@@ -11672,11 +11672,11 @@ int main()
     printf("\nNumber of leaf nodes in second tree are\t%d\n",leafnodes(node));
     count = 0;
  
-    /*Creating third Tree. */
+    /*Creating third Tree */
  
     struct node *root = createnode(15);
  
-    /* Sample Tree 3-  Tree having just one root node.
+    /* Sample Tree 3-  Tree having just one root node
  
                    15
     */
@@ -11731,7 +11731,7 @@ int countnodes(struct node *root)
  */
 int main()
 {
-    /* Creating first Tree. */
+    /* Creating first Tree */
     struct node *newnode = createnode(25);
     newnode->left = createnode(27);
     newnode->right = createnode(19);
@@ -11750,13 +11750,13 @@ int main()
     printf("\n");
     count = 0;
  
-    /* Creating second Tree. */
+    /* Creating second Tree */
     struct node *node = createnode(1);
     node->right = createnode(2);
     node->right->right = createnode(3);
     node->right->right->right = createnode(4);
     node->right->right->right->right = createnode(5);
-    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced)
      *               1
      *                \
      *                 2
@@ -11771,9 +11771,9 @@ int main()
     printf("\n");
     count = 0;
  
-    /* Creating third Tree. */
+    /* Creating third Tree */
     struct node *root = createnode(15);
-    /* Sample Tree 3- Tree having just one root node.
+    /* Sample Tree 3- Tree having just one root node
      *              15
      */
     printf("Number of nodes in tree 3 = %d",countnodes(root));
@@ -11847,7 +11847,7 @@ int nonleafnodes(struct node* newnode)
  
 int main()
 {
-   /* Creating first Tree.*/
+   /* Creating first Tree*/
  
     struct node *newnode = createnode(25);
     newnode->left = createnode(27);
@@ -11877,7 +11877,7 @@ int main()
     node->right->right->right = createnode(4);
     node->right->right->right->right = createnode(5);
  
-    /* Sample Tree 2-   Right Skewed Tree (Unbalanced).
+    /* Sample Tree 2-   Right Skewed Tree (Unbalanced)
  
                     1
                      \
@@ -11894,11 +11894,11 @@ int main()
     printf("\n");
     count = 0;
  
-    /*Creating third Tree. */
+    /*Creating third Tree */
  
     struct node *root = createnode(15);
  
-    /* Sample Tree 3-  Tree having just one root node.
+    /* Sample Tree 3-  Tree having just one root node
  
                    15
     */
@@ -12108,7 +12108,7 @@ int sumofnodes(struct node *root)
  */
 int main()
 {
-   /* Creating first Tree. */
+   /* Creating first Tree */
     struct node *newnode = createnode(25);
     newnode->left = createnode(27);
     newnode->right = createnode(19);
@@ -12126,13 +12126,13 @@ int main()
     printf("Sum of nodes in tree 1 = %d", sumofnodes(newnode));
     printf("\n");
  
-    /* Creating second Tree. */
+    /* Creating second Tree */
     struct node *node = createnode(1);
     node->right = createnode(2);
     node->right->right = createnode(3);
     node->right->right->right = createnode(4);
     node->right->right->right->right = createnode(5);
-    /* Sample Tree 2:   Right Skewed Tree (Unbalanced).
+    /* Sample Tree 2:   Right Skewed Tree (Unbalanced)
      *               1
      *                \
      *                 2
@@ -12146,9 +12146,9 @@ int main()
     printf("Sum of nodes in tree 2 = %d", sumofnodes(node));
     printf("\n");
  
-    /* Creating third Tree. */
+    /* Creating third Tree */
     struct node *root = createnode(15);
-    /* Sample Tree 3: Tree having just one root node.
+    /* Sample Tree 3: Tree having just one root node
      *              15
      */
     printf("Sum of nodes in tree 3 = %d", sumofnodes(root));
@@ -12223,7 +12223,7 @@ int leafnodes(struct node* newnode)
  
 int main()
 {
-   /* Creating first Tree.*/
+   /* Creating first Tree*/
  
     struct node *newnode = createnode(25);
     newnode->left = createnode(27);
@@ -12252,7 +12252,7 @@ int main()
     node->right->right->right = createnode(4);
     node->right->right->right->right = createnode(5);
  
-    /* Sample Tree 2-   Right Skewed Tree (Unbalanced).
+    /* Sample Tree 2-   Right Skewed Tree (Unbalanced)
  
                     1
                      \
@@ -12268,11 +12268,11 @@ int main()
     printf("\nNumber of leaf nodes in second tree are\t%d\n",leafnodes(node));
     count = 0;
  
-    /*Creating third Tree. */
+    /*Creating third Tree */
  
     struct node *root = createnode(15);
  
-    /* Sample Tree 3-  Tree having just one root node.
+    /* Sample Tree 3-  Tree having just one root node
  
                    15
     */
@@ -12536,7 +12536,7 @@ Simple interest =  6.00
 /*
  * C program to find out the roots of a quadratic equation
  * for non-zero coefficients. In case of errors the program
- * should report suitable error message.
+ * should report suitable error message
  
 ================================ EOKW
 --------------------------------
@@ -12608,8 +12608,8 @@ Enter the operator [+,-,*,/]
  C Program to Generate Fibonacci Series 
 ================================ EOPN
 /*
- * C program to generate Fibonacci Series. Fibonacci Series
- * is 0 1 1 2 3 5 8 13 21 ...
+ * C program to generate Fibonacci Series Fibonacci Series
+ * is 0 1 1 2 3 5 8 13 21  
  
 ================================ EOKW
 --------------------------------
@@ -12619,7 +12619,7 @@ $ cc pgm40.c
 $ a.out
 Enter the limit to generate the Fibonacci Series
 6
-Fibonacci Series is ...
+Fibonacci Series is  
 0
 1
 1
@@ -12764,7 +12764,7 @@ The value of cos(90) using library function = -0.000204
 *******************
  C Program to Check if a given Number is Prime number 
 ================================ EOPN
-/* * C program to check whether a given number is prime or not * and output the given number with suitable message. 
+/* * C program to check whether a given number is prime or not * and output the given number with suitable message 
 ================================ EOKW
 --------------------------------
 output:
@@ -12780,7 +12780,7 @@ Enter a number
 --------------------------------
 /*
  * C program to check whether a given number is prime or not
- * and output the given number with suitable message.
+ * and output the given number with suitable message
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -12905,10 +12905,10 @@ Standard deviation = 28.19
 /*
  * C program to evaluate a given polynomial by reading its coefficients
  * in an array.
- * P(x) = AnXn + An-1Xn-1 + An-2Xn-2+... +A1X + A0
+ * P(x) = AnXn + An-1Xn-1 + An-2Xn-2+  +A1X + A0
  *
  * The polynomial can be written as:
- * P(x) = A0 + X(A1 + X(A2 + X(A3 + X(Q4 + X(...X(An-1 + XAn))))
+ * P(x) = A0 + X(A1 + X(A2 + X(A3 + X(Q4 + X( X(An-1 + XAn))))
  * and evaluated starting from the inner loop
  
 ================================ EOKW
@@ -13129,7 +13129,7 @@ Sum of the above given series : 1^2 + 2^2 + 3^2 + 4^2 = 30
 C Program to Find the Sum of Series 1 + 1/2 + 1/3 + 1/4 + … + 1/N
 ================================ EOPN
 /*
- * C Program to find the Sum of Series 1 + 1/2 + 1/3 + 1/4 + ... + 1/N
+ * C Program to find the Sum of Series 1 + 1/2 + 1/3 + 1/4 +   + 1/N
  
 ================================ EOKW
 --------------------------------
@@ -13215,7 +13215,7 @@ output:
 Output:
 $ cc pgm23.c
 $ a.out
-1 + 1 / 2 + 1 / 3 +......+1 / n
+1 + 1 / 2 + 1 / 3 +  +1 / n
 Enter the value of n
 5
 the Sum of H.P Series is = 2.283334
@@ -13711,7 +13711,7 @@ C Program to Perform Binary Search using Recursion
 output:
 If the input array is {1, 2, 3, 4, 5, 6}
 and the key to be searched for is 6
-then the expected output will be "Search Successful".
+then the expected output will be "Search Successful"
 --------------------------------
 /*
  * C Program to Perform Binary Search using Recursion
