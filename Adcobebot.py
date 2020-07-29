@@ -179,7 +179,7 @@ def codename(message):
           robo_response = robo_response+sent_tokens[idx]
           #robo_response1 = re.find_oneall("%%(.*)%%",robo_response)[0]
           program_name=robo_response.split("eopn")[0]
-          program_code=robo_response.split("eokw")
+          program_code=''.join(robo_response.split("eokw"))
 
           '''list1=nltk.word_tokenize(robo_response)
           program_name=' '.join(list1[:list1.index('=')])
