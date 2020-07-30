@@ -138,7 +138,7 @@ def codename(message):
   raw=raw.lower()# converts to lowercase
   nltk.download('punkt') # first-time use only
   nltk.download('wordnet') # first-time use only
-  sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences 
+  sent_tokens = raw.split("etp")# converts to list of sentences 
   word_tokens = nltk.word_tokenize(raw)# converts to list of words
 
   def LemTokens(tokens):
@@ -179,12 +179,15 @@ def codename(message):
           robo_response = robo_response+sent_tokens[idx]
           #robo_response1 = re.find_oneall("%%(.*)%%",robo_response)[0]
           program_name=robo_response.split("eopn")[0]
-          program_code=robo_response.split("eokw")[1]
-          
+          if len(robo_response.split("eokw")) > 1 :
+           program_code=robo_response.split("eokw")[1]
+           return program_name+program_code
+          else:
+           return "Oops🙁 ,  seems like you entered incorrect program name or this program is available here , to try again please type Y or else type N... "
           '''list1=nltk.word_tokenize(robo_response)
           program_name=' '.join(list1[:list1.index('=')])
           program_code=' '.join(list1[list1.index('eokw')+4:])'''
-          return program_name+program_code
+          
           #return robo_response
   flag=True
   #print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
