@@ -100,13 +100,20 @@ def python(message):
  f=open(filename,'r',errors = 'ignore')
  msg=bot.send_message(tid,"Enter program name")
  bot.register_next_step_handler(msg, codename)
+GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
+GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
+keyboard = [[InlineKeyboardButton("c",url='/c'),
+             InlineKeyboardButton("Java", url='/java'), 
+             InlineKeyboardButton("Python", url='/python'),
+             InlineKeyboardButton("c++", url='/cpp')]]
+
+reply_markup = InlineKeyboardMarkup(keyboard)
+
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
- bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
+ bot.reply_to(message,'select a program a language among the following' ,reply_markup=reply_markup)
 
-GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
-GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
 
 '''def select_lang(message):
   global f
@@ -210,7 +217,7 @@ def codename(message):
       else:
           reply=response(user_response)
   #bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
-  msg=bot.send_message(tid,reply+"\n--------------------------\n If you want to continue please type Y or else type N")
+  msg=bot.send_message(tid,reply+"\n--------------------------\n \033[91m If you want to continue please type \033[92m Y or else type  \033[92m N")
   bot.register_next_step_handler(msg, recheck_lang)
 def recheck_lang(message):
   global f
@@ -222,7 +229,7 @@ def recheck_lang(message):
     msg=bot.send_message(tid,"Enter a program name")
     bot.register_next_step_handler(msg, codename)
   elif value=='N' or value=='n':
-    bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
+    bot.reply_to(message,'select a program a language among the following' ,reply_markup=reply_markup)
   else:
     bot.reply_to(message,'you entered wrong key to search a code tap /search')
 
