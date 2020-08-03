@@ -1,5 +1,6 @@
 import nltk
 import telebot
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from flask import Flask, request,redirect
 import os
 import string
