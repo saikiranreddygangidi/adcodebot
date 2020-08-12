@@ -29,7 +29,7 @@ PORT = int(os.environ.get('PORT', '8443'))
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
  tid = str(message.from_user.id)
- msg=bot.send_message(tid,"To start bot can please enter the fullname and gmail in format fullname:gmail")
+ msg=bot.send_message(tid,"To initiate the bot please enter your FULL NAME and EMAIL in the respective format \n FULLNAME: EMAIL")
  bot.register_next_step_handler(msg, userdetails)
 def userdetails(message):
  tid = str(message.from_user.id)
@@ -43,13 +43,13 @@ def userdetails(message):
           result=db.user_details.insert_one({'fullname':details[0],'gmail':details[1]})
         bot.reply_to(message, "Hi "+details[0]+" 👋, Welcome to Codebot. \n I'm here to help you in find_oneing the code you want.\n To begin tap /search\n if you want any help type '/help' command")
       else:
-        msg=bot.send_message(tid,"enter vaild gmail reenter data in format fullname:gmail")
+        msg=bot.send_message(tid,"Please enter valid email in the format FULL NAME:EMAIL")
         bot.register_next_step_handler(msg, userdetails)
     else:
-     msg=bot.send_message(tid,"enter vaild fullname reenter data in format fullname:gmail")
+     msg=bot.send_message(tid,"Please enter valid FULL NAME in the format FULL NAME:EMAIL")
      bot.register_next_step_handler(msg, userdetails)
  else:
-    msg=bot.send_message(message, "please enter the details in specified format, correct details")
+    msg=bot.send_message(message, "Please enter the details in specified format, FULL NAME:EMAIL")
     bot.register_next_step_handler(msg, userdetails)
 
   # Handle '/start' and '/help'
@@ -71,7 +71,7 @@ def c(message):
  tid = str(message.from_user.id)
  filename="c.txt"
  f=open(filename,'r',errors = 'ignore')
- msg=bot.send_message(tid,"Enter program name")
+ msg=bot.send_message(tid,"Please enter program name \n (Ex: Fibonacci, Palindrome etc..)")
  bot.register_next_step_handler(msg, codename)
 @bot.message_handler(commands=['cpp'])
 def cpp(message):
@@ -81,7 +81,7 @@ def cpp(message):
  tid = str(message.from_user.id)
  filename="c++.txt"
  f=open(filename,'r',errors = 'ignore')
- msg=bot.send_message(tid,"Enter program name")
+ msg=bot.send_message(tid,"Please enter program name \n (Ex: Fibonacci, Palindrome etc..)")
  bot.register_next_step_handler(msg, codename)
 @bot.message_handler(commands=['java'])
 def java(message):
@@ -90,7 +90,7 @@ def java(message):
  tid = str(message.from_user.id)
  filename="java.txt"
  f=open(filename,'r',errors = 'ignore')
- msg=bot.send_message(tid,"Enter program name")
+ msg=bot.send_message(tid,"Please enter program name \n (Ex: Fibonacci, Palindrome etc..)")
  bot.register_next_step_handler(msg, codename)
 @bot.message_handler(commands=['python'])
 def python(message):
@@ -100,7 +100,7 @@ def python(message):
  tid = str(message.from_user.id)
  filename="python.txt"
  f=open(filename,'r',errors = 'ignore')
- msg=bot.send_message(tid,"Enter program name")
+ msg=bot.send_message(tid,"Please enter program name \n (Ex: Fibonacci, Palindrome etc..)")
  bot.register_next_step_handler(msg, codename)
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
@@ -113,7 +113,7 @@ reply_markup=reply
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
- bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
+ bot.reply_to(message,'select a program a language among the following \n\n /c\t/cpp\n\n/java\t/python')
 
 
 
@@ -130,7 +130,7 @@ def search(message):
   else:
     filename=language+".txt"
     f=open(filename,'r',errors = 'ignore')
-    msg=bot.send_message(tid,"Enter program name")
+    msg=bot.send_message(tid,"Please enter program name \n (Ex: Fibonacci, Palindrome etc..)")
     bot.register_next_step_handler(msg, codename)'''
 def codename(message):
   
@@ -219,7 +219,7 @@ def codename(message):
       else:
           reply=response(user_response)
   #bot.reply_to(message,reply+'\n-----------------------------------------------------------\n "IF YOU WANT TO CONTIUE TO SEARCH PRESS Y OR N"')                  
-  msg=bot.send_message(tid,reply+"\n--------------------------\n \033[91m If you want to continue please type \033[92m Y or else type  \033[92m N")
+  msg=bot.send_message(tid,reply+"\n--------------------------\n If you want to continue please type  Y or else type  N")
   bot.register_next_step_handler(msg, recheck_lang)
 def recheck_lang(message):
   global f
@@ -231,7 +231,7 @@ def recheck_lang(message):
     msg=bot.send_message(tid,"Enter a program name")
     bot.register_next_step_handler(msg, codename)
   elif value=='N' or value=='n':
-    bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
+    bot.reply_to(message,'select a program a language among the following \n\n /c\t/cpp\n\n/java\t/python')
 
   else:
     bot.reply_to(message,'you entered wrong key to search a code tap /search')
