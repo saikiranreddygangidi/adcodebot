@@ -1,5 +1,6 @@
 import nltk
 import telebot
+import json
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from flask import Flask, request,redirect
 import os
@@ -109,7 +110,7 @@ keyboard = [[InlineKeyboardButton("c",url='/c'),
              InlineKeyboardButton("c++", url='/cpp')]]
 
 reply_markup = InlineKeyboardMarkup(keyboard)
-
+reply_markup=json.dumps(reply_markup)
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
