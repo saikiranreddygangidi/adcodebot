@@ -104,16 +104,16 @@ def python(message):
  bot.register_next_step_handler(msg, codename)
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
-keyboard = [[InlineKeyboardButton(text="c",url='/c')]]
+keyboard = [[InlineKeyboardButton(text="c",url='/c')],]
 
-reply = InlineKeyboardMarkup([[InlineKeyboardButton(text="c",url='/c')]])
+reply = InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 reply_markup=reply
 
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
- bot.send_message(tid,'select a program a language among the following',reply_markup=reply_markup)
+ bot.reply_to(message,'select a program a language among the following \n\n /c      /cpp\n\n/java  /python')
 
 
 
