@@ -1,7 +1,7 @@
 import nltk
 import telebot
 import json
-from telegram.namedtuple import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from flask import Flask, request,redirect
 import os
 import string
