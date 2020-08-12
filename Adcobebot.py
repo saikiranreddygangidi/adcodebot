@@ -109,7 +109,8 @@ keyboard = [[InlineKeyboardButton("c",url='/c'),
              InlineKeyboardButton("Python", url='/python'),
              InlineKeyboardButton("c++", url='/cpp')]]
 
-reply_markup = InlineKeyboardMarkup(keyboard)
+reply_markup =str(InlineKeyboardMarkup(keyboard))
+
 reply_markup=json.dumps(reply_markup)
 @bot.message_handler(commands=['search'])
 def search(message):
