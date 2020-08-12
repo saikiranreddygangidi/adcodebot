@@ -111,7 +111,7 @@ keyboard = [[InlineKeyboardButton("c",url='/c'),
 
 reply_markup =str(InlineKeyboardMarkup(keyboard))
 
-reply_markup=json.dumps(reply_markup)
+reply_markup=json.loads(reply_markup)
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
