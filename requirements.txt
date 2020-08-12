@@ -18,3 +18,5 @@ Werkzeug==1.0.1
 pymongo==3.10.1
 dnspython==1.16.0
 telegram==0.0.1
+future==0.18.2
+python-telegram-bot==4.0rc1
