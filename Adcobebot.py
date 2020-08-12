@@ -113,7 +113,8 @@ reply_markup=reply
 @bot.message_handler(commands=['search'])
 def search(message):
  tid = str(message.from_user.id)
- bot.reply_to(message,'select a program a language among the following' ,reply_markup=reply_markup)
+  bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
+
 
 
 '''def select_lang(message):
@@ -230,7 +231,8 @@ def recheck_lang(message):
     msg=bot.send_message(tid,"Enter a program name")
     bot.register_next_step_handler(msg, codename)
   elif value=='N' or value=='n':
-    bot.reply_to(message,'select a program a language among the following' ,reply_markup=reply_markup)
+     bot.reply_to(message,'select a program a language among the following \n /c\n/cpp\n/java\n/python')
+
   else:
     bot.reply_to(message,'you entered wrong key to search a code tap /search')
 
