@@ -1,7 +1,7 @@
 import nltk
 import telebot
 import json
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.namedtuple import InlineKeyboardButton, InlineKeyboardMarkup
 from flask import Flask, request,redirect
 import os
 import string
@@ -104,10 +104,7 @@ def python(message):
  bot.register_next_step_handler(msg, codename)
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey",)
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
-keyboard = [[InlineKeyboardButton("c",url='/c'),
-             InlineKeyboardButton("Java", url='/java'), 
-             InlineKeyboardButton("Python", url='/python'),
-             InlineKeyboardButton("c++", url='/cpp')]]
+keyboard = [[InlineKeyboardButton(text="c",url='/c')],]
 
 reply = InlineKeyboardMarkup(inline_keyboard=keyboard)
 
