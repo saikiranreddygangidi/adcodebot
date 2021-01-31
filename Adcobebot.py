@@ -13,7 +13,7 @@ API_TOKEN = '1095762894:AAH1y_gd31l3qimubyq0fYFNRYkeTPi-HCI'
 from pymongo import MongoClient
 
 #Step 1: Connect to MongoDB - Note: Change connection string as needed
-client = MongoClient("mongodb+srv://saikiran:saikiran0074@codebotdb.vok7o.mongodb.net/codebotdb?retryWrites=true&w=majority")
+client = MongoClient("********")
 db=client.codebotdb
 
 
